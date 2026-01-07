@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Archive | Goverdhan Koyalkar</title>
+    <meta name="description" content="Archive of newsletters on Cloud, DevOps, and Software Architecture by Goverdhan Koyalkar.">
+    
+    <!-- PWA Manifest & Theme -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Reuse existing styles -->
+    <style>
+        :root {
+            --primary-color: #7c3aed;
+            --primary-hover: #6d28d9;
+            --primary-gradient: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+            --bg-color: #ffffff;
+            --bg-secondary: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --nav-height: 70px;
+        }
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --card-bg: #1e293b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6, .logo, .btn, .btn-outline, .nav-links { font-family: 'Poppins', sans-serif; }
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+        .btn-outline { 
+            display: inline-block;
+            padding: 8px 16px; 
+            border: 1px solid var(--border-color); 
+            background: transparent; 
+            color: var(--text-main); 
+            border-radius: 6px; 
+            font-weight: 600;
+        }
+        .btn-outline:hover { background-color: var(--bg-secondary); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Nav */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--nav-height);
+            background-color: var(--bg-color); border-bottom: 1px solid var(--border-color);
+            z-index: 1000; display: flex; align-items: center;
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a:hover { color: var(--primary-color); }
+        .theme-toggle { cursor: pointer; font-size: 1.2rem; margin-left: 15px; }
+
+        /* Archive Grid */
+        #archive { padding-top: 120px; padding-bottom: 80px; min-height: 80vh; }
+        .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; text-align: center; }
+        .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 3rem; }
+        
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .blog-card { 
+            background: var(--card-bg); border-radius: 12px; overflow: hidden; 
+            border: 1px solid var(--border-color); transition: transform 0.3s;
+        }
+        .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .blog-content { padding: 20px; }
+        .blog-tag { font-size: 0.8rem; color: var(--primary-color); font-weight: 600; text-transform: uppercase; }
+        .blog-date { font-size: 0.8rem; color: var(--text-muted); float: right; }
+        .blog-title { font-size: 1.2rem; margin: 10px 0; font-weight: 700; }
+        .read-link { color: var(--primary-color); font-weight: 600; margin-top: 15px; display: block; }
+
+        /* Newsletter Box */
+        .newsletter-box { background: var(--primary-gradient); color: white; padding: 40px; border-radius: 12px; text-align: center; margin-top: 50px; }
+        .newsletter-box input { padding: 10px; border-radius: 4px; border: none; width: 60%; margin-right: 10px; }
+        .newsletter-box button { padding: 10px 20px; background: #0f172a; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        @media (max-width: 768px) {
+            .newsletter-box form { flex-direction: column; gap: 10px; }
+            .newsletter-box input { width: 100%; margin-right: 0; }
+            .newsletter-box button { width: 100%; }
+        }
+
+        /* Footer */
+        footer { background: #0f172a; color: #94a3b8; padding: 60px 0 20px; margin-top: auto; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { color: white; margin-bottom: 20px; }
+        .footer-col ul li { margin-bottom: 10px; }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Simplified for this page */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">JD.Dev</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+            <div style="display: flex; align-items: center;">
+                <div class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ARCHIVE CONTENT -->
+    <section id="archive">
+        <div class="container">
+            <a href="index.html" class="btn-outline" style="margin-bottom: 20px; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            <h1 class="section-title">Newsletter Archive</h1>
+            <p class="section-subtitle">Browse past editions on Scalability, DevOps, and Architecture.</p>
+            
+            <div class="blog-grid">
+                <!-- Issue 1 -->
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span class="blog-tag">Issue #5</span>
+                        <span class="blog-date">May 15, 2025</span>
+                        <h3 class="blog-title">The State of Micro Frontends in 2025</h3>
+                        <p>Analyzing the maturity of Module Federation and new tooling in the ecosystem.</p>
+                        <a href="#" class="read-link">Read Issue &rarr;</a>
+                    </div>
+                </div>
+                <!-- Issue 2 -->
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span class="blog-tag">Issue #4</span>
+                        <span class="blog-date">April 02, 2025</span>
+                        <h3 class="blog-title">Kubernetes Cost Optimization</h3>
+                        <p>Strategies for right-sizing pods and using spot instances effectively.</p>
+                        <a href="#" class="read-link">Read Issue &rarr;</a>
+                    </div>
+                </div>
+                <!-- Issue 3 -->
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span class="blog-tag">Issue #3</span>
+                        <span class="blog-date">March 10, 2025</span>
+                        <h3 class="blog-title">Serverless vs. Containers</h3>
+                        <p>When to choose AWS Lambda over ECS/EKS for enterprise workloads.</p>
+                        <a href="#" class="read-link">Read Issue &rarr;</a>
+                    </div>
+                </div>
+                <!-- Issue 4 -->
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span class="blog-tag">Issue #2</span>
+                        <span class="blog-date">Feb 22, 2025</span>
+                        <h3 class="blog-title">Securing Your CI/CD Pipeline</h3>
+                        <p>Best practices for secret management and supply chain security.</p>
+                        <a href="#" class="read-link">Read Issue &rarr;</a>
+                    </div>
+                </div>
+                <!-- Issue 5 -->
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span class="blog-tag">Issue #1</span>
+                        <span class="blog-date">Jan 15, 2025</span>
+                        <h3 class="blog-title">Welcome to the Newsletter</h3>
+                        <p>Introduction to the topics we will cover: Cloud, Code, and Career.</p>
+                        <a href="#" class="read-link">Read Issue &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUBSCRIBE FORM -->
+            <div class="newsletter-box">
+                <h3>Subscribe to Newsletter</h3>
+                <p style="margin-bottom: 15px; font-size: 0.9rem;">Get the latest issues delivered to your inbox.</p>
+                <form style="display: flex; justify-content: center;" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+                    <input type="email" placeholder="Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Goverdhan Koyalkar</h4>
+                    <p>Solutions Architect & Engineering Manager.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; border-top: 1px solid #334155; padding-top: 20px;">
+                <p>&copy; 2025 Goverdhan Koyalkar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+Goverdhan Koyalkar
++91 9885514982
+goverdhan.k@gmail.com
+________________________________________
+SUMMARY:
+●	18+ years of broad enterprise experience across Domains, Application Design, Development, and maintenance of Software Applications.
+●	Certified in HTML5 and JavaScript Programming, AWS, GCP, and Azure 
+●	Extensive experience collaborating with the Senior Leadership Teams in strategic solution-led planning IT Service Management and Relationship Management.
+●	Experienced in developing web applications using HTML5/CSS3, JavaScript, TypeScript, React.js, Angular, Next.js, Node.js, Express.js, MongoDB, MySQL, Nest.js, REST API, gRPC, Redis.
+●	Expertise in project planning, stakeholder communication, and team mentoring, combined with a deep technical foundation in cloud (AWS, GCP, Azure), DevOps (Kubernetes, Docker, Terraform)
+●	Proven track record of accelerating feature delivery through Micro Frontend architecture, CI/CD automation, and reusable widget libraries.
+●	Comfortable in working independently, in teams, and leading teams.
+●	Experience in Waterfall and Agile/Scrum Development Methodology and Program Management.
+●	Specialized knowledge of using design patterns and best practices to build flexibility into Enterprise Applications.
+●	Supervised development team and worked with departmental representatives to coordinate project priorities and progress to ensure project completion and meet deadlines.
+●	Mentored and performed code reviews for other developers to ensure that all standards, models, designs, and methodologies met coding standards and best practices.
+●	Experience with Model-View-Controller (MVC), and Model-View-View-Model (MVVM) architecture.
+●	Expertise in developing single-page applications (SPA) using Angular/ReactJS, Typescript, NestJS, and MongoDB.
+●	Define the overall application architecture across frontend, backend, APIs, databases, and cloud infrastructure.
+●	Ensure scalability, performance, security, and maintainability.
+●	Design microservices or a monolithic architecture based on scalability and team needs.
+●	Microfrontends, Single SPA, Module Federation (Webpack 5), and Composite UI.
+TECHNICAL SKILLS:
+Web Technologies	HTML5/CSS3, SCSS & LESS, Tailwind, JavaScript, Alpine.js, TypeScript, AJAX, & JSON, AngularJS 1.5, Angular 2+, Angular 16, Angular 18, Angular UI Bootstrap, Angular Powered Bootstrap (ngxBootstrap), Angular Material Designs, NativeScript, React.js, NextJS, JSX, Redux, Axios, React Native, Ant Design, Vue.js, Vuex.js, VueBootstrap, Ionic Framework, D3.js, NVD3.js, chart.js, 3d Forced Graphs, WebGL, Webservices, Web API, REST API, gRPC, and JSON
+Backend Skills	Node.js, Express.js, Express-validator.js, Nest.js, JWT token, socket.io, lodash.js, passport.js, SAML, OIDC, OAuth2, Auth0, KeyCloak, Swagger, Fast APIs, Web Sockets, etc.
+Microservices, Restful APIs, Serverless APIs, SSO.
+CMS	Joomla, Drupal, WordPress, Moodle, OSCommerce, CodeIgniter, CakePHP, Magento
+Cloud Technologies	AWS, GCP, Azure, Kubernetes (EKS, AKS, GKE), Cluster, Pods, Nodes, Docker, Docker Compose, Kind (Kubernetes in Docker), Minikube, Kubeadm, APISIX, HELM, HELM Charts, NODE22, Backstage, Terraform, Ansible, Pulumi, VPC, Subnets, ALB, NLB, GLB, Helm, Github Packages, ECR, IoT, IaC, Nginx, HAProxy, SSL/TLS, OWASP ZAP, HashiCorp Vault, API Gateway, SQS, SNS, Kafka, RabbitMQ, Redis, Google BigQuery SQL, Firebase 
+Azure Service Bus, Azure DevOps, Azure Function, Azure VM, Azure SQL, Google Pub/Sub, AWS Lambda, S3 Bucket, Google Storage, Azure SQL, GCP Storage, AKS, GKE, JFrog Artifactory, SonarQube, Automate, Veracode
+Design Patterns	Constructor Pattern, Module Pattern, Singleton Pattern, Observer Pattern, Prototype Pattern, Command Pattern, Facade Pattern, Factory Pattern, Timer Pattern, SOLID Principle.
+JavaScript Framework	Angular, React.js, Vue.js, Backbone.js, Knockout.js, Ember.js, Sencha Ext JS, JQuery UI, JQuery Mobile UI, Kendo UI, Breeze.js, require.js, Underscore.js, io.js, ES6.js, prototypes.js, JQPlot.js, D3.js, NVD3.js, PhoneGap, Cordova, Jasmine Test Specs
+Databases	Microsoft SQL Server 20xx, Cosmos DB, DB2, MySQL, Oracle 8i/10g/11g/12c, PostgreSQL, MS Access, MongoDB, Mongoose, and Azure SQL, AWS DynamoDB
+Design Tools	Sketch, Figma, Adobe XD, Balsamiq, draw.io.
+User Research, Usability Testing, Information Architecture, Wireframing and Prototyping, Visual Design, Interaction Design, User Persona Creation, User Journey Mapping, Accessibility Design, User-Centered Design (UCD)
+Operating Systems 	Windows Server 20XX, MacOS, Ubuntu and Linux
+Reporting/Portal Tools	PowerPoint, Crystal Reports, Active Reports, SSRS, SSIS, Tableau, and Power BI
+Domain Knowledge	E-commerce, Retail, Healthcare, Mobile, Logistics, Banking, Insurance, PropTech, Human Resources, Cybersecurity, IoT, Blockchain, Web3, Cloud Computing & DevOps, Big Data & Analytics.
+Testing Tools	Jasmine, Protractor, Jest, Pact.js, Karma, Cypress, SonarQube.
+Version control	GIT, GitHub, GitLab, GitHub Actions, GitHub Packages, Bitbucket, TFS, CI/CD Pipelines, YAML, Docker, Docker Compose, Jenkins, JIRA
+Languages	C, C++, .Net, Java, Node.js, Nest.js, Python, DJango, Golang, PHP
+
+EDUCATION
+●	MCA from Osmania University
+●	B.Sc. Computers from Osmania University
+●	Intermediate (M.P.C) from the Board of Intermediate Education
+●	SSC from the Board of Secondary Education
+WORK EXPERIENCE
+Company	Duration	Designation
+Soulverse Inc	Oct`24 - May`25	Solutions Architect (DevOps, Security, MERN and MEAN)
+ADQ Services	Dec’23 – Aug’24	Engineering Manager (MERN and MEAN)
+Datavid Inc	Nov’20 – Jul’23	Technical Architect
+Sears Inc. 	Aug’16 – Aug’20	UI Architect
+Deloitte 	Mar’16 – Jul’16	Technical Architect
+AccionLabs	Jan’14 – Feb’16	Principal Consultant 
+Applied Information Science 	Jul’12 – Sep’13	UI / UX Developer (Team Lead)
+Hitachi Consulting	Jun’10 – Dec’11	UI Engineer (Team Lead)
+UBS	Aug’07 – May’10 	Sr. UI Designer / Sr. Associate
+Anand Software	Jul’04 – Aug’07	PHP Programmer 
+SIS InfoTech 	Mar’03 – Jun’04	Research Editor
+
+ROLES and RESPONSIBILITIES
+UI Design and Implementation:
+●	Create wireframes, mock-ups, and prototypes to conceptualize UI designs.
+●	Develop clean and semantic HTML code to structure web content.
+●	Enhance user interactivity and functionality using JavaScript.
+●	Collaborate with graphic designers, developers, architects and product managers.
+●	Ensure responsive UI functionality across various devices and screen sizes.
+●	Ensure application accessibility for individuals with disabilities.
+●	Optimize UI performance for quick loading times and prompt user interaction responses.
+Security and Compliance:
+●	Implement robust user authentication and authorization mechanisms using JWT, Auth2, SSO, OIDC, OKTA, passport.js, HashiCorp Vault, and Snyk.
+●	Implement security best practices across the stack (e.g., HTTPS, JWT/OAuth, data encryption).
+●	Ensure compliance with standards like GDPR and HIPAA, depending on the domain.
+Performance Optimization
+●	Identify bottlenecks and optimize performance at the frontend, backend, database, and network levels.
+●	Use tools like Lighthouse, New Relic, and database profilers.
+DevOps & Deployment:
+●	Deploy applications to cloud platforms or on-premises servers.
+●	Deployed and managed applications using AWS services, including S3, Lambda, EC2, AppSync, Application Load Balancer, Auto Scaling Groups, and Elastic Beanstalk.
+●	Set up CI/CD pipelines, containerization (Docker), and orchestration (Kubernetes).
+●	Define infrastructure as code (e.g., Terraform, AWS CloudFormation).
+●	Monitor and optimize deployment pipelines and runtime environments.
+Documentation & Standards
+●	Create architectural diagrams, decision logs, and design documentation.
+●	Define reusable components, patterns, and templates.
+Stakeholder Communication
+●	Translate technical details into business language for stakeholders.
+●	Present architecture reviews, risk assessments, and ROI discussions.
+Backend Development:
+●	Design and implement RESTful APIs and AWS API Gateway.
+●	Review and enforce coding standards and best practices.
+●	Hands-on involvement in solving complex technical challenges across the stack.
+●	Build and manage serverless applications using AWS Lambda and other serverless technologies.
+●	Designed and managed scalable database solutions leveraging DynamoDB, RDS, and other AWS database services.
+●	Implement messaging and notification solutions using AWS SNS, SQS, and other integration services.
+●	Monitor application performance, troubleshoot issues, and optimize application performance and cost.
+●	Implement security best practices, including IAM roles, policies, encryption, and monitoring.
+●	Collaborate with cross-functional teams, including front-end developers, DevOps engineers, architects, and product managers.
+PROJECTS
+Company: Soulverse Inc
+Project: Kubernetes Orchestration & DevOps Automation – Soulverse Backend Services	Duration: Oct 2024 – May 2025
+Role: Kubernetes/DevOps Engineer	Domain: Blockchain, Web3, Cloud Computing & DevOps
+Key Highlights:
+●	Architected and deployed scalable Kubernetes clusters for Soulverse backend services, managing Pods, Nodes, and Namespaces for isolated service execution.
+●	Utilized Docker and Docker Compose to containerize microservices, enabling consistent builds across environments.
+●	Deployed and managed services using HELM and custom HELM Charts for repeatable, version-controlled deployments.
+●	Leveraged GitHub Packages to manage container images, environments, and internal developer portals.
+●	Configured NAT Gateways, VPCs, and Subnets for secure and performant network architecture across public and private services.
+●	Implemented AWS Load Balancers:
+○	Application Load Balancer (ALB) for Layer 7 routing
+○	Network Load Balancer (NLB) for high-throughput traffic scenarios
+●	Provisioned infrastructure using Terraform and automated configuration management with Ansible, enabling Infrastructure as Code (IaC) and consistent environment replication.
+●	Ensured smooth service discovery, configuration, and scaling in the Kubernetes ecosystem with monitoring and logging extensions integrated into the pipeline.
+Project: Penetration Testing and Security Hardening – Soulverse Microservices	Duration: Oct 2024 – May 2025
+Role: Security Engineer / DevSecOps (Individual Contributor)	Domain: Cloud Computing, Cybersecurity & DevOps
+Key Highlights:
+●	Performed penetration testing on Soulverse’s microservices infrastructure, identifying and mitigating critical vulnerabilities across multiple services.
+●	Implemented Nginx as a reverse proxy and load balancer for optimized routing and enhanced application-layer protection.
+●	Configured and installed SSL certificates for custom domains using MailCheap, ensuring secure HTTPS access across all services.
+●	Hardened application security by implementing:
+○	Cross-Site Scripting (XSS) protection
+○	Content Security Policy (CSP) headers
+○	HTTP Strict Transport Security (HSTS)
+○	Clickjacking protection via X-Frame-Options
+○	Referrer policy and other modern browser-based security headers
+●	Worked closely with DevOps and backend teams to apply OWASP Top 10 mitigation strategies and conduct post-deployment verification.
+
+Project: Scalable Infrastructure Setup with AWS Elastic Beanstalk and Auto Scaling	Duration: Oct 2024 – May 2025
+Role:  Cloud Infrastructure Architect / DevOps Engineer	Domain: Cloud Computing & DevOps
+Key Highlights:
+●	Designed and deployed a load-balanced architecture for critical applications and services using AWS Elastic Beanstalk.
+●	Configured Elastic Beanstalk environments with Application Load Balancers (ALB) to ensure high availability, fault tolerance, and efficient traffic distribution.
+●	Integrated AWS Auto Scaling Groups to dynamically scale EC2 instances based on real-time CPU and network usage metrics, ensuring cost-efficiency and performance under varying traffic loads.
+●	Tuned scaling policies and lifecycle hooks to minimize downtime and improve deployment efficiency.
+●	Enabled seamless CI/CD pipeline integration and infrastructure monitoring using CloudWatch, ensuring end-to-end observability.
+●	Contributed to cost optimization and system resilience as part of a broader cloud modernization initiative.
+
+Project: MDMS, HES	Duration: Oct 2024 – May 2025
+Role: Solutions Architect	Domain: Big Data, Cloud Computing & IoT
+As a Solutions Architect, I spearheaded the development of two pivotal applications—the Head End System (HES) and the Meter Dynamics Management System (MDMS)—designed to revolutionize smart meter management and data analytics.
+Meter Dynamics Management System (MDMS):
+Centralized Smart Meter Management: Engineered a robust platform for the seamless registration and oversight of smart electrical meters, facilitating real-time monitoring of usage, billing, and remote operations such as connection and disconnection.
+Scalable Data Handling: Implemented AWS services, including DynamoDB for scalable storage and Data Lake to efficiently manage extensive datasets, ensuring optimal performance with millions of IoT devices.
+Microservices Architecture: Designed and deployed a microservices framework utilizing API Gateway and NATS for efficient inter-service communication, enhancing system modularity and resilience.
+Head End System (HES):
+Configurable Regional Deployment: Developed a flexible application capable of regional deployment based on postal codes, dynamically integrating with MDMS to retrieve smart meter serial numbers and initiate data acquisition.
+High-Frequency Data Collection: Orchestrated the periodic (every 30 minutes) collection and analysis of data from millions of IoT-enabled smart meters, ensuring timely synchronization with MDMS.
+Advanced Communication Protocols: Leveraged MQTT for efficient, low-latency communication between devices, ensuring reliable data transmission across the network.
+Technological Stack:
+Frameworks and Languages: Utilized Next.js and Nest.js to develop scalable and maintainable applications, ensuring a robust and efficient codebase.
+AWS Services: Employed AWS Lambda for serverless computing, S3 buckets for secure storage of raw IoT data, and EC2 instances to host and manage HES and MDMS applications.
+Data Analytics and Monitoring: Integrated AWS QuickSight and Prometheus for comprehensive data visualization and system monitoring, enabling proactive insights and performance tuning.
+This initiative enhanced the efficiency of smart meter data management and provided a scalable solution adaptable to diverse regional requirements, significantly contributing to the advancement of smart grid technologies.
+Company: ADQ Services
+Enquire.buzz & Omnisent.ai	Duration: Dec 2023 – June 2024
+Role:  Engineering Manager	Domain: Web3
+Technologies: Angular, Module Federation, Micro Frontend Architecture, TypeScript, REST APIs, Node.js, Next.js, Nest.js, Composite UI, Cloud Hosting (AWS/Azure).
+Led the architecture and development of two innovative, scalable web applications:
+●	Enquire.buzz – A search engine platform similar to Google that allows users to enter queries and receive both search results and real-time widgets such as weather updates, sports scores, financial data, and movie information.
+●	Omnisent.ai – An AI-powered assistant platform inspired by ChatGPT that integrates intelligent responses alongside 50+ reusable widget components for enhanced context and user experience.
+Key Contributions:
+●	Architected and implemented a Micro Frontend-based widget ecosystem using Angular Module Federation, enabling dynamic loading and reuse of 50+ widgets across applications.
+●	Developed a Composite UI Framework to enable seamless integration of widgets within the conversational interface of Omnisent.ai.
+●	Established scalable and modular architecture, enabling rapid widget development, independent deployments, and reusability across multiple domains.
+●	Collaborated with cross-functional teams to ensure performance, security, and accessibility standards.
+●	Optimized frontend build and deployment using CI/CD pipelines and containerized environments.
+Impact:
+●	Reduced development time for new features by 60% through reusable widget design.
+●	Enabled consistent UX and UI standards across multiple applications.
+●	Facilitated rapid product iterations by decoupling widget teams from host applications.
+Company:  Datavid
+Synapse	Duration: Dec 2020 – June 2023
+Role:  Technical Architect (Individual Contributor)	Domain: Big Data, Web3 
+Technologies Stack: HTML5, CSS3, JavaScript, TypeScript, Angular 12, Node.js, Express.js, Passport.js, SAML, MarkLogic, Redis
+Description: Synapse is an advanced search application that enhances user experience by offering a powerful, intuitive interface. It allows users to apply multiple filters and options for precise and efficient search results, making it a crucial component of our web application.
+Responsibilities:
+●	Developed a comprehensive set of search filters that enabled users to specify their search criteria through categories, keywords, date ranges, locations, and other relevant attributes.
+●	Implemented multi-criteria search functionality, allowing users to refine search results using multiple criteria simultaneously with logical AND/OR operators.
+●	Enabled users to sort and organize search results by parameters such as relevance, date, price, or ratings to improve the search experience.
+●	Created a faceted search experience that offered dynamic filtering options based on the current dataset, improving the precision of search results.
+●	Implemented autosuggestions to assist users in finding relevant search terms as they typed, enhancing the efficiency and accuracy of search queries.
+
+Project: Single Sign-On (SSO) Implementation for Enterprise Applications	Duration: Dec 2020 – June 2023
+Role:  Technical Architect (Individual Contributor)	Domain: Cybersecurity, Web3
+Project Overview:
+ Led the design and implementation of a secure and scalable Single Sign-On (SSO) solution across multiple enterprise applications to improve user experience and centralize identity management.
+Key Responsibilities & Technologies:
+●	Integrated AWS Cognito with Active Directory using SAML 2.0 and OIDC for federated identity management.
+●	Configured OIDC Clients and OIDC Providers to support modern authentication flows.
+●	Implemented Passport.js strategies for authenticating Node.js-based applications with third-party identity providers.
+●	Used JWT tokens for secure API authentication and fine-grained authorization.
+●	Configured API Gateway to validate tokens, enforce scopes, and enable secure access to microservices.
+●	Ensured compliance with enterprise security standards and best practices in identity and access management (IAM).
+Impact:
+●	Reduced login complexity and improved user onboarding across applications.
+●	Centralized access control and auditing.
+●	Enabled seamless integration with third-party SaaS and internal apps using standards-based protocols.
+
+VetChef	Duration: Jan 2021 – June 2021
+Role:  Technical Architect (Individual Contributor)	Domain: Web3
+Technologies: Frontend: React Native (for mobile app) or React.js (for web), Backend: Next.js, Database: MongoDB, User Authentication: Firebase Authentication, Cloud Storage: Firebase Cloud Storage (for storing pet profiles and recipes), APIs for nutritional data (e.g., USDA Food Database), Push notifications (for reminders), Responsive design for web application
+Description:  VetChef is a user-friendly digital platform for pet health and nutrition, leveraging Next.js for the web application, empowering dynamic content delivery and SEO optimization. The platform helps pet owners and veterinarians plan and manage balanced meals for dogs and cats, ensuring optimal well-being.
+Responsibilities:
+●	Developed a comprehensive set of search filters that enabled users to specify their search criteria through categories, keywords, date ranges, locations, and other relevant attributes.
+●	Implemented functionality allowing users to sort and organize search results by various criteria such as relevance, date, price, or ratings, enhancing the overall search experience.
+●	Created a faceted search experience that offered dynamic filtering options based on the current dataset, improving the precision of search results.
+●	Implemented autosuggestions to assist users in finding relevant search terms, enhancing the efficiency and accuracy of search queries.
+Company:  Sears Inc
+Sears Parts Direct (SPD)	Duration: Jan 2019 – Dec 2019
+Role: UI Architect	Domain: E-Commerce
+
+Technologies: React.js, Redux, Bootstrap, Ant Design, Next.js, Node.js, Express.js, MongoDB, Mongoose, GraphQL.
+
+Description: Sears Parts Direct is a robust online platform leveraging Next.js for optimal performance and SEO, offering a comprehensive catalog of replacement parts and accessories for appliances, lawn & garden equipment, and electronics. The platform empowers users to effortlessly identify required components through advanced search functionalities, including model and part number search, complemented by intuitive schematic diagrams and assembly illustrations. Secure online ordering and seamless checkout processes ensure a frictionless shopping experience, delivering parts directly to customers' doorsteps.
+Key Result Areas:
+●	Enhanced Product Discovery: Developed a robust parts catalog optimized for search and discovery, utilizing Next.js's data fetching capabilities to deliver lightning-fast search results.
+●	Improved User Experience: Implemented intuitive search filters, sorting, and faceted navigation, leveraging Next.js's SSR and ISR for optimal performance and SEO.
+●	Visual Product Support: Provided detailed schematic diagrams and assembly illustrations, optimized for various screen sizes using Next.js's image optimization features.
+●	Streamlined Checkout: Facilitated secure online ordering with a seamless checkout process, leveraging Next.js's API routes for backend integration.
+By harnessing the power of Next.js, Sears Parts Direct delivers an exceptional user experience, improved SEO, and faster load times, solidifying its position as a leading platform for replacement parts.
+Member Discovery Engine (MDE)	Duration: Jan 2018 to Dec 2018
+Role: UI Architect	Domain: Retail
+Technologies:React.js, Redux, Bootstrap, Ant Design, Next.js, Node.js, Express.js, MongoDB, Mongoose, GraphQL.
+●	Advanced search algorithms and indexing techniques.
+●	A database management system (DBMS) for data storage and retrieval.
+●	The user interface was developed using technologies such as Angular.js, Angular 8, ngBootstrap (an Angular-powered Bootstrap framework), Node.js, Express.js, Express-validator.js, and MongoDB (utilizing the MEAN stack) for web applications, as well as NativeScript for mobile applications.
+●	Natural language processing libraries and semantic search capabilities.
+Description: The Member Discovery Engine (MDE) is a customizable search platform that helps Sales and Marketing teams efficiently explore and filter registered members in the Sears ecosystem or a large database.
+Key Result Areas:
+●	Enabled dynamic filtering through faceted search, helping users refine results based on selected parameters for more precise outcomes.
+●	Created advanced sorting capabilities that enable users to organize search results by relevance, price, date, popularity, and user ratings.
+●	Integrated NLP capabilities to process natural language queries, enhancing user accessibility and making searches more intuitive.
+●	Provided mobile accessibility, ensuring users could search and discover information conveniently from their mobile devices.
+
+Individual Member View (IMV)	Duration: Jan 2017 – Dec 2017
+Role: UI Architect	Domain: Big Data, Analytics and Retail
+Technologies: Angular 9, Material Design, MongoDB, Express.js, Node.js (MEAN Stack)
+Description: The Member Tool enables dynamic search and exploration of billions of data points and attributes within the member population. It offers quick response times, customizable logic, and the ability to view and rank individual member sales by various metrics, with export and saving options.
+Individual Member View (IMV)	Duration: Jan 2017 – Dec 2017
+Role: UI Architect	Domain: Retail
+Technologies: Angular 9, Material Design, MongoDB, Express.js, Node.js (MEAN)
+Description: The Member Tool offers dynamic search and exploration of billions of data points, providing quick population sizing, customizable logic, and the ability to view and rank individual member sales, along with export and saving options.
+Individual Store View (ISV app)	Duration: Jan 2016 – Dec 2016
+Role: UI Architect	Domain: Mobile, Retail
+Technologies: Angular 9, React Native, PhoneGap, Material Design, MongoDB, Express.js, Node.js (MEAN)
+Description: Individual Store View (ISV) is a web and mobile app that provides a personalized, location-specific experience for users in physical retail stores, offering access to store information, promotions, and services.
+Key Result Areas:
+●	Implemented a store locator feature using GPS and maps to help users find nearby store locations easily.
+●	Provided detailed store-specific information, including address, hours, contact details, and directions, to enhance user convenience.
+●	Enabled in-store navigation with interactive maps and directions to assist users in locating products and departments within the store.
+●	Displayed exclusive in-store promotions, discounts, and special offers to engage users and drive sales.
+●	Facilitated mobile shopping and "click and collect" options, allowing users to browse, purchase, and track orders directly from their mobile devices.
+
+Member Application Platform (MAP)	Duration: Sept 2016 – Dec 2016
+Role: UI Architect	Domain: Retail
+Technologies: MongoDB, Express.js, Bootstrap 4+, Angular 9, Node.js (MEAN)
+Description: The Performance Measurement Tool provides flexible data views and insights by displaying Format/SHC results across various time frames in multiple tiles, enabling quick data access and discovery opportunities through designated drill paths.
+Responsibilities:
+●	Designed and implemented the front-end architecture using Angular 9 and Bootstrap 4+ ensuring responsive and consistent UI across devices.
+
+●	Collaborated with business stakeholders to gather requirements and translated them into technical specifications and UI wireframes.
+
+●	Developed reusable UI components and shared services to streamline development and ensure consistency across modules.
+
+●	Integrated MEAN stack (MongoDB, Express.js, Angular, Node.js) for end-to-end application development, enabling real-time data access and insights.
+
+●	Optimized application performance by implementing lazy loading, change detection strategies, and API response handling.
+
+●	Defined and enforced UI coding standards, best practices, and design patterns across the team to maintain scalability and maintainability.
+
+●	Worked closely with backend developers to design RESTful APIs and ensure seamless integration with front-end components.
+
+●	Conducted code reviews and provided technical guidance to developers, improving code quality and reducing defects.
+
+●	Implemented drill-down dashboards and data visualization to present insights on Format/SHC performance metrics effectively.
+
+●	Coordinated with QA teams for test planning, defect triage, and ensuring high-quality deliverables within the timeline.
+
+MPS – Database Fetch	Duration: Sept 2016 – Dec 2016
+Role: UI Architect	Domain: Retail
+Technologies: MongoDB, Express.js, Angular.js, Node.js (MEAN)
+Description: Database Fetch provides a quick and straightforward method to retrieve data from the Member Performance Scorecard. It enables users to access both current source data and historical data that is no longer visible in MPS.
+Responsibilities:
+●	Designed and developed the front-end architecture using Angular.js with a focus on scalability, performance, and maintainability.
+●	Built data retrieval modules to fetch both current and historical Member Performance Scorecard data efficiently.
+●	Integrated the MEAN stack (MongoDB, Express.js, Angular.js, Node.js) to enable seamless interaction between UI and backend services.
+●	Created reusable UI components and services to streamline data access and visualization across the application.
+●	Implemented RESTful API integration for fetching and managing large datasets with optimized query performance.
+●	Applied UI/UX best practices to ensure intuitive navigation and quick access to key performance insights.
+●	Conducted code reviews and provided technical guidance for the team to maintain coding standards and best practices.
+●	Collaborated with backend engineers and database teams to design efficient data models and improve query performance.
+●	Ensured data security and access control while retrieving sensitive performance-related information.
+●	Coordinated with QA teams for unit testing and defect resolution to deliver a stable, production-ready solution.
+Company: Deloitte
+Employee QuickView	Duration: Sept 2015 – Dec 2015
+Role: Technical Architect	Domain: Human Resources
+Technologies: HTML5, CSS3, JavaScript, Angular.js 2.0, Typescript, Bootstrap 3.0, GIT, Node.js, Express.js, MySQL, Gulp, Browserify.
+Description: Employee QuickView (EQV) is an integrated analytics platform that streamlines workforce management with twenty modules, offering comprehensive dashboards, an intuitive UI, and customizable reports to optimize headcount management and critical operations.
+Responsibilities:
+●	Led the design and development of an integrated analytics platform with 20+ modules to streamline workforce management.
+●	Architected and implemented responsive UI using Angular 2.0, TypeScript, HTML5, CSS3, and Bootstrap 3.0.
+●	Built customizable dashboards and reporting modules enabling real-time insights into headcount and operational data.
+●	Developed modular and reusable components using Angular 2.0 for consistency and faster development cycles.
+●	Integrated Node.js and Express.js APIs with MySQL to ensure secure, high-performance data access.
+●	Utilized Gulp and Browserify for automated builds, bundling, and performance optimization.
+●	Established and enforced coding standards, version control practices (GIT), and best practices across the team.
+●	Mentored and guided a team of developers, conducted code reviews, and ensured adherence to architecture principles.
+●	Collaborated with business stakeholders to gather requirements and translate them into scalable technical solutions.
+●	Partnered with QA teams for test strategy, bug triage, and deployment readiness, ensuring high-quality deliverables.
+Headcount Management (HM) Summary View	Duration: Sept 2015 – Dec 2015
+Role: Technical Architect	Domain: Human Resources
+Technologies: HTML5, CSS3, JavaScript, React.js, JSX, Redux.js, JavaScript Design Patterns, Bootstrap 3.0, GIT, Node.js, Express.js, MySQL, Gulp, Browserify, WebPack
+Description: HM Summary View provides a comprehensive Staffing Support Solution Package that handles all the staffing firm's back office needs.
+Responsibilities:
+●	Defined and implemented the front-end architecture using React.js, JSX, and Redux.js, ensuring modular, reusable, and scalable UI components.
+●	Applied JavaScript design patterns to build maintainable and high-performing applications.
+●	Integrated Node.js and Express.js backend services with MySQL, enabling efficient data management for staffing operations.
+●	Designed and developed responsive UI layouts with Bootstrap 3.0, ensuring cross-browser and cross-device compatibility.
+●	Configured Gulp, Browserify, and Webpack for automated builds, bundling, and deployment optimization.
+●	Established best practices and coding standards, conducting code reviews to maintain quality and consistency across the development team.
+●	Collaborated with stakeholders to analyze requirements and translate them into technical design specifications and workflows.
+●	Worked closely with QA teams to support unit testing, integration testing, and defect resolution for smooth product delivery.
+●	Provided technical leadership and mentoring to junior developers, ensuring adherence to architectural principles.
+●	Optimized application performance by implementing state management with Redux and fine-tuning React rendering strategies.
+Company:    AccionLabs
+Lucas Systems (AMD)	Duration: Jan 2015 – Aug 2015
+Role: Principal Consultant	Domain: Logistics
+Technologies: HTML5, CSS3, JavaScript, JQuery, Angular.js, Angular UI Bootstrap, Angular Router UI, UI-Grid, Restangular, Jasmine, Protractor, Bootstrap 3.0, JIRA, GIT, BitBucket, Node.js, Express.js, MySQL, & MongoDB
+Description: Lucas Systems offers Lucas AMD, a web-based dashboard that provides real-time visibility into operations, productivity, and workflow for distribution logistics. It allows managers to configure views and access the platform on mobile devices for managing mobile work execution with the Jennifer Mobile apps.
+MobileMatrics	Duration: Sept 2014 – Dec 2014
+Role: Principal Consultant	Domain: Analytics and Mobile
+Technologies: HTML5, CSS3, JavaScript, JQuery, AngularJS, Angular UI Bootstrap, Angular Router UI, UI-Grid, Restangular, Bootstrap 3.0, Node.js, Express.js, NoSQL, SQLite3, PhoneGap, Cordova, D3.js, NVD3.js
+Description: MobileMatrics is a data warehouse data analytics web application; it’s a web-based data analytics dashboard, where you can generate and view high-level business reports. You can query data based on metrics like time, volume, and category, and perform various business intelligence operations.
+Responsibilities:
+●	Designed and developed web-based analytics dashboards using AngularJS, Angular UI Bootstrap, and UI-Grid, enabling users to generate and view real-time business reports.
+●	Built interactive data visualizations using D3.js and NVD3.js to present metrics such as time, volume, and category for business intelligence operations.
+●	Integrated REST APIs with AngularJS (Rest Angular) for seamless communication between frontend and backend services.
+●	Implemented responsive UI design with Bootstrap 3.0 to ensure accessibility across devices and browsers.
+●	Developed hybrid mobile applications using PhoneGap and Cordova, extending dashboard capabilities to mobile platforms.
+●	Utilized Node.js, Express.js, NoSQL, and SQLite3 to build scalable backend services and data pipelines.
+●	Applied modular architecture patterns to improve code maintainability, reusability, and scalability.
+●	Led requirement analysis and technical design sessions with stakeholders to align solutions with business objectives.
+●	Conducted code reviews, performance tuning, and defect resolution, ensuring high-quality deliverables within timelines.
+●	Mentored team members on AngularJS best practices, UI development standards, and data visualization techniques.
+Company: Applied Information Science
+Gieco	Duration: Sept 2013 – Dec 2013
+Role: UI Developer	Domain: Insurance
+Technologies: HTML5, CSS3, JavaScript, JQuery, AngularJS, Angular UI, Angular Router UI, UI-Grid, RestAngular, Bootstrap 3.0, TFS, MVC, SQL Server
+Description: Gieco is an Insurance company; we have developed many products for Gieco. Users can create or check the status of their insurance. We developed products for various types of insurance, like Vehicle, Property, and Business insurance.
+Responsibilities:
+●	Developed and maintained UI components using AngularJS, Angular UI, Angular Router UI, and UI-Grid for insurance products across vehicle, property, and business domains.
+●	Built responsive and cross-browser compatible web interfaces using HTML5, CSS3, JavaScript, JQuery, and Bootstrap 3.0.
+●	Integrated REST APIs with frontend modules using Rest Angular, enabling seamless data flow between UI and backend services.
+●	Collaborated with backend developers on MVC and SQL Server integration to manage policy creation, claims, and status tracking.
+●	Implemented modular architecture for different insurance products, ensuring scalability and maintainability.
+●	Participated in requirement gathering and analysis sessions to align technical solutions with business needs.
+●	Conducted unit testing and debugging, ensuring high-quality deliverables within timelines.
+●	Utilized TFS for version control, build management, and project tracking in a collaborative environment.
+●	Coordinated with QA teams for defect resolution and user acceptance testing (UAT).
+●	Optimized UI performance to improve page load times and enhance the overall customer experience.
+Company:   Hitachi Consulting
+Edelman TrustBarometer 2011 Mobile site	Duration: Jan 2012 – Dec 2012
+Role: UI Developer	Domain: Public Relations, Financial Services,  and Communications Services
+Technologies: XHTML, CSS, JavaScript, .NET, XML, Mobile Simulators
+Description: It’s a website that can be accessed using mobile phones (BlackBerry, iPhone, etc.). It's a mobile version of an existing site, http://www.edelman.com/trust/2011/. I planned the complete architecture and designed the layouts, and converted the layouts into XHTML/CSS, which is cross-browser compatible (IE8, Firefox) and also on mobile phones like Blackberry & iPhone, and MicroMax Q7.
+Responsibilities:
+●	Designed and developed interactive web widgets using HTML/CSS, Flash ActionScript, and Flex to enable article publishing and user engagement.
+●	Implemented admin panel functionality for content management, allowing administrators to add, update, and manage articles.
+●	Integrated PHP and MySQL for backend services to support user authentication, content storage, and comment management.
+●	Created XML-based data exchange mechanisms to synchronize content between the widget and backend systems.
+●	Enabled widget embedding and sharing features so users could integrate the widget into their personal or corporate websites.
+●	Optimized UI/UX design for improved readability, navigation, and accessibility across multiple platforms.
+●	Collaborated with business stakeholders to align features with the client’s communication and branding requirements.
+●	Conducted unit testing and debugging to ensure cross-browser compatibility and stable deployments.
+●	Supported the development of the Edelman Trust Barometer 2011 Mobile Site, making survey insights accessible on mobile platforms.
+Edelman Widget	Duration: Jan 2010 – Dec 2010
+Role: UI Developer	Domain: Public Relations, Financial Services, and Communications Services
+Technologies: HTML/CSS, Flash, Flex, PHP, MySQL, XML
+Description: Developed interactive web and mobile solutions including the Edelman Widget and Edelman Trust Barometer 2011 Mobile Site, enabling content publishing, article sharing, user engagement, and survey insights on both web and mobile platforms.
+Responsibilities:
+●	Designed and implemented widgets and mobile interfaces using HTML/CSS, Flash ActionScript, and Flex.
+●	Built admin panel functionalities for managing articles, comments, and user-generated content.
+Integrated PHP/MySQL backend services with XML-based data exchange for dynamic content delivery.
+●	Enabled widget sharing and embedding features for seamless integration across websites.
+●	Enhanced user experience and accessibility by optimizing UI/UX for both desktop and mobile platforms.
+●	Collaborated with stakeholders to deliver solutions aligned with branding and communication strategies.
+●	Performed unit testing, debugging, and cross-browser validation to ensure high-quality deliverables.
+Company:   UBS
+UBS	Duration: Jan 2009 – Dec 2009
+Role: UI Developer	Domain: Banking & Financial Services
+Technologies: Flash ActionScripting
+Description: Above is a flash website, designed only for the home page and the navigation. Hope you appreciate the look and feel of this site.
+UBS	Duration: Jan 2008 – Dec 2008
+Role: UI Developer	Domain: Banking & Financial Services
+Technologies: Flash ActionScripting
+Description: Above is a flash website, designed only the home page and the navigation. Hope you appreciate the look and feel of this site.
+UBS Wealth Management – Global	Duration: Jan 2009 – Dec 2009
+Role: UI Developer	Domain: Banking & Financial Services
+Technologies: HTML/CSS, JavaScript, Flash ActionScripting
+Description: It features some static pages, and on the home page, a flash component is present with options and a 'View Results' button. Based on the option selection, it will open a particular page.
+UBS	Duration:  Jan 2008 – Dec 2008
+Role: UI Developer	Domain: Banking & Financial Services
+Technologies: HTML/CSS, JavaScript, Flash ActionScripting
+Description: The URLs listed above contain Flash components that I developed, which are reusable and can be embedded into any web page.
+Responsibilities:
+●	Designed and developed a custom Flash video player with ActionScript for streaming video podcasts.
+●	Implemented search and filter functionality using JavaScript, jQuery, and XML to improve content discoverability.
+●	Managed and displayed multimedia assets (videos, images, thumbnails) by integrating XML data paths with dynamic rendering.
+●	Built responsive web interfaces with HTML/CSS to ensure a consistent user experience.
+●	Collaborated with content teams to integrate business data hosted in Excel into web applications via XML parsing.
+●	Conducted unit testing and debugging for Flash and JavaScript modules to ensure smooth functionality across browsers.
+●	Enhanced overall user engagement and accessibility by delivering interactive, media-rich solutions.
+UBS – Careers	Duration:  Jan 2008 – Dec 2008
+Role: UI Developer	Domain: Banking & Financial Services
+Technologies: HTML/CSS, JavaScript, Flash ActionScripting
+Description: Worked on UBS Careers and UBS Wealth Management – Global projects, building rich web applications and interactive media solutions including a video podcast site with a custom Flash video player, advanced search, and filtering features.
+Responsibilities:
+●	Designed and developed a custom Flash video player with ActionScript for streaming video podcasts.
+●	Implemented search and filter functionality using JavaScript, jQuery, and XML to improve content discoverability.
+●	Managed and displayed multimedia assets (videos, images, thumbnails) by integrating XML data paths with dynamic rendering.
+●	Built responsive web interfaces with HTML/CSS to ensure a consistent user experience.
+●	Collaborated with content teams to integrate business data hosted in Excel into web applications via XML parsing.
+●	Conducted unit testing and debugging for Flash and JavaScript modules to ensure smooth functionality across browsers.
+●	Enhanced overall user engagement and accessibility by delivering interactive, media-rich solutions.
+Company:   Anand Software
+Executive Summary Report	Duration:  Jul’04 – Aug’07
+Role: PHP Programmer	Domain: Analytics
+Technologies: HTML/HTML5, CSS2/ 3, JavaScript, JQuery, JSON, PHP, MySQL
+Description:
+ Developed an SEO and analytics reporting tool to evaluate websites based on Month-over-Month (MoM) and Year-over-Year (YoY) traffic, top keyword rankings, and SEO factors. The solution integrated with Google Analytics, applied MVC architecture, and presented insights in an interactive, user-friendly format.
+Responsibilities:
+●	Designed and developed front-end logic in JavaScript and jQuery to compute final grades and visualize SEO/traffic metrics.
+●	Implemented MVC architecture in PHP/MySQL to ensure structured, scalable code management.
+●	Integrated with Google Analytics APIs and consumed JSON data for traffic and keyword analysis.
+●	Created interactive dashboards and reports to display MoM, YoY comparisons, and keyword performance.
+●	Optimized SQL queries and PHP scripts to improve data retrieval speed and reporting accuracy.
+●	Built responsive and interactive UI components using HTML5 and CSS3 for enhanced usability.
+●	Worked with cross-functional teams to refine requirements and align tool features with business needs.
+●	Conducted testing and debugging to ensure data accuracy and reliable reporting outputs.

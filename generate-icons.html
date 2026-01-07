@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate PWA Icons</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; gap: 20px; }
+        button { padding: 15px 30px; font-size: 1.2rem; background: #2563eb; color: white; border: none; border-radius: 8px; cursor: pointer; }
+        button:hover { background: #1d4ed8; }
+    </style>
+</head>
+<body>
+    <h1>PWA Icon Generator</h1>
+    <p>Click the button below to generate and download your 192x192 and 512x512 icons.</p>
+    <button onclick="downloadIcons()">Download Icons</button>
+
+    <script>
+        function downloadIcons() {
+            const sizes = [192, 512];
+            
+            sizes.forEach(size => {
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+
+                // Draw Background (Blue)
+                ctx.fillStyle = '#2563eb';
+                ctx.fillRect(0, 0, size, size);
+
+                // Draw Text (JD)
+                ctx.fillStyle = '#ffffff';
+                ctx.font = `bold ${size * 0.4}px Arial, sans-serif`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('JD', size / 2, size / 2);
+
+                // Trigger Download
+                const link = document.createElement('a');
+                link.download = `icon-${size}x${size}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+            
+            alert('Icons downloaded! Move them to your project folder.');
+        }
+    </script>
+</body>
+</html>

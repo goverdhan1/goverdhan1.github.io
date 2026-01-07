@@ -1,0 +1,2612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
+    <title>Goverdhan Koyalkar | Solutions Architect & Engineering Manager</title>
+    <meta name="description" content="18+ years experience. Solutions Architect & Engineering Manager. Expert in Cloud (AWS/Azure/GCP), DevOps (K8s, Docker), Micro Frontends, Full Stack (Angular/React/Node), and Enterprise Architecture.">
+    <meta name="keywords" content="Solutions Architect, Engineering Manager, DevOps, AWS, Azure, GCP, Kubernetes, Docker, Terraform, Microservices, Micro Frontends, Angular, React, Next.js, Node.js, TypeScript, Python, Java, CI/CD, Enterprise Architecture">
+    <meta name="author" content="Goverdhan Koyalkar">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Goverdhan Koyalkar Portfolio">
+    <meta property="og:description" content="Driving business growth through scalable technology, Cloud, and DevOps architectures.">
+    <meta property="og:type" content="website">
+    
+    <!-- PWA Manifest & Theme -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Using FontAwesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Analytics (GA4) -->
+    <!-- Replace G-XXXXXXXXXX with your actual Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+     crossorigin="anonymous"></script>
+
+    <style>
+        /* --- CSS VARIABLES (THEMING) --- */
+        :root {
+            --primary-color: #7c3aed; /* Vibrant Purple */
+            --primary-hover: #6d28d9;
+            --primary-gradient: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+            --bg-color: #ffffff;
+            --bg-secondary: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --nav-height: 70px;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0f172a; /* Slate 950 */
+            --bg-secondary: #1e293b; /* Slate 800 */
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --card-bg: #1e293b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            --glass-bg: rgba(30, 41, 59, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- RESET & BASE STYLES --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        /* Professional Font for Headings & UI */
+        h1, h2, h3, h4, h5, h6, .logo, .btn, .nav-links, .hero-badge, .section-title, .service-title, .timeline-title, .cert-title, .blog-title, .project-title {
+            font-family: 'Poppins', sans-serif;
+        }
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+        
+        /* --- UTILITIES --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary { background: var(--primary-gradient); color: white; }
+        .btn-primary:hover { opacity: 0.9; }
+        .btn-outline { border: 1px solid var(--border-color); background: transparent; color: var(--text-main); }
+        .btn-outline:hover { background-color: var(--bg-secondary); }
+        .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; text-align: center; }
+        .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* --- NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            height: var(--nav-height);
+            background-color: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+        .nav-container {
+            display: flex; justify-content: space-between; align-items: center; width: 100%;
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { font-size: 0.95rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--primary-color); }
+        
+        .nav-actions { display: flex; align-items: center; gap: 15px; }
+        
+        /* Search Box */
+        .search-box { position: relative; }
+        .search-box input {
+            padding: 8px 12px 8px 35px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-main);
+            outline: none;
+        }
+        .search-box i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.8rem; }
+
+        /* Theme Toggle */
+        .theme-toggle { cursor: pointer; font-size: 1.2rem; }
+        .share-btn { cursor: pointer; font-size: 1.2rem; }
+
+        /* Mobile Menu */
+        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
+
+        /* --- HERO SECTION --- */
+        #home { 
+            padding-top: 150px; 
+            padding-bottom: 100px; 
+            text-align: center; 
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            /* background-attachment: fixed; */
+        }
+        #home::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.85); z-index: 1;
+        }
+        #home .container { position: relative; z-index: 2; }
+        
+        .hero-avatar {
+            width: 130px; height: 130px; border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.1); margin: 0 auto 25px;
+            object-fit: cover; box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
+        }
+        .hero-badge {
+            background-color: rgba(124, 58, 237, 0.2); color: #c4b5fd; border: 1px solid rgba(124, 58, 237, 0.3);
+            padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
+            display: inline-block; margin-bottom: 25px; backdrop-filter: blur(5px);
+        }
+        .hero-title { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; color: #ffffff; min-height: 2.4em; }
+        .hero-desc { font-size: 1.2rem; color: #cbd5e1; max-width: 700px; margin: 0 auto 40px; }
+        
+        /* Override buttons in hero for dark background */
+        #home .btn-outline { border-color: rgba(255,255,255,0.2); color: #ffffff; }
+        #home .btn-outline:hover { background-color: rgba(255,255,255,0.1); border-color: #ffffff; }
+        
+        /* --- ABOUT / SUMMARY --- */
+        #about { padding: 80px 0; background-color: var(--bg-secondary); }
+        .summary-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            text-align: left;
+        }
+        @media (min-width: 768px) {
+            .summary-list { grid-template-columns: 1fr 1fr; }
+        }
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .summary-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .summary-item i {
+            color: var(--primary-color);
+            margin-top: 4px;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        /* --- SKILLS CLOUD --- */
+        .skills-cloud-container {
+            margin-top: 60px;
+            text-align: center;
+        }
+        .skills-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .skill-tag {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            padding: 8px 20px; border-radius: 50px; font-size: 0.95rem;
+            color: var(--text-main); transition: all 0.3s; box-shadow: var(--shadow);
+            opacity: 0; /* Hidden for animation */
+        }
+        .skill-tag:hover {
+            transform: translateY(-3px); border-color: var(--primary-color);
+            color: var(--primary-color); box-shadow: 0 5px 15px rgba(124, 58, 237, 0.2);
+        }
+
+        /* --- STATS / TRUSTED BY --- */
+        #stats { background-color: var(--bg-secondary); padding: 60px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+        .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--primary-color); }
+        .stat-label { color: var(--text-muted); font-size: 0.9rem; }
+        .clients-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; opacity: 0.6; }
+        .client-logo { font-weight: 700; font-size: 1.5rem; color: var(--text-muted); }
+
+        /* --- SERVICES / EXPERTISE --- */
+        #services { 
+            padding: 80px 0; 
+            background-image: radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.05) 0%, transparent 40%), 
+                              radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%);
+        }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card {
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            box-shadow: var(--glass-shadow);
+            padding: 30px; border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2); }
+        .service-icon { font-size: 2rem; color: var(--primary-color); margin-bottom: 20px; }
+        .service-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 10px; }
+        .service-desc { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* --- WHY HIRE ME (Business Value) --- */
+        #why-hire-me { padding: 80px 0; background-color: var(--bg-secondary); }
+        .value-list { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .value-item h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .value-item i { color: #10b981; } /* Green check */
+
+        /* --- PROJECTS GRID --- */
+        #projects { padding: 80px 0; }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .project-img { width: 100%; height: 200px; object-fit: cover; cursor: zoom-in; border-bottom: 1px solid var(--border-color); }
+        .project-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
+        .project-desc { color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; font-size: 0.95rem; flex-grow: 1; }
+        .project-tech { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+        .tech-tag { 
+            background: var(--bg-secondary); color: var(--primary-color); border: 1px solid var(--border-color);
+            padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; 
+        }
+        .view-case-study-btn {
+            margin-top: 15px;
+            width: 100%;
+            font-size: 0.9rem;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent; cursor: pointer; transition: all 0.3s;
+        }
+        .view-case-study-btn:hover { background: var(--primary-gradient); color: white; border-color: transparent; }
+
+        /* --- BLOG / LEARNINGS --- */
+        #blog { padding: 80px 0; background-color: var(--bg-secondary); }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .blog-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); }
+        .blog-content { padding: 20px; }
+        .blog-tag { font-size: 0.8rem; color: var(--primary-color); font-weight: 600; text-transform: uppercase; }
+        .blog-title { font-size: 1.2rem; margin: 10px 0; font-weight: 700; }
+
+        /* --- FAQ --- */
+        #faq { padding: 80px 0; }
+        .faq-item { border-bottom: 1px solid var(--border-color); padding: 20px 0; }
+        .faq-question { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
+        .faq-answer { display: none; margin-top: 15px; color: var(--text-muted); }
+        .faq-item.active .faq-answer { display: block; }
+
+        /* --- CONTACT & NEWSLETTER --- */
+        #contact { padding: 80px 0; background-color: var(--bg-secondary); }
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px; border-radius: 6px;
+            border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-main);
+        }
+        .newsletter-box { background: var(--primary-gradient); color: white; padding: 40px; border-radius: 12px; text-align: center; margin-top: 50px; }
+        .newsletter-box input { padding: 10px; border-radius: 4px; border: none; width: 60%; margin-right: 10px; }
+        .newsletter-box button { padding: 10px 20px; background: #0f172a; color: white; border: none; border-radius: 4px; cursor: pointer; }
+
+        /* --- FOOTER --- */
+        footer { background: #0f172a; color: #94a3b8; padding: 60px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { color: white; margin-bottom: 20px; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .social-links a { margin-right: 15px; font-size: 1.2rem; transition: color 0.3s; }
+        .social-links a:hover { color: white; }
+
+        /* --- COOKIE BANNER --- */
+        #cookie-banner {
+            position: fixed; bottom: 20px; right: 20px; max-width: 350px;
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            padding: 20px; border-radius: 8px; box-shadow: var(--shadow);
+            z-index: 2000; display: none;
+        }
+
+        /* --- SKILLS SECTION --- */
+        #skills { padding: 80px 0; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .skill-item { margin-bottom: 20px; }
+        .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; }
+        .progress-bar-bg { width: 100%; height: 10px; background-color: var(--border-color); border-radius: 5px; overflow: hidden; }
+        .progress-bar-fill { height: 100%; background: var(--primary-gradient); width: 0; transition: width 1.5s ease-out; border-radius: 5px; }
+        
+        /* --- CATEGORIZED SKILLS --- */
+        .skill-category { margin-bottom: 30px; }
+        .skill-category h3 { font-size: 1.2rem; color: var(--primary-color); margin-bottom: 15px; border-left: 4px solid var(--primary-color); padding-left: 10px; }
+        .skill-tags-container { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-pill {
+            background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 6px 14px; 
+            border-radius: 4px; font-size: 0.9rem; color: var(--text-main); transition: all 0.2s;
+            opacity: 0; /* Hidden for animation */
+        }
+        .skill-pill:hover { background: var(--primary-color); color: white; border-color: var(--primary-color); transform: translateY(-2px); }
+        
+        /* --- SKILL ANIMATION --- */
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.8) translateY(10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .skill-tag.animate, .skill-pill.animate {
+            animation: popIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        /* --- TIMELINE (EXPERIENCE) --- */
+        #experience { padding: 80px 0; background-color: var(--bg-secondary); }
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::after {
+            content: ''; position: absolute; width: 2px; background-color: var(--border-color);
+            top: 0; bottom: 0; left: 20px; margin-left: -1px;
+        }
+        .timeline-item {
+            padding: 10px 10px 10px 50px; position: relative; background-color: inherit; width: 100%;
+        }
+        .timeline-item::after {
+            content: ''; position: absolute; width: 16px; height: 16px;
+            background-color: var(--bg-color); border: 4px solid var(--primary-color);
+            top: 20px; left: 12px; border-radius: 50%; z-index: 1;
+        }
+        .timeline-content {
+            padding: 20px; background-color: var(--card-bg); position: relative;
+            border-radius: 6px; border: 1px solid var(--border-color); box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        .timeline-content:hover { transform: translateX(5px); }
+        .timeline-date {
+            font-size: 0.85rem; color: var(--primary-color); font-weight: 600; margin-bottom: 5px; display: block;
+        }
+        .timeline-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 5px; }
+        .timeline-company {
+            font-size: 1rem; font-weight: 600; color: var(--text-muted); margin-bottom: 10px;
+        }
+        .timeline-desc { font-size: 0.95rem; color: var(--text-muted); }
+
+        /* --- CERTIFICATIONS --- */
+        #certifications { padding: 80px 0; }
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .cert-card { 
+            background: var(--card-bg); border: 1px solid var(--border-color); 
+            padding: 30px; border-radius: 12px; text-align: center; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+        }
+        .cert-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .cert-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
+        .cert-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .cert-issuer { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px; }
+
+        /* --- EDUCATION & CERTIFICATIONS --- */
+        #education-certifications { padding: 80px 0; background-color: var(--bg-secondary); }
+        .edu-cert-wrapper { display: grid; grid-template-columns: 1fr; gap: 50px; }
+        .edu-cert-column h3 { font-size: 1.5rem; margin-bottom: 30px; color: var(--primary-color); border-left: 4px solid var(--primary-color); padding-left: 15px; }
+        .edu-cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        
+        /* --- ROLES & RESPONSIBILITIES --- */
+        #roles { padding: 80px 0; }
+        .roles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .role-card {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            padding: 30px; border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .role-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .role-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; }
+        .role-icon { font-size: 1.8rem; color: var(--primary-color); flex-shrink: 0; }
+        .role-title { font-size: 1.25rem; font-weight: 600; margin: 0; }
+        .role-list { list-style: none; padding: 0; transition: max-height 0.5s ease-out; overflow: hidden; }
+        .role-list.collapsed { max-height: 150px; mask-image: linear-gradient(to bottom, black 60%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%); }
+        .role-list li { margin-bottom: 10px; font-size: 0.95rem; color: var(--text-muted); position: relative; padding-left: 20px; }
+        .role-list li::before { content: "•"; color: var(--primary-color); font-weight: bold; position: absolute; left: 0; }
+        .read-more-toggle {
+            display: block; width: 100%; text-align: center; margin-top: 10px;
+            background: none; border: none; color: var(--primary-color); font-weight: 600; cursor: pointer; font-size: 0.9rem;
+        }
+        .read-more-toggle:hover { text-decoration: underline; }
+        
+        /* Roles Filter */
+        .roles-filter, .projects-filter { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+        .filter-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s;
+        }
+        .filter-btn.active, .filter-btn:hover { background: var(--primary-gradient); color: white; border-color: transparent; }
+        .role-search, .project-search { position: relative; max-width: 300px; margin: 0 auto 20px; }
+        .role-search input, .project-search input {
+            width: 100%; padding: 10px 15px 10px 40px; border-radius: 20px;
+            border: 1px solid var(--border-color); background: var(--card-bg);
+            color: var(--text-main); outline: none;
+        }
+        .role-search i, .project-search i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+
+        /* --- TESTIMONIALS --- */
+        #testimonials { padding: 80px 0; }
+        .testimonial-slider { position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; }
+        .testimonial-slide {
+            display: none; text-align: center; padding: 40px;
+            background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);
+            box-shadow: var(--shadow); animation: fadeEffect 1s;
+        }
+        .testimonial-slide.active { display: block; }
+        @keyframes fadeEffect { from {opacity: 0.4} to {opacity: 1} }
+        .testimonial-text { font-size: 1.1rem; font-style: italic; margin-bottom: 20px; color: var(--text-main); }
+        .testimonial-author { display: flex; align-items: center; justify-content: center; gap: 15px; }
+        .testimonial-avatar { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; background-color: var(--bg-secondary); }
+        .testimonial-info h4 { margin: 0; font-size: 1rem; color: var(--primary-color); }
+        .testimonial-info p { margin: 0; font-size: 0.85rem; color: var(--text-muted); }
+        .slider-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 10px 15px;
+            cursor: pointer; border-radius: 50%; font-size: 1.2rem; color: var(--text-main);
+            transition: background 0.3s;
+        }
+        .slider-btn:hover { background: var(--primary-gradient); color: white; border: none; }
+        .prev-btn { left: 0; }
+        .next-btn { right: 0; }
+
+        /* --- BLOG MODAL --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7); z-index: 3000;
+            display: none; justify-content: center; align-items: center;
+            padding: 20px;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal-content {
+            background: var(--card-bg); padding: 30px; border-radius: 12px;
+            max-width: 600px; width: 100%; position: relative;
+            border: 1px solid var(--border-color); box-shadow: var(--shadow);
+            max-height: 80vh; overflow-y: auto;
+        }
+        .close-modal {
+            position: absolute; top: 15px; right: 15px; font-size: 1.5rem;
+            cursor: pointer; color: var(--text-muted);
+        }
+        .close-modal:hover { color: var(--primary-color); }
+
+        /* --- HIRE ME FAB --- */
+        #hire-me-fab {
+            position: fixed;
+            bottom: 30px;
+            left: 20px;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+            z-index: 1600;
+            display: none;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        #hire-me-fab:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        /* --- TECH STACK MARQUEE --- */
+        .tech-marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 15px 0;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            z-index: 10;
+        }
+        .tech-track {
+            display: inline-block;
+            animation: marquee 40s linear infinite;
+        }
+        .tech-item {
+            display: inline-block;
+            margin: 0 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .tech-item i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .tech-marquee:hover .tech-track {
+            animation-play-state: paused;
+        }
+
+        /* --- LIGHTBOX --- */
+        #lightbox {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9); z-index: 4000;
+            display: none; justify-content: center; align-items: center;
+        }
+        #lightbox.active { display: flex; }
+        #lightbox img {
+            max-width: 90%; max-height: 90%; border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .close-lightbox {
+            position: absolute; top: 20px; right: 30px; font-size: 2rem;
+            color: white; cursor: pointer; transition: color 0.3s;
+        }
+        .close-lightbox:hover { color: var(--primary-color); }
+
+        /* --- LOADER --- */
+        #page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--border-color);
+            border-top: 5px solid #7c3aed;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* --- SCROLL TO TOP --- */
+        #scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            z-index: 1500;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        #scroll-top-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-3px);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            /* Typography & Spacing */
+            .section-title { font-size: 1.75rem; }
+            .section-subtitle { margin-bottom: 2rem; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-desc { font-size: 1rem; }
+            
+            /* Reduce section padding */
+            #home, #about, #services, #why-hire-me, #projects, #blog, #faq, #contact, #skills, #experience, #testimonials, #education-certifications, #roles {
+                padding: 50px 0;
+            }
+            #stats { padding: 40px 0; }
+
+            /* Navigation */
+            .nav-links { 
+                display: none; 
+                position: absolute; 
+                top: var(--nav-height); 
+                left: 0; 
+                width: 100%; 
+                background: var(--bg-color); 
+                flex-direction: column; 
+                padding: 20px; 
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: var(--shadow);
+            }
+            .nav-links.active { display: flex; }
+            .hamburger { display: block; }
+            
+            /* Layout Adjustments */
+            .value-list, .contact-wrapper { grid-template-columns: 1fr; }
+            .search-box { display: none; } /* Hide search on small mobile for simplicity */
+            #hire-me-fab { display: flex; }
+            
+            /* Timeline Mobile Optimization */
+            .timeline::after { left: 10px; }
+            .timeline-item { padding-left: 35px; padding-right: 0; }
+            .timeline-item::after { left: 2px; }
+            
+            /* Testimonials Mobile Optimization */
+            .testimonial-slide { padding: 25px 15px; }
+            .testimonial-text { font-size: 1rem; }
+            .slider-btn { padding: 8px 12px; font-size: 1rem; }
+            
+            /* Footer & Newsletter */
+            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+            .newsletter-box form { flex-direction: column; gap: 10px; }
+            .newsletter-box input { width: 100%; margin-right: 0; }
+            .newsletter-box button { width: 100%; }
+        }
+
+        /* --- BUY ME A COFFEE BUTTON --- */
+        .bmc-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background-color: #FFDD00; color: #000000;
+            padding: 10px 20px; border-radius: 8px; font-weight: 700;
+            margin-top: 15px; font-family: 'Poppins', sans-serif;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .bmc-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 221, 0, 0.3);
+        }
+
+        /* --- PRINT STYLES --- */
+        @media print {
+            @page { margin: 1.5cm; }
+            body { background: white; color: black; font-size: 11pt; }
+            .container { width: 100%; max-width: 100%; padding: 0; margin: 0; }
+            
+            /* Hide non-essential elements */
+            header, footer, #cookie-banner, #hire-me-fab, #scroll-top-btn, 
+            .nav-actions, .theme-toggle, .share-btn, .btn, 
+            #contact, #projects, #testimonials, #blog, #faq, #stats, #why-hire-me,
+            .newsletter-box, .search-box, .hamburger, .hero-badge, .typing-cursor {
+                display: none !important;
+            }
+
+            /* Hero Section */
+            #home {
+                padding: 0 0 20px 0;
+                background: none !important;
+                text-align: left;
+                height: auto;
+            }
+            #home::before { display: none; }
+            .hero-avatar {
+                width: 100px; height: 100px;
+                border: none; box-shadow: none;
+                float: right; margin: 0;
+            }
+            .hero-title { 
+                color: black; font-size: 22pt; margin-bottom: 5px; line-height: 1.2;
+            }
+            .hero-desc { 
+                color: #333; font-size: 11pt; max-width: none; margin: 0; 
+            }
+            #typing-text { display: none !important; }
+            .print-only-text { display: inline !important; color: black !important; }
+
+            /* Sections */
+            section { padding: 15px 0 !important; page-break-inside: avoid; }
+            .section-title { 
+                text-align: left; font-size: 16pt; 
+                border-bottom: 2px solid #333; padding-bottom: 5px; margin-bottom: 10px; 
+                color: black;
+            }
+            .section-subtitle { display: none; }
+
+            /* Summary */
+            #about { background: none; padding-top: 0; }
+            .summary-list { grid-template-columns: 1fr !important; gap: 5px; }
+            .summary-item { 
+                box-shadow: none; border: none; padding: 0; background: none;
+                color: black; font-size: 10pt;
+            }
+            .summary-item i { display: none; }
+            .summary-item::before { content: "•"; margin-right: 10px; font-weight: bold; }
+
+            /* Skills */
+            .skills-cloud-container { margin-top: 10px; text-align: left; }
+            .skills-cloud { justify-content: flex-start; gap: 5px; }
+            .skill-tag, .skill-pill { 
+                border: 1px solid #333; box-shadow: none; padding: 2px 8px; 
+                color: black; background: none; font-size: 9pt;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .section-title[style*="font-size: 1.5rem"] { font-size: 14pt !important; margin-bottom: 10px !important; }
+
+            /* Experience */
+            #experience { background: none; }
+            .timeline::after { display: none; }
+            .timeline-item { padding: 0; margin-bottom: 10px; }
+            .timeline-item::after { display: none; }
+            .timeline-content { 
+                box-shadow: none; border: none; padding: 0; background: none; 
+            }
+            .timeline-content:hover { transform: none; }
+            .timeline-date { float: right; color: #666; font-weight: bold; font-size: 10pt; }
+            .timeline-title { font-size: 12pt; margin: 0; display: inline-block; }
+            .timeline-company { font-size: 11pt; font-weight: bold; color: #333; margin: 2px 0; }
+            .timeline-desc { color: black; font-size: 10pt; }
+
+            /* Certifications */
+            .cert-grid { grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+            .cert-card { 
+                box-shadow: none; border: 1px solid #ccc; padding: 10px; 
+                text-align: left;
+            }
+            .cert-icon { display: none; }
+            .cert-title { font-size: 10pt; margin-bottom: 2px; }
+            .cert-issuer { font-size: 9pt; margin: 0; }
+            
+            /* Education & Certifications Print */
+            #education-certifications { background: none !important; padding: 10px 0 !important; }
+            .edu-cert-wrapper { grid-template-columns: 1fr !important; gap: 20px; }
+            .edu-cert-grid { gap: 10px; }
+            .cert-card, .education-card { box-shadow: none; border: 1px solid #ccc; padding: 10px; text-align: left; background: none; }
+            .cert-icon, .education-icon { display: none; }
+
+            /* Roles */
+            #roles { background: none !important; }
+            .roles-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+            .role-card { 
+                box-shadow: none; border: 1px solid #ccc; padding: 10px; 
+                text-align: left; background: none; page-break-inside: avoid;
+            }
+            .role-header { border-bottom: 1px solid #333; margin-bottom: 5px; padding-bottom: 5px; }
+            .role-icon { display: none; }
+            .role-title { font-size: 11pt; color: black; }
+            .role-list li { font-size: 9pt; color: black; margin-bottom: 2px; }
+            .read-more-toggle { display: none; }
+            .roles-filter { display: none; }
+
+            /* Services/Expertise - Optional to keep or hide. Let's hide for resume view as Summary covers it */
+            #services { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- LOADING SPINNER -->
+    <div id="page-loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">JD.Dev</a>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search expertise...">
+                </div>
+                <button id="installAppBtn" class="btn btn-primary" style="display: none; padding: 6px 12px; font-size: 0.8rem;">Install App</button>
+                <div class="share-btn" id="share-btn" title="Share Profile">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                <div class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home">
+        <div class="container">
+            <img src="profile.jpg" alt="Goverdhan Koyalkar" class="hero-avatar">
+            <span class="hero-badge">Available for New Projects</span>
+            <h1 class="hero-title">Driving Business Growth through <br> <span id="typing-text" style="color: var(--primary-color);"></span><span class="typing-cursor"></span><span class="print-only-text" style="display:none;">Solutions Architect & Engineering Manager</span></h1>
+            <p class="hero-desc">
+                18+ years of broad enterprise experience designing and maintaining scalable software applications. Expert in Cloud (AWS, GCP, Azure), DevOps, and Micro Frontend architectures.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="#contact" class="btn btn-primary">Why Hire Me?</a>
+                <a href="https://calendly.com/" target="_blank" class="btn btn-primary"><i class="fas fa-calendar-alt"></i> Schedule a Call</a>
+                <a href="#projects" class="btn btn-outline">View Work</a>
+                <a href="resume.pdf" download id="resume-download-btn" class="btn btn-outline resume-download-tracker"><i class="fas fa-download"></i> Download Resume</a>
+                <button id="print-resume-btn" class="btn btn-outline"><i class="fas fa-print"></i> Print Resume</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK MARQUEE -->
+    <div class="tech-marquee">
+        <div class="tech-track">
+            <!-- Original Set -->
+            <span class="tech-item"><i class="fab fa-html5"></i> HTML5/CSS3</span>
+            <span class="tech-item"><i class="fab fa-js"></i> JavaScript</span>
+            <span class="tech-item"><i class="fas fa-code"></i> TypeScript</span>
+            <span class="tech-item"><i class="fab fa-angular"></i> Angular</span>
+            <span class="tech-item"><i class="fab fa-react"></i> React.js</span>
+            <span class="tech-item"><i class="fas fa-layer-group"></i> Next.js</span>
+            <span class="tech-item"><i class="fab fa-vuejs"></i> Vue.js</span>
+            <span class="tech-item"><i class="fab fa-node-js"></i> Node.js</span>
+            <span class="tech-item"><i class="fas fa-server"></i> Express.js</span>
+            <span class="tech-item"><i class="fas fa-feather-alt"></i> Nest.js</span>
+            <span class="tech-item"><i class="fab fa-python"></i> Python</span>
+            <span class="tech-item"><i class="fab fa-java"></i> Java</span>
+            <span class="tech-item"><i class="fab fa-google"></i> Golang</span>
+            <span class="tech-item"><i class="fab fa-php"></i> PHP</span>
+            <span class="tech-item"><i class="fab fa-aws"></i> AWS</span>
+            <span class="tech-item"><i class="fab fa-google"></i> GCP</span>
+            <span class="tech-item"><i class="fab fa-microsoft"></i> Azure</span>
+            <span class="tech-item"><i class="fas fa-cubes"></i> Kubernetes</span>
+            <span class="tech-item"><i class="fab fa-docker"></i> Docker</span>
+            <span class="tech-item"><i class="fas fa-code-branch"></i> Terraform</span>
+            <span class="tech-item"><i class="fas fa-terminal"></i> Ansible</span>
+            <span class="tech-item"><i class="fas fa-network-wired"></i> Microservices</span>
+            <span class="tech-item"><i class="fas fa-cloud"></i> Serverless</span>
+            <span class="tech-item"><i class="fas fa-database"></i> MongoDB</span>
+            <span class="tech-item"><i class="fas fa-database"></i> MySQL</span>
+            <span class="tech-item"><i class="fas fa-database"></i> PostgreSQL</span>
+            <span class="tech-item"><i class="fas fa-database"></i> SQL Server</span>
+            <span class="tech-item"><i class="fas fa-memory"></i> Redis</span>
+            <span class="tech-item"><i class="fas fa-stream"></i> Kafka</span>
+            <span class="tech-item"><i class="fas fa-envelope-open-text"></i> RabbitMQ</span>
+            <span class="tech-item"><i class="fab fa-jenkins"></i> Jenkins</span>
+            <span class="tech-item"><i class="fab fa-github"></i> GitHub Actions</span>
+            <span class="tech-item"><i class="fab fa-microsoft"></i> Azure DevOps</span>
+            <span class="tech-item"><i class="fab fa-jira"></i> Jira</span>
+            <span class="tech-item"><i class="fab fa-figma"></i> Figma</span>
+            <span class="tech-item"><i class="fab fa-adobe"></i> Adobe XD</span>
+            <span class="tech-item"><i class="fas fa-vial"></i> Jasmine</span>
+            <span class="tech-item"><i class="fas fa-vial"></i> Jest</span>
+            <span class="tech-item"><i class="fas fa-check-double"></i> Cypress</span>
+            <span class="tech-item"><i class="fas fa-search"></i> SonarQube</span>
+            <span class="tech-item"><i class="fab fa-git-alt"></i> Git</span>
+            <span class="tech-item"><i class="fab fa-linux"></i> Linux</span>
+            <span class="tech-item"><i class="fab fa-windows"></i> Windows Server</span>
+            <span class="tech-item"><i class="fab fa-apple"></i> MacOS</span>
+            <span class="tech-item"><i class="fas fa-chart-bar"></i> Tableau</span>
+            <span class="tech-item"><i class="fas fa-chart-pie"></i> Power BI</span>
+            <span class="tech-item"><i class="fab fa-wordpress"></i> WordPress</span>
+            <span class="tech-item"><i class="fab fa-drupal"></i> Drupal</span>
+            <span class="tech-item"><i class="fab fa-magento"></i> Magento</span>
+            <!-- Duplicate Set for Seamless Loop -->
+            <span class="tech-item"><i class="fab fa-html5"></i> HTML5/CSS3</span>
+            <span class="tech-item"><i class="fab fa-js"></i> JavaScript</span>
+            <span class="tech-item"><i class="fas fa-code"></i> TypeScript</span>
+            <span class="tech-item"><i class="fab fa-angular"></i> Angular</span>
+            <span class="tech-item"><i class="fab fa-react"></i> React.js</span>
+            <span class="tech-item"><i class="fas fa-layer-group"></i> Next.js</span>
+            <span class="tech-item"><i class="fab fa-vuejs"></i> Vue.js</span>
+            <span class="tech-item"><i class="fab fa-node-js"></i> Node.js</span>
+            <span class="tech-item"><i class="fas fa-server"></i> Express.js</span>
+            <span class="tech-item"><i class="fas fa-feather-alt"></i> Nest.js</span>
+            <span class="tech-item"><i class="fab fa-python"></i> Python</span>
+            <span class="tech-item"><i class="fab fa-java"></i> Java</span>
+            <span class="tech-item"><i class="fab fa-google"></i> Golang</span>
+            <span class="tech-item"><i class="fab fa-php"></i> PHP</span>
+            <span class="tech-item"><i class="fab fa-aws"></i> AWS</span>
+            <span class="tech-item"><i class="fab fa-google"></i> GCP</span>
+            <span class="tech-item"><i class="fab fa-microsoft"></i> Azure</span>
+            <span class="tech-item"><i class="fas fa-cubes"></i> Kubernetes</span>
+            <span class="tech-item"><i class="fab fa-docker"></i> Docker</span>
+            <span class="tech-item"><i class="fas fa-code-branch"></i> Terraform</span>
+            <span class="tech-item"><i class="fas fa-terminal"></i> Ansible</span>
+            <span class="tech-item"><i class="fas fa-network-wired"></i> Microservices</span>
+            <span class="tech-item"><i class="fas fa-cloud"></i> Serverless</span>
+            <span class="tech-item"><i class="fas fa-database"></i> MongoDB</span>
+            <span class="tech-item"><i class="fas fa-database"></i> MySQL</span>
+            <span class="tech-item"><i class="fas fa-database"></i> PostgreSQL</span>
+            <span class="tech-item"><i class="fas fa-database"></i> SQL Server</span>
+            <span class="tech-item"><i class="fas fa-memory"></i> Redis</span>
+            <span class="tech-item"><i class="fas fa-stream"></i> Kafka</span>
+            <span class="tech-item"><i class="fas fa-envelope-open-text"></i> RabbitMQ</span>
+            <span class="tech-item"><i class="fab fa-jenkins"></i> Jenkins</span>
+            <span class="tech-item"><i class="fab fa-github"></i> GitHub Actions</span>
+            <span class="tech-item"><i class="fab fa-microsoft"></i> Azure DevOps</span>
+            <span class="tech-item"><i class="fab fa-jira"></i> Jira</span>
+            <span class="tech-item"><i class="fab fa-figma"></i> Figma</span>
+            <span class="tech-item"><i class="fab fa-adobe"></i> Adobe XD</span>
+            <span class="tech-item"><i class="fas fa-vial"></i> Jasmine</span>
+            <span class="tech-item"><i class="fas fa-vial"></i> Jest</span>
+            <span class="tech-item"><i class="fas fa-check-double"></i> Cypress</span>
+            <span class="tech-item"><i class="fas fa-search"></i> SonarQube</span>
+            <span class="tech-item"><i class="fab fa-git-alt"></i> Git</span>
+            <span class="tech-item"><i class="fab fa-linux"></i> Linux</span>
+            <span class="tech-item"><i class="fab fa-windows"></i> Windows Server</span>
+            <span class="tech-item"><i class="fab fa-apple"></i> MacOS</span>
+            <span class="tech-item"><i class="fas fa-chart-bar"></i> Tableau</span>
+            <span class="tech-item"><i class="fas fa-chart-pie"></i> Power BI</span>
+            <span class="tech-item"><i class="fab fa-wordpress"></i> WordPress</span>
+            <span class="tech-item"><i class="fab fa-drupal"></i> Drupal</span>
+            <span class="tech-item"><i class="fab fa-magento"></i> Magento</span>
+        </div>
+    </div>
+
+    <!-- ABOUT / SUMMARY SECTION -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="summary-list">
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>18+ years of broad enterprise experience across Domains, Application Design, Development, and maintenance of Software Applications.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Certified in HTML5 and JavaScript Programming, AWS, GCP, and Azure.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Extensive experience collaborating with Senior Leadership Teams in strategic solution-led planning, IT Service Management, and Relationship Management.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Experienced in developing web applications using HTML5/CSS3, JavaScript, TypeScript, React.js, Angular, Next.js, Node.js, Express.js, MongoDB, MySQL, Nest.js, REST API, gRPC, Redis.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Expertise in project planning, stakeholder communication, and team mentoring, combined with a deep technical foundation in cloud (AWS, GCP, Azure) and DevOps (Kubernetes, Docker, Terraform).</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Proven track record of accelerating feature delivery through Micro Frontend architecture, CI/CD automation, and reusable widget libraries.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Comfortable working independently, in teams, and leading teams.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Experience in Waterfall and Agile/Scrum Development Methodology and Program Management.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Specialized knowledge of using design patterns and best practices to build flexibility into Enterprise Applications.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Supervised development teams and worked with departmental representatives to coordinate project priorities and progress to ensure project completion and meet deadlines.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Mentored and performed code reviews for other developers to ensure that all standards, models, designs, and methodologies met coding standards and best practices.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Experience with Model-View-Controller (MVC) and Model-View-View-Model (MVVM) architecture.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Expertise in developing single-page applications (SPA) using Angular/ReactJS, Typescript, NestJS, and MongoDB.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Defining overall application architecture across frontend, backend, APIs, databases, and cloud infrastructure.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Ensuring scalability, performance, security, and maintainability.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Designing microservices or monolithic architectures based on scalability and team needs.</span></div>
+                <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Microfrontends, Single SPA, Module Federation (Webpack 5), and Composite UI.</span></div>
+            </div>
+            
+            <!-- SKILLS CLOUD -->
+            <div class="skills-cloud-container">
+                <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 30px;">Core Competencies</h3>
+                <div class="skills-cloud">
+                    <span class="skill-tag">Solutions Architecture</span>
+                    <span class="skill-tag">Cloud Computing</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">GCP</span>
+                    <span class="skill-tag">DevOps</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Terraform</span>
+                    <span class="skill-tag">Microservices</span>
+                    <span class="skill-tag">Micro Frontends</span>
+                    <span class="skill-tag">Angular</span>
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Nest.js</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">Security</span>
+                    <span class="skill-tag">Agile/Scrum</span>
+                    <span class="skill-tag">Team Leadership</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Golang</span>
+                    <span class="skill-tag">GraphQL</span>
+                    <span class="skill-tag">REST API</span>
+                    <span class="skill-tag">System Design</span>
+                    <span class="skill-tag">Database Design</span>
+                    <span class="skill-tag">Event-Driven Architecture</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">Kafka</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="resume.pdf" download class="btn btn-primary resume-download-tracker"><i class="fas fa-download"></i> Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS & TRUSTED BY -->
+    <section id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div>
+                    <div class="stat-number">18+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div>
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Cloud Certifications</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="text-transform: uppercase; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">Trusted by Industry Leaders</p>
+                <div class="clients-grid">
+                    <span class="client-logo">Soulverse</span>
+                    <span class="client-logo">Sears</span>
+                    <span class="client-logo">Deloitte</span>
+                    <span class="client-logo">UBS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES & EXPERTISE -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">My Expertise</h2>
+            <p class="section-subtitle">Delivering enterprise-grade solutions focusing on Cloud, DevOps, and Scalable Architectures.</p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <i class="fas fa-users-cog service-icon"></i>
+                    <h3 class="service-title">Micro Frontends & UI</h3>
+                    <p class="service-desc">Architecting scalable UIs using Module Federation, Angular, React, and Next.js for seamless user experiences.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <i class="fas fa-tachometer-alt service-icon"></i>
+                    <h3 class="service-title">Cloud & DevOps</h3>
+                    <p class="service-desc">Expert in AWS, GCP, Azure, Kubernetes, Docker, and Terraform for robust infrastructure automation.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <i class="fas fa-server service-icon"></i>
+                    <h3 class="service-title">Full Stack Development</h3>
+                    <p class="service-desc">Building end-to-end solutions using MERN (MongoDB, Express, React, Node) and MEAN stacks.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <i class="fas fa-shield-alt service-icon"></i>
+                    <h3 class="service-title">Security & Compliance</h3>
+                    <p class="service-desc">Implementing OAuth2, OIDC, SSO, and OWASP best practices to secure enterprise applications.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <i class="fas fa-chart-line service-icon"></i>
+                    <h3 class="service-title">Solution Architecture</h3>
+                    <p class="service-desc">Defining overall application architecture across frontend, backend, APIs, and cloud infrastructure.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <i class="fas fa-globe service-icon"></i>
+                    <h3 class="service-title">Database & Big Data</h3>
+                    <p class="service-desc">Managing scalable data solutions with MongoDB, DynamoDB, SQL Server, and BigQuery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY HIRE ME (Business Value) -->
+    <section id="why-hire-me">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div>
+                    <h2 class="section-title" style="text-align: left;">Why Should You Hire Me?</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        I don't just write code; I implement solutions that directly impact your bottom line. My focus is on business value—improving sales, reducing churn, and ensuring operational efficiency.
+                    </p>
+                    <a href="#contact" class="btn btn-primary">Let's Talk Business</a>
+                </div>
+                <div class="value-list">
+                    <div class="value-item">
+                        <h3><i class="fas fa-check-circle"></i> Business Value</h3>
+                        <p class="service-desc">Focus on ROI and Sales Growth.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3><i class="fas fa-check-circle"></i> Technical Leadership</h3>
+                        <p class="service-desc">Mentoring teams, code reviews, and strategic planning.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3><i class="fas fa-check-circle"></i> Rapid Delivery</h3>
+                        <p class="service-desc">Agile/Scrum methodologies and CI/CD automation.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3><i class="fas fa-check-circle"></i> Future Proofing</h3>
+                        <p class="service-desc">Microservices and Serverless architectures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Proficiency</h2>
+            <p class="section-subtitle">Comprehensive overview of my technical stack and domain expertise.</p>
+            
+            <div class="skill-category">
+                <h3>Web Technologies (Frontend)</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">HTML5/CSS3</span><span class="skill-pill">SCSS & LESS</span><span class="skill-pill">Tailwind</span>
+                    <span class="skill-pill">JavaScript</span><span class="skill-pill">Alpine.js</span><span class="skill-pill">TypeScript</span>
+                    <span class="skill-pill">AJAX & JSON</span><span class="skill-pill">AngularJS 1.5</span><span class="skill-pill">Angular 2+</span>
+                    <span class="skill-pill">Angular 16/18</span><span class="skill-pill">Angular UI Bootstrap</span><span class="skill-pill">ngxBootstrap</span>
+                    <span class="skill-pill">Angular Material</span><span class="skill-pill">NativeScript</span><span class="skill-pill">React.js</span>
+                    <span class="skill-pill">NextJS</span><span class="skill-pill">JSX</span><span class="skill-pill">Redux</span>
+                    <span class="skill-pill">Axios</span><span class="skill-pill">React Native</span><span class="skill-pill">Ant Design</span>
+                    <span class="skill-pill">Vue.js</span><span class="skill-pill">Vuex.js</span><span class="skill-pill">VueBootstrap</span>
+                    <span class="skill-pill">Ionic Framework</span><span class="skill-pill">D3.js</span><span class="skill-pill">NVD3.js</span>
+                    <span class="skill-pill">Chart.js</span><span class="skill-pill">3d Forced Graphs</span><span class="skill-pill">WebGL</span>
+                    <span class="skill-pill">Webservices</span><span class="skill-pill">Web API</span><span class="skill-pill">Backbone.js</span>
+                    <span class="skill-pill">Knockout.js</span><span class="skill-pill">Ember.js</span><span class="skill-pill">Sencha Ext JS</span>
+                    <span class="skill-pill">JQuery UI/Mobile</span><span class="skill-pill">Kendo UI</span><span class="skill-pill">Breeze.js</span>
+                    <span class="skill-pill">Require.js</span><span class="skill-pill">Underscore.js</span><span class="skill-pill">ES6</span>
+                    <span class="skill-pill">PhoneGap</span><span class="skill-pill">Cordova</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Backend, Languages & API</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">Node.js</span><span class="skill-pill">Express.js</span><span class="skill-pill">Nest.js</span>
+                    <span class="skill-pill">Python</span><span class="skill-pill">Django</span><span class="skill-pill">Golang</span>
+                    <span class="skill-pill">PHP</span><span class="skill-pill">Java</span><span class="skill-pill">C/C++</span>
+                    <span class="skill-pill">.Net</span><span class="skill-pill">Socket.io</span><span class="skill-pill">Lodash.js</span>
+                    <span class="skill-pill">Passport.js</span><span class="skill-pill">SAML</span><span class="skill-pill">OIDC</span>
+                    <span class="skill-pill">OAuth2</span><span class="skill-pill">Auth0</span><span class="skill-pill">KeyCloak</span>
+                    <span class="skill-pill">Swagger</span><span class="skill-pill">Fast APIs</span><span class="skill-pill">Web Sockets</span>
+                    <span class="skill-pill">Microservices</span><span class="skill-pill">RESTful APIs</span><span class="skill-pill">Serverless APIs</span>
+                    <span class="skill-pill">SSO</span><span class="skill-pill">gRPC</span><span class="skill-pill">Express-validator.js</span>
+                    <span class="skill-pill">JWT</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Cloud & DevOps</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">AWS</span><span class="skill-pill">GCP</span><span class="skill-pill">Azure</span>
+                    <span class="skill-pill">Kubernetes (EKS, AKS, GKE)</span><span class="skill-pill">Docker</span><span class="skill-pill">Docker Compose</span>
+                    <span class="skill-pill">Kind</span><span class="skill-pill">Minikube</span><span class="skill-pill">Kubeadm</span>
+                    <span class="skill-pill">APISIX</span><span class="skill-pill">HELM</span><span class="skill-pill">Backstage</span>
+                    <span class="skill-pill">Terraform</span><span class="skill-pill">Ansible</span><span class="skill-pill">Pulumi</span>
+                    <span class="skill-pill">VPC/Subnets</span><span class="skill-pill">ALB/NLB/GLB</span><span class="skill-pill">Github Packages</span>
+                    <span class="skill-pill">ECR</span><span class="skill-pill">IoT</span><span class="skill-pill">IaC</span>
+                    <span class="skill-pill">Nginx</span><span class="skill-pill">HAProxy</span><span class="skill-pill">SSL/TLS</span>
+                    <span class="skill-pill">OWASP ZAP</span><span class="skill-pill">HashiCorp Vault</span><span class="skill-pill">API Gateway</span>
+                    <span class="skill-pill">SQS/SNS</span><span class="skill-pill">Kafka</span><span class="skill-pill">RabbitMQ</span>
+                    <span class="skill-pill">Redis</span><span class="skill-pill">BigQuery</span><span class="skill-pill">Firebase</span>
+                    <span class="skill-pill">Azure Service Bus</span><span class="skill-pill">Azure DevOps</span><span class="skill-pill">Azure Function</span>
+                    <span class="skill-pill">Azure VM</span><span class="skill-pill">Google Pub/Sub</span><span class="skill-pill">AWS Lambda</span>
+                    <span class="skill-pill">S3 Bucket</span><span class="skill-pill">Google Storage</span><span class="skill-pill">Jfrog</span>
+                    <span class="skill-pill">SonarQube</span><span class="skill-pill">Veracode</span><span class="skill-pill">GIT</span>
+                    <span class="skill-pill">GitHub/GitLab</span><span class="skill-pill">GitHub Actions</span><span class="skill-pill">Bitbucket</span>
+                    <span class="skill-pill">TFS</span><span class="skill-pill">CI/CD Pipelines</span><span class="skill-pill">YAML</span>
+                    <span class="skill-pill">Jenkins</span><span class="skill-pill">JIRA</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Databases</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">SQL Server</span><span class="skill-pill">Cosmos DB</span><span class="skill-pill">DB2</span>
+                    <span class="skill-pill">MySQL</span><span class="skill-pill">Oracle</span><span class="skill-pill">PostgreSQL</span>
+                    <span class="skill-pill">MS Access</span><span class="skill-pill">MongoDB</span><span class="skill-pill">Mongoose</span>
+                    <span class="skill-pill">Azure SQL</span><span class="skill-pill">AWS DynamoDB</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>CMS & Reporting</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">Joomla</span><span class="skill-pill">Drupal</span><span class="skill-pill">WordPress</span>
+                    <span class="skill-pill">Moodle</span><span class="skill-pill">OSCommerce</span><span class="skill-pill">CodeIgniter</span>
+                    <span class="skill-pill">CakePHP</span><span class="skill-pill">Magento</span><span class="skill-pill">PowerPoint</span>
+                    <span class="skill-pill">Crystal Reports</span><span class="skill-pill">Active Reports</span><span class="skill-pill">SSRS/SSIS</span>
+                    <span class="skill-pill">Tableau</span><span class="skill-pill">Power BI</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Design, Testing & Patterns</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">Sketch</span><span class="skill-pill">Figma</span><span class="skill-pill">Adobe XD</span>
+                    <span class="skill-pill">Balsamiq</span><span class="skill-pill">draw.io</span><span class="skill-pill">User Research</span>
+                    <span class="skill-pill">Usability Testing</span><span class="skill-pill">Information Architecture</span><span class="skill-pill">Wireframing</span>
+                    <span class="skill-pill">Prototyping</span><span class="skill-pill">Visual/Interaction Design</span><span class="skill-pill">User Persona</span>
+                    <span class="skill-pill">User Journey</span><span class="skill-pill">Accessibility</span><span class="skill-pill">UCD</span>
+                    <span class="skill-pill">Jasmine</span><span class="skill-pill">Protractor</span><span class="skill-pill">Jest</span>
+                    <span class="skill-pill">Pact.js</span><span class="skill-pill">Karma</span><span class="skill-pill">Cypress</span>
+                    <span class="skill-pill">Design Patterns (SOLID, MVC, MVVM)</span><span class="skill-pill">Singleton</span><span class="skill-pill">Observer</span>
+                    <span class="skill-pill">Factory</span><span class="skill-pill">Facade</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Operating Systems</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">Windows Server</span><span class="skill-pill">MacOS</span><span class="skill-pill">Ubuntu</span>
+                    <span class="skill-pill">Linux</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Domain Knowledge</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">E-commerce</span><span class="skill-pill">Retail</span><span class="skill-pill">Healthcare</span>
+                    <span class="skill-pill">Mobile</span><span class="skill-pill">Logistics</span><span class="skill-pill">Banking</span>
+                    <span class="skill-pill">Insurance</span><span class="skill-pill">PropTech</span><span class="skill-pill">Human Resources</span>
+                    <span class="skill-pill">Cybersecurity</span><span class="skill-pill">IoT</span><span class="skill-pill">Blockchain</span>
+                    <span class="skill-pill">Web3</span><span class="skill-pill">Cloud Computing</span><span class="skill-pill">Big Data & Analytics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-subtitle">My professional journey and key achievements.</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Oct 2024 - May 2025</span>
+                        <h3 class="timeline-title">Solutions Architect (DevOps, Security, MERN and MEAN)</h3>
+                        <div class="timeline-company">Soulverse Inc</div>
+                        <p class="timeline-desc">Architected scalable Kubernetes clusters, implemented DevOps automation, and secured microservices. Led infrastructure setup using AWS Elastic Beanstalk and Auto Scaling.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Dec 2023 - Aug 2024</span>
+                        <h3 class="timeline-title">Engineering Manager (MERN and MEAN)</h3>
+                        <div class="timeline-company">ADQ Services</div>
+                        <p class="timeline-desc">Led development of Enquire.buzz & Omnisent.ai. Architected Micro Frontend ecosystem using Angular Module Federation and Composite UI framework.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Nov 2020 - Jul 2023</span>
+                        <h3 class="timeline-title">Technical Architect</h3>
+                        <div class="timeline-company">Datavid Inc</div>
+                        <p class="timeline-desc">Designed SSO solutions using AWS Cognito & SAML. Developed Synapse search application and VetChef platform using React/Next.js and Node.js.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Aug 2016 - Aug 2020</span>
+                        <h3 class="timeline-title">UI Architect</h3>
+                        <div class="timeline-company">Sears Inc</div>
+                        <p class="timeline-desc">Enhanced Sears Parts Direct with Next.js. Developed Member Discovery Engine and Individual Store View apps using MEAN stack and React Native.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Mar 2016 - Jul 2016</span>
+                        <h3 class="timeline-title">Technical Architect</h3>
+                        <div class="timeline-company">Deloitte</div>
+                        <p class="timeline-desc">Architected Employee QuickView analytics platform. Built responsive UI using Angular 2.0 and TypeScript.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jan 2014 - Feb 2016</span>
+                        <h3 class="timeline-title">Principal Consultant</h3>
+                        <div class="timeline-company">AccionLabs</div>
+                        <p class="timeline-desc">Developed Lucas AMD dashboard and MobileMatrics analytics using AngularJS and D3.js.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jul 2012 - Sep 2013</span>
+                        <h3 class="timeline-title">UI / UX Developer (Team Lead)</h3>
+                        <div class="timeline-company">Applied Information Science</div>
+                        <p class="timeline-desc">Led UI/UX development initiatives and team management.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jun 2010 - Dec 2011</span>
+                        <h3 class="timeline-title">UI Engineer (Team Lead)</h3>
+                        <div class="timeline-company">Hitachi Consulting</div>
+                        <p class="timeline-desc">UI Engineering and team leadership for enterprise applications.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Aug 2007 - May 2010</span>
+                        <h3 class="timeline-title">Sr. UI Designer / Sr. Associate</h3>
+                        <div class="timeline-company">UBS</div>
+                        <p class="timeline-desc">Senior UI design and development for financial services.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jul 2004 - Aug 2007</span>
+                        <h3 class="timeline-title">PHP Programmer</h3>
+                        <div class="timeline-company">Anand Software</div>
+                        <p class="timeline-desc">Full stack PHP development and maintenance.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Mar 2003 - Jun 2004</span>
+                        <h3 class="timeline-title">Research Editor</h3>
+                        <div class="timeline-company">SIS InfoTech</div>
+                        <p class="timeline-desc">Research and content editing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROLES & RESPONSIBILITIES SECTION -->
+    <section id="roles">
+        <div class="container">
+            <h2 class="section-title">Roles & Responsibilities</h2>
+            <p class="section-subtitle">Key areas of ownership and contribution throughout my career.</p>
+            
+            <div class="role-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="roleSearchInput" placeholder="Search roles...">
+            </div>
+
+            <div class="roles-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="tech">Tech & Dev</button>
+                <button class="filter-btn" data-filter="management">Management</button>
+                <button class="filter-btn" data-filter="design">Design & UX</button>
+            </div>
+
+            <div class="roles-grid">
+                <div class="role-card" data-category="design">
+                    <div class="role-header">
+                        <i class="fas fa-pencil-ruler role-icon"></i>
+                        <h3 class="role-title">UI Design & Implementation</h3>
+                    </div>
+                    <ul class="role-list collapsed">
+                        <li>Create wireframes, mock-ups, and prototypes to conceptualize UI designs.</li>
+                        <li>Develop clean and semantic HTML code to structure web content.</li>
+                        <li>Enhance user interactivity and functionality using JavaScript.</li>
+                        <li>Collaborate with graphic designers, developers, architects and product managers.</li>
+                        <li>Ensure responsive UI functionality across various devices and screen sizes.</li>
+                        <li>Ensure application accessibility for individuals with disabilities.</li>
+                        <li>Optimize UI performance for quick loading times and prompt user interaction responses.</li>
+                    </ul>
+                    <button class="read-more-toggle">Read More <i class="fas fa-chevron-down"></i></button>
+                </div>
+
+                <div class="role-card" data-category="tech">
+                    <div class="role-header">
+                        <i class="fas fa-shield-alt role-icon"></i>
+                        <h3 class="role-title">Security & Compliance</h3>
+                    </div>
+                    <ul class="role-list collapsed">
+                        <li>Implement robust user authentication and authorization mechanisms using JWT, Auth2, SSO, OIDC, OKTA, passport.js, HashiCorp Vault, and Snyk.</li>
+                        <li>Implement security best practices across the stack (e.g., HTTPS, JWT/OAuth, data encryption).</li>
+                        <li>Ensure compliance with standards like GDPR and HIPAA, depending on the domain.</li>
+                        <li>Implement security best practices, including IAM roles, policies, encryption, and monitoring.</li>
+                    </ul>
+                    <button class="read-more-toggle">Read More <i class="fas fa-chevron-down"></i></button>
+                </div>
+
+                <div class="role-card" data-category="tech">
+                    <div class="role-header">
+                        <i class="fas fa-tachometer-alt role-icon"></i>
+                        <h3 class="role-title">Performance Optimization</h3>
+                    </div>
+                    <ul class="role-list collapsed">
+                        <li>Identify bottlenecks and optimize performance at the frontend, backend, database, and network levels.</li>
+                        <li>Use tools like Lighthouse, New Relic, and database profilers.</li>
+                        <li>Monitor application performance, troubleshoot issues, and optimize application performance and cost.</li>
+                    </ul>
+                    <button class="read-more-toggle">Read More <i class="fas fa-chevron-down"></i></button>
+                </div>
+
+                <div class="role-card" data-category="tech">
+                    <div class="role-header">
+                        <i class="fas fa-cloud-upload-alt role-icon"></i>
+                        <h3 class="role-title">DevOps & Deployment</h3>
+                    </div>
+                    <ul class="role-list collapsed">
+                        <li>Deploy applications to cloud platforms or on-premises servers.</li>
+                        <li>Deployed and managed applications using AWS services (S3, Lambda, EC2, AppSync, ALB, ASG, Elastic Beanstalk).</li>
+                        <li>Set up CI/CD pipelines, containerization (Docker), and orchestration (Kubernetes).</li>
+                        <li>Define infrastructure as code (e.g., Terraform, AWS CloudFormation).</li>
+                        <li>Monitor and optimize deployment pipelines and runtime environments.</li>
+                    </ul>
+                    <button class="read-more-toggle">Read More <i class="fas fa-chevron-down"></i></button>
+                </div>
+
+                <div class="role-card" data-category="tech">
+                    <div class="role-header">
+                        <i class="fas fa-server role-icon"></i>
+                        <h3 class="role-title">Backend Development</h3>
+                    </div>
+                    <ul class="role-list collapsed">
+                        <li>Design and implement RESTful APIs and AWS API Gateway.</li>
+                        <li>Review and enforce coding standards and best practices.</li>
+                        <li>Hands-on involvement in solving complex technical challenges across the stack.</li>
+                        <li>Build and manage serverless applications using AWS Lambda and other serverless technologies.</li>
+                        <li>Designed and managed scalable database solutions leveraging DynamoDB, RDS, and other AWS database services.</li>
+                        <li>Implement messaging and notification solutions using AWS SNS, SQS, and other integration services.</li>
+                        <li>Collaborate with cross-functional teams, including front-end developers, DevOps engineers, architects, and product managers.</li>
+                    </ul>
+                    <button class="read-more-toggle">Read More <i class="fas fa-chevron-down"></i></button>
+                </div>
+
+                <div class="role-card" data-category="management">
+                    <div class="role-header">
+                        <i class="fas fa-file-alt role-icon"></i>
+                        <h3 class="role-title">Documentation & Standards</h3>
+                    </div>
+                    <ul class="role-list collapsed">
+                        <li>Create architectural diagrams, decision logs, and design documentation.</li>
+                        <li>Define reusable components, patterns, and templates.</li>
+                    </ul>
+                    <button class="read-more-toggle">Read More <i class="fas fa-chevron-down"></i></button>
+                </div>
+
+                <div class="role-card" data-category="management">
+                    <div class="role-header">
+                        <i class="fas fa-users role-icon"></i>
+                        <h3 class="role-title">Stakeholder Communication</h3>
+                    </div>
+                    <ul class="role-list collapsed">
+                        <li>Translate technical details into business language for stakeholders.</li>
+                        <li>Present architecture reviews, risk assessments, and ROI discussions.</li>
+                    </ul>
+                    <button class="read-more-toggle">Read More <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS SECTION -->
+    <section id="education-certifications">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <p class="section-subtitle">Academic background and professional validations.</p>
+            
+            <div class="edu-cert-wrapper">
+                <!-- Education Column -->
+                <div class="edu-cert-column">
+                    <h3>Education</h3>
+                    <div class="edu-cert-grid">
+                        <div class="cert-card">
+                            <i class="fas fa-graduation-cap cert-icon"></i>
+                            <h3 class="cert-title">MCA</h3>
+                            <div class="cert-issuer">Osmania University</div>
+                        </div>
+                        <div class="cert-card">
+                            <i class="fas fa-university cert-icon"></i>
+                            <h3 class="cert-title">B.Sc. Computers</h3>
+                            <div class="cert-issuer">Osmania University</div>
+                        </div>
+                        <div class="cert-card">
+                            <i class="fas fa-school cert-icon"></i>
+                            <h3 class="cert-title">Intermediate (M.P.C)</h3>
+                            <div class="cert-issuer">Board of Intermediate Education</div>
+                        </div>
+                        <div class="cert-card">
+                            <i class="fas fa-book cert-icon"></i>
+                            <h3 class="cert-title">SSC</h3>
+                            <div class="cert-issuer">Board of Secondary Education</div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="transcript.pdf" download class="btn btn-outline"><i class="fas fa-file-download"></i> Download Transcript</a>
+                    </div>
+                </div>
+
+                <!-- Certifications Column -->
+                <div class="edu-cert-column">
+                    <h3>Certifications</h3>
+                    <div class="edu-cert-grid">
+                        <div class="cert-card">
+                            <i class="fab fa-aws cert-icon"></i>
+                            <h3 class="cert-title">AWS Certified Solutions Architect</h3>
+                            <div class="cert-issuer">Amazon Web Services</div>
+                        </div>
+                        <div class="cert-card">
+                            <i class="fab fa-microsoft cert-icon"></i>
+                            <h3 class="cert-title">Azure Solutions Architect</h3>
+                            <div class="cert-issuer">Microsoft Azure</div>
+                        </div>
+                        <div class="cert-card">
+                            <i class="fab fa-google cert-icon"></i>
+                            <h3 class="cert-title">Google Cloud Professional</h3>
+                            <div class="cert-issuer">Google Cloud Platform</div>
+                        </div>
+                        <div class="cert-card">
+                            <i class="fas fa-code cert-icon"></i>
+                            <h3 class="cert-title">HTML5 & JavaScript</h3>
+                            <div class="cert-issuer">Certified Professional</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Success Stories</h2>
+            <p class="section-subtitle">What industry leaders say about working with me.</p>
+            
+            <div class="testimonial-slider">
+                <!-- Slide 1 -->
+                <div class="testimonial-slide active">
+                    <p class="testimonial-text">"John transformed our legacy platform into a high-performance machine. Our conversion rates increased by 40% within the first month of launch."</p>
+                    <div class="testimonial-author">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=random" alt="Client" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>CTO, TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"The attention to detail regarding SEO and accessibility was outstanding. We are finally ranking on the first page for our key terms."</p>
+                    <div class="testimonial-author">
+                        <img src="https://ui-avatars.com/api/?name=Michael+Chen&background=random" alt="Client" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Michael Chen</h4>
+                            <p>Product Manager, GlobalBiz</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"A true expert in Headless CMS architectures. The migration was seamless, and our content team loves the new flexibility."</p>
+                    <div class="testimonial-author">
+                        <img src="https://ui-avatars.com/api/?name=Emily+Davis&background=random" alt="Client" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Emily Davis</h4>
+                            <p>Director of Engineering, InnovateInc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A showcase of my latest work and technical contributions.</p>
+            
+            <div class="project-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="projectSearchInput" placeholder="Search projects...">
+            </div>
+
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="cloud">Cloud & DevOps</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="cloud">
+                    <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80" class="project-img" alt="Soulverse Backend">
+                    <div class="project-content">
+                        <h3 class="project-title">Soulverse Backend Services</h3>
+                        <p class="project-desc">Architected scalable Kubernetes clusters and implemented DevOps automation. Leveraged GitHub Packages to manage container images and environments.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Terraform</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Architected and deployed scalable Kubernetes clusters for backend services.</li><li>Leveraged GitHub Packages to manage container images and environments.</li><li>Implemented AWS Load Balancers (ALB/NLB) for traffic management.</li><li>Provisioned infrastructure using Terraform and Ansible (IaC).</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project: AWS Elastic Beanstalk -->
+                <div class="project-card" data-category="cloud">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&q=80" class="project-img" alt="AWS Elastic Beanstalk">
+                    <div class="project-content">
+                        <h3 class="project-title">Scalable Infrastructure with AWS Elastic Beanstalk</h3>
+                        <p class="project-desc">Designed and deployed load-balanced architecture using AWS Elastic Beanstalk and Auto Scaling Groups for high availability and cost-efficiency.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS Elastic Beanstalk</span>
+                            <span class="tech-tag">Auto Scaling</span>
+                            <span class="tech-tag">ALB</span>
+                            <span class="tech-tag">CloudWatch</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Designed and deployed a load-balanced architecture using AWS Elastic Beanstalk.</li><li>Configured Application Load Balancers (ALB) for high availability.</li><li>Integrated AWS Auto Scaling Groups for dynamic scaling based on metrics.</li><li>Enabled seamless CI/CD pipeline integration and infrastructure monitoring.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project: Soulverse Microservices Security -->
+                <div class="project-card" data-category="cloud">
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80" class="project-img" alt="Soulverse Microservices Security">
+                    <div class="project-content">
+                        <h3 class="project-title">Soulverse Microservices Security</h3>
+                        <p class="project-desc">Performed penetration testing and security hardening. Implemented Nginx reverse proxy, SSL, and OWASP mitigation strategies.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Nginx</span>
+                            <span class="tech-tag">SSL/TLS</span>
+                            <span class="tech-tag">OWASP</span>
+                            <span class="tech-tag">DevSecOps</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Performed penetration testing and vulnerability mitigation.</li><li>Implemented Nginx reverse proxy for application-layer protection.</li><li>Configured SSL certificates and enforced HTTPS.</li><li>Hardened security with XSS protection, CSP, HSTS, and X-Frame-Options.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" class="project-img" alt="Enquire.buzz">
+                    <div class="project-content">
+                        <h3 class="project-title">Enquire.buzz & Omnisent.ai</h3>
+                        <p class="project-desc">Architected a Micro Frontend ecosystem using Angular Module Federation. Developed a Composite UI Framework for seamless widget integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Micro Frontends</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Module Federation</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Architected a Micro Frontend ecosystem using Angular Module Federation.</li><li>Developed a Composite UI Framework for seamless widget integration.</li><li>Enabled dynamic loading and reuse of 50+ widgets across applications.</li><li>Reduced development time for new features by 60%.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80" class="project-img" alt="Synapse Search">
+                    <div class="project-content">
+                        <h3 class="project-title">Synapse Search Application</h3>
+                        <p class="project-desc">Developed an advanced search application with multi-criteria filtering and faceted search. Integrated AWS Cognito for secure SSO authentication.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">AWS Cognito</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">ElasticSearch</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Developed an advanced search application with multi-criteria filtering.</li><li>Implemented faceted search and autosuggestions.</li><li>Integrated AWS Cognito with Active Directory using SAML 2.0/OIDC.</li><li>Ensured secure API authentication using JWT tokens.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?auto=format&fit=crop&q=80" class="project-img" alt="Sears Parts Direct">
+                    <div class="project-content">
+                        <h3 class="project-title">Sears Parts Direct</h3>
+                        <p class="project-desc">Enhanced e-commerce platform using Next.js for SSR/ISR. Improved SEO and product discovery with faceted search.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Enhanced product discovery with a robust parts catalog.</li><li>Implemented intuitive search filters and faceted navigation.</li><li>Leveraged Next.js SSR and ISR for optimal performance and SEO.</li><li>Streamlined the secure online ordering and checkout process.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="cloud">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80" class="project-img" alt="MDMS & HES">
+                    <div class="project-content">
+                        <h3 class="project-title">MDMS & HES (IoT)</h3>
+                        <p class="project-desc">Developed Smart Meter Management System using AWS IoT, Lambda, and DynamoDB. Handled high-frequency data collection.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS IoT</span>
+                            <span class="tech-tag">Big Data</span>
+                            <span class="tech-tag">Nest.js</span>
+                            <span class="tech-tag">Microservices</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Spearheaded development of Head End System (HES) and Meter Dynamics Management System (MDMS).</li><li>Implemented AWS IoT, Lambda, and DynamoDB for scalable data handling.</li><li>Orchestrated high-frequency data collection from millions of smart meters.</li><li>Designed microservices architecture using API Gateway.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" class="project-img" alt="Member Discovery">
+                    <div class="project-content">
+                        <h3 class="project-title">Member Discovery Engine</h3>
+                        <p class="project-desc">Customizable search platform for Sales/Marketing to filter registered members. Features faceted search and NLP queries.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">ElasticSearch</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Built a customizable search platform for Sales and Marketing teams.</li><li>Enabled dynamic filtering through faceted search.</li><li>Integrated NLP capabilities to process natural language queries.</li><li>Provided mobile accessibility for on-the-go usage.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" class="project-img" alt="Employee QuickView">
+                    <div class="project-content">
+                        <h3 class="project-title">Employee QuickView</h3>
+                        <p class="project-desc">Integrated analytics platform for workforce management. Built with Angular 2.0 and Node.js for real-time insights.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular 2.0</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Architected an integrated analytics platform with 20+ modules.</li><li>Built customizable dashboards for real-time workforce insights.</li><li>Developed modular and reusable UI components using Angular.</li><li>Integrated Node.js APIs with MySQL for high-performance data access.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80" class="project-img" alt="Lucas Systems">
+                    <div class="project-content">
+                        <h3 class="project-title">Lucas Systems (AMD)</h3>
+                        <p class="project-desc">Web-based dashboard for logistics operations visibility. Configurable views for managing mobile work execution.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AngularJS</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Developed a web-based dashboard for logistics operations visibility.</li><li>Enabled real-time tracking of productivity and workflow.</li><li>Implemented configurable views for managing mobile work execution.</li><li>Optimized UI for mobile devices used in distribution centers.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80" class="project-img" alt="Gieco Insurance">
+                    <div class="project-content">
+                        <h3 class="project-title">Gieco Insurance Portal</h3>
+                        <p class="project-desc">Developed UI components for insurance products (Vehicle, Property). Integrated REST APIs for policy management.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AngularJS</span>
+                            <span class="tech-tag">HTML5/CSS3</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">SQL Server</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG / LATEST LEARNINGS -->
+    <section id="blog">
+        <div class="container">
+            <h2 class="section-title">Latest Learnings</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span class="blog-tag">Performance</span>
+                        <h3 class="blog-title">Advanced Caching with Redis & Varnish</h3>
+                        <p class="service-desc">How to reduce server load by 80% using tiered caching strategies.</p>
+                        <a href="#" class="read-more-btn" 
+                           data-title="Advanced Caching with Redis & Varnish" 
+                           data-content="<p>Caching is critical for high-performance web applications. By implementing a tiered caching strategy using Redis for object caching and Varnish for full-page caching, we can significantly reduce database load.</p><p style='margin-top:10px;'>In this case study, we explore how setting up proper TTLs and cache invalidation strategies reduced server response times from 200ms to under 50ms.</p>"
+                           style="color: var(--primary-color); font-weight: 600; margin-top: 10px; display: block;">Read More &rarr;</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span class="blog-tag">AI & Personalization</span>
+                        <h3 class="blog-title">AI-Driven Segmentation</h3>
+                        <p class="service-desc">Using Machine Learning to predict user intent and serve dynamic content.</p>
+                        <a href="#" class="read-more-btn"
+                           data-title="AI-Driven Segmentation"
+                           data-content="<p>Personalization is no longer optional. Using machine learning models, we can analyze user behavior in real-time to predict intent.</p><p style='margin-top:10px;'>This article discusses integrating Python-based ML models with a Node.js backend to serve dynamic content blocks based on user probability scores.</p>"
+                           style="color: var(--primary-color); font-weight: 600; margin-top: 10px; display: block;">Read More &rarr;</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span class="blog-tag">Architecture</span>
+                        <h3 class="blog-title">Monolith to Microservices</h3>
+                        <p class="service-desc">A case study on migrating a legacy financial application to the cloud.</p>
+                        <a href="#" class="read-more-btn"
+                           data-title="Monolith to Microservices"
+                           data-content="<p>Legacy monolithic applications often become bottlenecks for scaling. Migrating to microservices allows for independent deployment and scaling of components.</p><p style='margin-top:10px;'>We break down the strangler fig pattern used to gradually replace functionality in a financial application without downtime.</p>"
+                           style="color: var(--primary-color); font-weight: 600; margin-top: 10px; display: block;">Read More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">Do you work with agencies or direct clients? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">I work with both. I have extensive experience integrating into existing agency teams as well as leading projects for direct clients.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How do you handle SEO? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">I build with a 'Performance First' mindset. Using semantic HTML, fast load times (Core Web Vitals), and proper metadata management ensures high rankings.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What industries have you served? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">I have served FinTech, E-commerce, Healthcare, and SaaS sectors, helping them scale their digital presence.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & NEWSLETTER -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div>
+                    <h3 style="margin-bottom: 20px;">Contact Me</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="contactName" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="contactEmail" placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea id="contactMessage" rows="5" placeholder="How can I help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 20px;">Connect</h3>
+                    <p style="margin-bottom: 10px; color: var(--text-muted);"><i class="fas fa-envelope" style="width: 20px; color: var(--primary-color);"></i> goverdhan.k@gmail.com</p>
+                    <p style="margin-bottom: 20px; color: var(--text-muted);"><i class="fas fa-phone" style="width: 20px; color: var(--primary-color);"></i> +91 9885514982</p>
+                    <div class="social-links" style="margin-bottom: 30px;">
+                        <a href="#" style="color: var(--text-main)"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="#" style="color: var(--text-main)"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" style="color: var(--text-main)"><i class="fab fa-twitter"></i> Twitter</a>
+                    </div>
+                    
+                    <a href="https://calendly.com/" target="_blank" class="btn btn-primary" style="margin-bottom: 15px; width: 100%; text-align: center;"><i class="fas fa-calendar-check"></i> Schedule a Call</a>
+                    
+                    <button id="vcard-btn" class="btn btn-outline" style="margin-bottom: 30px; width: 100%;"><i class="fas fa-address-card"></i> Download vCard</button>
+                    
+                    <div class="newsletter-box">
+                        <h3>Subscribe to Newsletter</h3>
+                        <p style="margin-bottom: 15px; font-size: 0.9rem;">Get insights on scalability, SEO, and software architecture.</p>
+                        <form style="display: flex; justify-content: center;">
+                            <input type="email" placeholder="Email Address">
+                            <button>Join</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Goverdhan Koyalkar</h4>
+                    <p>Solutions Architect & Engineering Manager specializing in Cloud, DevOps, and Full Stack.</p>
+                    <a href="https://www.buymeacoffee.com/" target="_blank" class="bmc-btn">
+                        <i class="fas fa-coffee"></i> Buy me a coffee
+                    </a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="newsletter.html">Newsletter Archive</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Latest Tweets</h4>
+                    <a class="twitter-timeline" data-height="300" data-theme="dark" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> 
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+            <div style="text-align: center; border-top: 1px solid #334155; padding-top: 20px;">
+                <p>&copy; 2025 Goverdhan Koyalkar. All rights reserved.</p>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">
+                    Total Views: <span id="view-count">...</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookie-banner">
+        <h4 style="margin-bottom: 10px;">We value your privacy</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
+            We use cookies to enhance your experience, analyze site traffic, and personalize content.
+        </p>
+        <div style="display: flex; gap: 10px;">
+            <button id="accept-cookies" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Accept</button>
+            <button id="decline-cookies" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Decline</button>
+        </div>
+    </div>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button id="scroll-top-btn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- HIRE ME FAB (Mobile Only) -->
+    <a href="#contact" id="hire-me-fab">
+        <i class="fas fa-paper-plane"></i> Hire Me
+    </a>
+
+    <!-- BLOG MODAL -->
+    <div class="modal-overlay" id="blog-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title" style="margin-bottom: 20px;"></h2>
+            <div id="modal-body" style="color: var(--text-muted); line-height: 1.8;"></div>
+        </div>
+    </div>
+
+    <!-- PROJECT MODAL -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-project-modal">&times;</span>
+            <img id="modal-project-img" src="" alt="" style="width:100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 20px;">
+            <h2 id="modal-project-title" style="margin-bottom: 15px;"></h2>
+            <div id="modal-project-tech" style="margin-bottom: 20px; display: flex; gap: 8px; flex-wrap: wrap;"></div>
+            <div id="modal-project-body" style="color: var(--text-muted); line-height: 1.8;"></div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Full Screen Image">
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // --- Page Loader Logic ---
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                setTimeout(() => { loader.style.display = 'none'; }, 500);
+            }
+        });
+
+        // --- Dark Mode Logic ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // Check local storage
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+
+        // --- Mobile Menu ---
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // --- FAQ Accordion ---
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // --- Cookie Banner ---
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+        const declineBtn = document.getElementById('decline-cookies');
+
+        if (!localStorage.getItem('cookie-consent')) {
+            setTimeout(() => {
+                cookieBanner.style.display = 'block';
+            }, 2000);
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie-consent', 'accepted');
+            cookieBanner.style.display = 'none';
+        });
+
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie-consent', 'declined');
+            cookieBanner.style.display = 'none';
+        });
+
+        // --- Simple Search Highlight ---
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                const term = this.value.toLowerCase();
+                if (!term) return;
+                
+                // Simple find functionality for static page
+                const found = window.find(term);
+                if (!found) {
+                    alert('Term not found on this page.');
+                }
+            }
+        });
+
+        // --- Contact Form Validation ---
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('contactName').value.trim();
+                const email = document.getElementById('contactEmail').value.trim();
+                const message = document.getElementById('contactMessage').value.trim();
+                
+                if (!name || !email || !message) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                
+                // Simulate submission
+                alert('Thank you, ' + name + '! Your message has been sent.');
+                contactForm.reset();
+            });
+        }
+
+        // --- PWA Service Worker Registration ---
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => console.log('ServiceWorker registration successful'))
+                    .catch(err => console.log('ServiceWorker registration failed: ', err));
+            });
+        }
+
+        // --- PWA Install Button Logic ---
+        let deferredPrompt;
+        const installBtn = document.getElementById('installAppBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            // Stash the event so it can be triggered later.
+            deferredPrompt = e;
+            // Update UI notify the user they can install the PWA
+            if (installBtn) installBtn.style.display = 'block';
+        });
+
+        if (installBtn) {
+            installBtn.addEventListener('click', async () => {
+                // Hide the app provided install promotion
+                installBtn.style.display = 'none';
+                // Show the install prompt
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    // Wait for the user to respond to the prompt
+                    const { outcome } = await deferredPrompt.userChoice;
+                    console.log(`User response to the install prompt: ${outcome}`);
+                    deferredPrompt = null;
+                }
+            });
+        }
+
+        window.addEventListener('appinstalled', () => {
+            if (installBtn) installBtn.style.display = 'none';
+            deferredPrompt = null;
+            console.log('PWA was installed');
+        });
+
+        // --- Share Button Logic ---
+        const shareBtn = document.getElementById('share-btn');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', async () => {
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: document.title,
+                            text: 'Check out this portfolio!',
+                            url: window.location.href
+                        });
+                    } catch (err) {
+                        console.log('Error sharing:', err);
+                    }
+                } else {
+                    // Fallback for browsers that don't support Web Share API
+                    try {
+                        await navigator.clipboard.writeText(window.location.href);
+                        alert('Link copied to clipboard!');
+                    } catch (err) {
+                        console.error('Failed to copy: ', err);
+                    }
+                }
+            });
+        }
+
+        // --- Scroll to Top Logic ---
+        const scrollTopBtn = document.getElementById('scroll-top-btn');
+
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // --- Typing Animation Logic ---
+        const typingText = document.getElementById('typing-text');
+        
+        if (typingText) {
+            const words = ["Solutions Architect", "Engineering Manager", "Cloud & DevOps Expert", "Full Stack Developer"];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typeDelay = 100;
+
+            function type() {
+                const currentWord = words[wordIndex];
+                
+                if (isDeleting) {
+                    typingText.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                    typeDelay = 50;
+                } else {
+                    typingText.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                    typeDelay = 100;
+                }
+
+                if (!isDeleting && charIndex === currentWord.length) {
+                    isDeleting = true;
+                    typeDelay = 2000; // Pause at end of word
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    typeDelay = 500; // Pause before next word
+                }
+
+                setTimeout(type, typeDelay);
+            }
+
+            // Start typing loop
+            setTimeout(type, 1000);
+        }
+
+        // --- Google Analytics Resume Download Tracking ---
+        document.querySelectorAll('.resume-download-tracker').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'file_download', {
+                        'file_name': 'resume.pdf',
+                        'file_extension': 'pdf',
+                        'link_text': 'Download Resume'
+                    });
+                }
+            });
+        });
+
+        // --- Skills Animation ---
+        const skillContainers = document.querySelectorAll('.skills-cloud, .skill-tags-container');
+
+        if (skillContainers.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const tags = entry.target.querySelectorAll('.skill-tag, .skill-pill');
+                        tags.forEach((tag, index) => {
+                            tag.style.animationDelay = `${index * 0.05}s`;
+                            tag.classList.add('animate');
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            skillContainers.forEach(container => {
+                observer.observe(container);
+            });
+        }
+
+        // --- Testimonials Slider ---
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        if (slides.length > 0) {
+            function showSlide(n) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slideIndex = (n + slides.length) % slides.length;
+                slides[slideIndex].classList.add('active');
+            }
+
+            if (prevBtn) prevBtn.addEventListener('click', () => showSlide(slideIndex - 1));
+            if (nextBtn) nextBtn.addEventListener('click', () => showSlide(slideIndex + 1));
+
+            // Auto slide every 5 seconds
+            setInterval(() => showSlide(slideIndex + 1), 5000);
+        }
+
+        // --- Project Carousel Logic ---
+        let projectIndex = 0;
+        const projectSlides = document.querySelectorAll('.project-slide');
+        const prevProjectBtn = document.querySelector('.prev-project-btn');
+        const nextProjectBtn = document.querySelector('.next-project-btn');
+
+        if (projectSlides.length > 0) {
+            function showProjectSlide(n) {
+                projectSlides.forEach(slide => slide.classList.remove('active'));
+                projectIndex = (n + projectSlides.length) % projectSlides.length;
+                projectSlides[projectIndex].classList.add('active');
+            }
+
+            if (prevProjectBtn) prevProjectBtn.addEventListener('click', () => showProjectSlide(projectIndex - 1));
+            if (nextProjectBtn) nextProjectBtn.addEventListener('click', () => showProjectSlide(projectIndex + 1));
+            
+            // Optional: Auto slide for projects
+            // setInterval(() => showProjectSlide(projectIndex + 1), 7000);
+        }
+
+        // --- Blog Modal Logic ---
+        const modalOverlay = document.getElementById('blog-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const closeModal = document.querySelector('.close-modal');
+        const readMoreBtns = document.querySelectorAll('.read-more-btn');
+
+        if (modalOverlay) {
+            readMoreBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const title = btn.getAttribute('data-title');
+                    const content = btn.getAttribute('data-content');
+                    
+                    modalTitle.textContent = title;
+                    modalBody.innerHTML = content;
+                    
+                    modalOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                });
+            });
+
+            const closeBlogModal = () => {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            if (closeModal) closeModal.addEventListener('click', closeBlogModal);
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) closeBlogModal();
+            });
+        }
+
+        // --- View Counter Logic ---
+        const viewCount = document.getElementById('view-count');
+        if (viewCount) {
+            // Using counterapi.dev (Free, no auth required)
+            fetch('https://api.counterapi.dev/v1/goverdhan1.github.io/portfolio/up')
+                .then(response => response.json())
+                .then(data => {
+                    viewCount.innerText = data.count;
+                })
+                .catch(error => {
+                    console.error('Error fetching view count:', error);
+                    viewCount.innerText = 'N/A';
+                });
+        }
+
+        // --- Lightbox Logic ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeLightbox = document.querySelector('.close-lightbox');
+        const galleryImages = document.querySelectorAll('.gallery-item img, .project-img');
+
+        if (lightbox) {
+            galleryImages.forEach(img => {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                });
+            });
+
+            const closeLightboxFunc = () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            if (closeLightbox) closeLightbox.addEventListener('click', closeLightboxFunc);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightboxFunc();
+            });
+        }
+
+        // --- Parallax Hero Logic ---
+        const heroSection = document.getElementById('home');
+        if (heroSection) {
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.pageYOffset;
+                heroSection.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+            });
+        }
+
+        // --- vCard Download Logic ---
+        const vCardBtn = document.getElementById('vcard-btn');
+        if (vCardBtn) {
+            vCardBtn.addEventListener('click', () => {
+                const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Goverdhan Koyalkar
+N:Koyalkar;Goverdhan;;;
+TITLE:Solutions Architect & Engineering Manager
+TEL;TYPE=CELL:+91 9885514982
+EMAIL;TYPE=WORK,INTERNET:goverdhan.k@gmail.com
+URL:https://goverdhan1.github.io
+NOTE:Expert in Cloud (AWS/Azure/GCP), DevOps, Micro Frontends, and Full Stack.
+END:VCARD`;
+                const blob = new Blob([vCardData], { type: 'text/vcard' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'goverdhan_koyalkar.vcf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            });
+        }
+
+        // --- Print Resume Logic ---
+        const printBtn = document.getElementById('print-resume-btn');
+        if (printBtn) {
+            printBtn.addEventListener('click', () => {
+                window.print();
+            });
+        }
+
+        // --- Roles Read More Logic ---
+        document.querySelectorAll('.read-more-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const list = button.previousElementSibling;
+                list.classList.toggle('collapsed');
+                
+                if (list.classList.contains('collapsed')) {
+                    button.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+                } else {
+                    button.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+                }
+            });
+        });
+
+        // --- Roles Filter Logic ---
+        const roleFilterBtns = document.querySelectorAll('.roles-filter .filter-btn');
+        const roleCards = document.querySelectorAll('.role-card');
+        const roleSearchInput = document.getElementById('roleSearchInput');
+
+        roleFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                roleFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+                const searchTerm = roleSearchInput.value.toLowerCase();
+
+                filterRoles(filterValue, searchTerm);
+            });
+        });
+
+        if (roleSearchInput) {
+            roleSearchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const activeFilterBtn = document.querySelector('.filter-btn.active');
+                const filterValue = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
+                
+                filterRoles(filterValue, searchTerm);
+            });
+        }
+
+        function filterRoles(category, term) {
+            roleCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                const cardText = card.textContent.toLowerCase();
+                
+                const matchesCategory = category === 'all' || cardCategory === category;
+                const matchesSearch = cardText.includes(term);
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'inline-block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // --- Projects Filter Logic ---
+        const projectFilterBtns = document.querySelectorAll('.projects-filter .filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        const projectSearchInput = document.getElementById('projectSearchInput');
+
+        function filterProjects(category, term) {
+            projectCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                const cardText = card.textContent.toLowerCase();
+                
+                const matchesCategory = category === 'all' || cardCategory === category;
+                const matchesSearch = cardText.includes(term);
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        projectFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                projectFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                const searchTerm = projectSearchInput ? projectSearchInput.value.toLowerCase() : '';
+                
+                filterProjects(filterValue, searchTerm);
+            });
+        });
+
+        if (projectSearchInput) {
+            projectSearchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const activeFilterBtn = document.querySelector('.projects-filter .filter-btn.active');
+                const filterValue = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
+                
+                filterProjects(filterValue, searchTerm);
+            });
+        }
+
+        // --- Project Modal Logic ---
+        const projectModal = document.getElementById('project-modal');
+        const projectModalImg = document.getElementById('modal-project-img');
+        const projectModalTitle = document.getElementById('modal-project-title');
+        const projectModalBody = document.getElementById('modal-project-body');
+        const projectModalTech = document.getElementById('modal-project-tech');
+        const closeProjectModal = document.getElementById('close-project-modal');
+
+        document.querySelectorAll('.view-case-study-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const card = btn.closest('.project-card');
+                const img = card.querySelector('.project-img').src;
+                const title = card.querySelector('.project-title').innerText;
+                const tech = card.querySelector('.project-tech').innerHTML;
+                const details = btn.getAttribute('data-details');
+
+                projectModalImg.src = img;
+                projectModalTitle.innerText = title;
+                projectModalTech.innerHTML = tech;
+                projectModalBody.innerHTML = details;
+
+                projectModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        if (closeProjectModal) closeProjectModal.addEventListener('click', () => { projectModal.classList.remove('active'); document.body.style.overflow = ''; });
+        if (projectModal) projectModal.addEventListener('click', (e) => { if (e.target === projectModal) { projectModal.classList.remove('active'); document.body.style.overflow = ''; } });
+    </script>
+</body>
+</html>
