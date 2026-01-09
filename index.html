@@ -7,7 +7,7 @@
     <!-- SEO & Meta Tags -->
     <title>Goverdhan Koyalkar | Solutions Architect & Engineering Manager</title>
     <meta name="description" content="18+ years experience. Solutions Architect & Engineering Manager. Expert in Cloud (AWS/Azure/GCP), DevOps (K8s, Docker), Micro Frontends, Full Stack (Angular/React/Node), and Enterprise Architecture.">
-    <meta name="keywords" content="Solutions Architect, Engineering Manager, DevOps, AWS, Azure, GCP, Kubernetes, Docker, Terraform, Microservices, Micro Frontends, Angular, React, Next.js, Node.js, TypeScript, Python, Java, CI/CD, Enterprise Architecture, SEO, Digital Marketing">
+    <meta name="keywords" content="Solutions Architect, Engineering Manager, Technical Architect, UI Architect, Full Stack Developer, Frontend Developer, JavaScript Developer, TypeScript Developer, Angular Developer, React Developer, MEAN Stack Developer, MERN Stack Developer, DevOps Engineer, AWS, Azure, GCP, Kubernetes, Docker, Terraform, Microservices, Micro Frontends, Next.js, Node.js, Python, Java, CI/CD, Enterprise Architecture">
     <meta name="author" content="Goverdhan Koyalkar">
     
     <!-- Open Graph / Social Media -->
@@ -19,6 +19,7 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#7c3aed">
     <link rel="apple-touch-icon" href="icon-192x192.png">
+    <link rel="icon" type="image/png" href="icon-192x192.png">
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,6 +92,10 @@
         ul { list-style: none; }
         img { max-width: 100%; display: block; }
         
+        /* Global Section Styling */
+        section { border-bottom: 1px solid var(--border-color); }
+        section:last-of-type { border-bottom: none; }
+        
         /* --- UTILITIES --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .btn {
@@ -123,6 +128,8 @@
             display: flex; justify-content: space-between; align-items: center; width: 100%;
         }
         .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+        .contact-info { display: flex; flex-direction: column; margin-left: 20px; }
+        .contact-info p { margin: 0; color: var(--text-muted); font-size: 0.9rem; }
         .nav-links { display: flex; gap: 20px; }
         .nav-links a { font-size: 0.95rem; font-weight: 500; }
         .nav-links a:hover { color: var(--primary-color); }
@@ -151,13 +158,14 @@
         /* --- HERO SECTION --- */
         #home { 
             padding-top: 150px; 
-            padding-bottom: 100px; 
+            padding-bottom: 80px; 
             text-align: center; 
             position: relative;
             background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80');
             background-size: cover;
             background-position: center;
             /* background-attachment: fixed; */
+            border-bottom: none; /* Marquee has top border */
         }
         #home::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -183,7 +191,7 @@
         #home .btn-outline:hover { background-color: rgba(255,255,255,0.1); border-color: #ffffff; }
         
         /* --- ABOUT / SUMMARY --- */
-        #about { padding: 80px 0; background-color: var(--bg-secondary); }
+        #about { padding: 60px 0; }
         .summary-list {
             display: grid;
             grid-template-columns: 1fr;
@@ -243,16 +251,55 @@
         }
 
         /* --- STATS / TRUSTED BY --- */
-        #stats { background-color: var(--bg-secondary); padding: 60px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        #stats { 
+            background-color: #020617;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #stats-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        #stats .container {
+            position: relative;
+            z-index: 2;
+        }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
-        .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--primary-color); }
-        .stat-label { color: var(--text-muted); font-size: 0.9rem; }
-        .clients-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; opacity: 0.6; }
-        .client-logo { font-weight: 700; font-size: 1.5rem; color: var(--text-muted); }
+        .stat-number { 
+            font-size: 2.5rem; font-weight: 700; color: var(--primary-color); 
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace; 
+            cursor: default;
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
+        .stat-number:hover { animation: none; text-shadow: 0 0 20px var(--primary-color); transition: text-shadow 0.3s; }
+        @keyframes pulseGlow {
+            0%, 100% { text-shadow: 0 0 0 transparent; }
+            50% { text-shadow: 0 0 10px var(--primary-color); }
+        }
+        .stat-label { color: #94a3b8; font-size: 0.9rem; }
+        
+        /* Clients Marquee */
+        .clients-marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 40px 0 0;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .clients-track { display: inline-block; animation: marquee 35s linear infinite; }
+        .clients-track:hover { animation-play-state: paused; }
+        .client-logo { display: inline-block; margin: 0 30px; font-weight: 700; font-size: 1.2rem; color: #cbd5e1; opacity: 0.6; text-decoration: none; transition: all 0.3s; }
+        .client-logo:hover { opacity: 1; color: var(--primary-color); }
 
         /* --- SERVICES / EXPERTISE --- */
         #services { 
-            padding: 80px 0; 
+            padding: 60px 0; 
             background-image: radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.05) 0%, transparent 40%), 
                               radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%);
         }
@@ -269,13 +316,13 @@
         .service-desc { color: var(--text-muted); font-size: 0.95rem; }
 
         /* --- WHY HIRE ME (Business Value) --- */
-        #why-hire-me { padding: 80px 0; background-color: var(--bg-secondary); }
+        #why-hire-me { padding: 60px 0; background-color: var(--bg-secondary); }
         .value-list { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .value-item h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
         .value-item i { color: #10b981; } /* Green check */
 
         /* --- PROJECTS GRID --- */
-        #projects { padding: 80px 0; }
+        #projects { padding: 60px 0; }
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -317,7 +364,7 @@
         .view-case-study-btn:hover { background: var(--primary-gradient); color: white; border-color: transparent; }
 
         /* --- BLOG / LEARNINGS --- */
-        #blog { padding: 80px 0; background-color: var(--bg-secondary); }
+        #blog { padding: 60px 0; background-color: var(--bg-secondary); }
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .blog-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); }
         .blog-content { padding: 20px; }
@@ -325,14 +372,14 @@
         .blog-title { font-size: 1.2rem; margin: 10px 0; font-weight: 700; }
 
         /* --- FAQ --- */
-        #faq { padding: 80px 0; }
+        #faq { padding: 60px 0; }
         .faq-item { border-bottom: 1px solid var(--border-color); padding: 20px 0; }
         .faq-question { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
         .faq-answer { display: none; margin-top: 15px; color: var(--text-muted); }
         .faq-item.active .faq-answer { display: block; }
 
         /* --- CONTACT & NEWSLETTER --- */
-        #contact { padding: 80px 0; background-color: var(--bg-secondary); }
+        #contact { padding: 60px 0; background-color: var(--bg-secondary); }
         .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
@@ -361,7 +408,7 @@
         }
 
         /* --- SKILLS SECTION --- */
-        #skills { padding: 80px 0; }
+        #skills { padding: 60px 0; background-color: var(--bg-secondary); }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         .skill-item { margin-bottom: 20px; }
         .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; }
@@ -389,7 +436,7 @@
         }
 
         /* --- TIMELINE (EXPERIENCE) --- */
-        #experience { padding: 80px 0; background-color: var(--bg-secondary); }
+        #experience { padding: 60px 0; }
         .timeline { position: relative; max-width: 800px; margin: 0 auto; }
         .timeline::after {
             content: ''; position: absolute; width: 2px; background-color: var(--border-color);
@@ -419,26 +466,45 @@
         .timeline-desc { font-size: 0.95rem; color: var(--text-muted); }
 
         /* --- CERTIFICATIONS --- */
-        #certifications { padding: 80px 0; }
+        #certifications { padding: 60px 0; }
         .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .cert-card { 
-            background: var(--card-bg); border: 1px solid var(--border-color); 
-            padding: 30px; border-radius: 12px; text-align: center; 
-            transition: transform 0.3s, box-shadow 0.3s; 
+        
+        /* Flip Card Styles */
+        .cert-card {
+            background-color: transparent; perspective: 1000px; height: 260px; border: none; padding: 0;
         }
-        .cert-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-        .cert-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
-        .cert-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
-        .cert-issuer { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px; }
+        .cert-card-inner {
+            position: relative; width: 100%; height: 100%; text-align: center;
+            transition: transform 0.6s; transform-style: preserve-3d;
+            box-shadow: var(--shadow); border-radius: 12px;
+        }
+        .cert-card:hover .cert-card-inner { transform: rotateY(180deg); }
+        .cert-card-front, .cert-card-back {
+            position: absolute; width: 100%; height: 100%;
+            -webkit-backface-visibility: hidden; backface-visibility: hidden;
+            border-radius: 12px; padding: 30px; border: 1px solid var(--border-color);
+            background: var(--card-bg); display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+        }
+        .cert-card-back {
+            background-color: var(--bg-secondary); transform: rotateY(180deg); padding: 20px;
+        }
+        /* Front Face Content */
+        .cert-card-front .cert-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
+        .cert-card-front .cert-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .cert-card-front .cert-issuer { color: var(--text-muted); font-size: 0.9rem; }
+        /* Back Face Content */
+        .cert-card-back p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px; }
 
         /* --- EDUCATION & CERTIFICATIONS --- */
-        #education-certifications { padding: 80px 0; background-color: var(--bg-secondary); }
+        #education-certifications { padding: 60px 0; }
         .edu-cert-wrapper { display: grid; grid-template-columns: 1fr; gap: 50px; }
         .edu-cert-column h3 { font-size: 1.5rem; margin-bottom: 30px; color: var(--primary-color); border-left: 4px solid var(--primary-color); padding-left: 15px; }
+        .edu-cert-column > h3 { color: var(--text-main); border-left: none; padding-left: 0; }
         .edu-cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         
         /* --- ROLES & RESPONSIBILITIES --- */
-        #roles { padding: 80px 0; }
+        #roles { padding: 60px 0; background-color: var(--bg-secondary); }
         .roles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .role-card {
             background: var(--card-bg); border: 1px solid var(--border-color);
@@ -473,7 +539,7 @@
         .role-search i, .project-search i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
 
         /* --- TESTIMONIALS --- */
-        #testimonials { padding: 80px 0; }
+        #testimonials { padding: 60px 0; background-color: var(--bg-secondary); }
         .testimonial-slider { position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; }
         .testimonial-slide {
             display: none; text-align: center; padding: 40px;
@@ -642,6 +708,26 @@
             opacity: 0.9;
             transform: translateY(-3px);
         }
+        #scroll-top-btn.show {
+            display: flex;
+            animation: popIn 0.3s ease-out;
+        }
+
+        /* Custom Tooltip */
+        #custom-tooltip {
+            position: fixed;
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            pointer-events: none;
+            z-index: 9999;
+            display: none;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
@@ -653,24 +739,25 @@
             
             /* Reduce section padding */
             #home, #about, #services, #why-hire-me, #projects, #blog, #faq, #contact, #skills, #experience, #testimonials, #education-certifications, #roles {
-                padding: 50px 0;
+                padding: 40px 0;
             }
-            #stats { padding: 40px 0; }
+            #stats { padding: 30px 0; }
 
             /* Navigation */
-            .nav-links { 
-                display: none; 
-                position: absolute; 
-                top: var(--nav-height); 
-                left: 0; 
-                width: 100%; 
-                background: var(--bg-color); 
-                flex-direction: column; 
-                padding: 20px; 
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0;
+                width: 100%;
+                background: var(--bg-color);
+                flex-direction: column;
+                padding: 20px;
                 border-bottom: 1px solid var(--border-color);
                 box-shadow: var(--shadow);
             }
             .nav-links.active { display: flex; }
+            .contact-info { display: none; }
             .hamburger { display: block; }
             
             /* Layout Adjustments */
@@ -834,10 +921,13 @@
     <header>
         <div class="container nav-container">
             <div style="display: flex; flex-direction: column;">
-                <a href="#" class="logo">Goverdhan Koyalkar</a>
-                <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500; margin-top: -5px;">goverdhan.k@gmail.com | +91 9885514982</span>
+                <a href="#" class="logo" style="line-height: 1.2;">Goverdhan Koyalkar</a>
+                <div class="contact-info" style="margin-left: 0; flex-direction: row; gap: 15px;">
+                    <p style="font-size: 0.8rem;"><i class="fas fa-envelope" style="width: 16px; color: var(--primary-color);" aria-hidden="true"></i> goverdhan.k@gmail.com</p>
+                    <p style="font-size: 0.8rem;"><a href="https://wa.me/919885514982" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp" style="width: 16px; color: var(--primary-color);" aria-hidden="true"></i> +91 9885514982</a></p>
+                </div>
             </div>
-            
+
             <nav class="nav-links" id="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -849,18 +939,18 @@
 
             <div class="nav-actions">
                 <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="Search expertise...">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input type="text" id="searchInput" placeholder="Search expertise..." aria-label="Search expertise">
                 </div>
                 <button id="installAppBtn" class="btn btn-primary" style="display: none; padding: 6px 12px; font-size: 0.8rem;">Install App</button>
-                <div class="share-btn" id="share-btn" title="Share Profile">
-                    <i class="fas fa-share-alt"></i>
+                <div class="share-btn" id="share-btn" title="Share Profile" role="button" tabindex="0" aria-label="Share Profile">
+                    <i class="fas fa-share-alt" aria-hidden="true"></i>
                 </div>
-                <div class="theme-toggle" id="theme-toggle">
-                    <i class="fas fa-moon"></i>
+                <div class="theme-toggle" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </div>
-                <div class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
+                <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open Menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </div>
             </div>
         </div>
@@ -877,10 +967,10 @@
             </p>
             <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
                 <a href="#contact" class="btn btn-primary">Why Hire Me?</a>
-                <a href="https://calendly.com/" target="_blank" class="btn btn-primary"><i class="fas fa-calendar-alt"></i> Schedule a Call</a>
+                <a href="https://calendly.com/" target="_blank" class="btn btn-primary"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Schedule a Call</a>
                 <a href="#projects" class="btn btn-outline">View Work</a>
-                <a href="resume.pdf" download id="resume-download-btn" class="btn btn-outline resume-download-tracker"><i class="fas fa-download"></i> Download Resume</a>
-                <button id="print-resume-btn" class="btn btn-outline"><i class="fas fa-print"></i> Print Resume</button>
+                <a href="resume.pdf" download id="resume-download-btn" class="btn btn-outline resume-download-tracker"><i class="fas fa-download" aria-hidden="true"></i> Download Resume</a>
+                <button id="print-resume-btn" class="btn btn-outline"><i class="fas fa-print" aria-hidden="true"></i> Print Resume</button>
             </div>
         </div>
     </section>
@@ -1015,6 +1105,35 @@
                 <div class="summary-item"><i class="fas fa-check-circle"></i> <span>Microfrontends, Single SPA, Module Federation (Webpack 5), and Composite UI.</span></div>
             </div>
             
+            <!-- WHY HIRE ME (Business Value) -->
+            <div class="contact-wrapper" style="margin-top: 60px; margin-bottom: 60px; background-color: var(--bg-secondary); padding: 40px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: var(--shadow);">
+                <div>
+                    <h2 class="section-title" style="text-align: left;">Why Should You Hire Me?</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        I don't just write code; I implement solutions that directly impact your bottom line. My focus is on business value—improving sales, reducing churn, and ensuring operational efficiency.
+                    </p>
+                    <a href="#contact" class="btn btn-primary">Let's Talk Business</a>
+                </div>
+                <div class="value-list">
+                    <div class="value-item">
+                        <h3><i class="fas fa-check-circle"></i> Business Value</h3>
+                        <p class="service-desc">Focus on ROI and Sales Growth.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3><i class="fas fa-check-circle"></i> Technical Leadership</h3>
+                        <p class="service-desc">Mentoring teams, code reviews, and strategic planning.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3><i class="fas fa-check-circle"></i> Rapid Delivery</h3>
+                        <p class="service-desc">Agile/Scrum methodologies and CI/CD automation.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3><i class="fas fa-check-circle"></i> Future Proofing</h3>
+                        <p class="service-desc">Microservices and Serverless architectures.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- SKILLS CLOUD -->
             <div class="skills-cloud-container">
                 <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 30px;">Core Competencies</h3>
@@ -1051,17 +1170,301 @@
                     <span class="skill-tag">Event-Driven Architecture</span>
                     <span class="skill-tag">Redis</span>
                     <span class="skill-tag">Kafka</span>
-                    <span class="skill-tag">SEO & Analytics</span>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="resume.pdf" download class="btn btn-primary resume-download-tracker"><i class="fas fa-download"></i> Download Resume</a>
+        </div>
+    </section>
+
+    <!-- STATS & TRUSTED BY -->
+    <section id="stats">
+        <canvas id="stats-particles"></canvas>
+        <div class="container">
+            <div class="stats-grid">
+                <div>
+                    <div class="stat-number" data-target="25">0+</div>
+                    <div class="stat-label">Architecture Projects</div>
+                </div>
+                <div>
+                    <div class="stat-number" data-target="50">0+</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div>
+                    <div class="stat-number" data-target="15">0+</div>
+                    <div class="stat-label">Companies Served</div>
+                </div>
+                <div>
+                    <div class="stat-number" data-target="12">0+</div>
+                    <div class="stat-label">Years of Leadership</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="text-transform: uppercase; font-size: 0.8rem; font-weight: 700; color: #94a3b8;">Trusted by Industry Leaders</p>
+                <div class="clients-marquee">
+                    <div class="clients-track">
+                        <!-- Original Set -->
+                        <a href="https://soulverse.us" target="_blank" class="client-logo" data-tooltip="Blockchain & Web3 Platform">Soulverse</a>
+                        <a href="https://www.sears.com" target="_blank" class="client-logo" data-tooltip="Retail & E-commerce">Sears</a>
+                        <a href="https://www2.deloitte.com" target="_blank" class="client-logo" data-tooltip="Audit, Consulting & Advisory">Deloitte</a>
+                        <a href="https://www.ubs.com" target="_blank" class="client-logo" data-tooltip="Global Financial Services">UBS</a>
+                        <a href="https://sisinfotech.com" target="_blank" class="client-logo" data-tooltip="IT Solutions & Services">SIS Infotech</a>
+                        <a href="https://www.hitachi.com" target="_blank" class="client-logo" data-tooltip="Global Tech Conglomerate">Hitachi</a>
+                        <a href="https://www.hitachivantara.com" target="_blank" class="client-logo" data-tooltip="Enterprise Applications">Sierra Atlantic</a>
+                        <a href="https://www.vertafore.com" target="_blank" class="client-logo" data-tooltip="Insurance Tech Solutions">Vertaform</a>
+                        <a href="https://motivitylabs.com" target="_blank" class="client-logo" data-tooltip="Mobile & Cloud Solutions">MotivityLabs</a>
+                        <a href="https://www.accionlabs.com" target="_blank" class="client-logo" data-tooltip="Innovation Engineering">AccionLabs</a>
+                        <a href="https://www.appliedis.com" target="_blank" class="client-logo" data-tooltip="Cloud Adoption Services">AIS</a>
+                        <a href="https://www.knoah.com" target="_blank" class="client-logo" data-tooltip="Customer Experience BPO">Knoah Solutions</a>
+                        <a href="#" target="_blank" class="client-logo" data-tooltip="IT Services & Consulting">Bregrade</a>
+                        <a href="https://www.infosys.com" target="_blank" class="client-logo" data-tooltip="Digital Services & Consulting">Infosys</a>
+                        <a href="https://www.cognizant.com" target="_blank" class="client-logo" data-tooltip="IT Services & Consulting">Cognizant</a>
+                        <a href="https://www.inrythm.com" target="_blank" class="client-logo" data-tooltip="Digital Product Engineering">Inrythm</a>
+                        <a href="https://www.ispace.com" target="_blank" class="client-logo" data-tooltip="IT Staffing & Solutions">iSpace</a>
+                        <a href="https://www.cigniti.com" target="_blank" class="client-logo" data-tooltip="Quality Engineering & Testing">Cigniti</a>
+                        <!-- Duplicate Set for Loop -->
+                        <div aria-hidden="true" style="display: inline;">
+                        <a href="https://soulverse.us" target="_blank" class="client-logo" data-tooltip="Blockchain & Web3 Platform">Soulverse</a>
+                        <a href="https://www.sears.com" target="_blank" class="client-logo" data-tooltip="Retail & E-commerce">Sears</a>
+                        <a href="https://www2.deloitte.com" target="_blank" class="client-logo" data-tooltip="Audit, Consulting & Advisory">Deloitte</a>
+                        <a href="https://www.ubs.com" target="_blank" class="client-logo" data-tooltip="Global Financial Services">UBS</a>
+                        <a href="https://sisinfotech.com" target="_blank" class="client-logo" data-tooltip="IT Solutions & Services">SIS Infotech</a>
+                        <a href="https://www.hitachi.com" target="_blank" class="client-logo" data-tooltip="Global Tech Conglomerate">Hitachi</a>
+                        <a href="https://www.hitachivantara.com" target="_blank" class="client-logo" data-tooltip="Enterprise Applications">Sierra Atlantic</a>
+                        <a href="https://www.vertafore.com" target="_blank" class="client-logo" data-tooltip="Insurance Tech Solutions">Vertaform</a>
+                        <a href="https://motivitylabs.com" target="_blank" class="client-logo" data-tooltip="Mobile & Cloud Solutions">MotivityLabs</a>
+                        <a href="https://www.accionlabs.com" target="_blank" class="client-logo" data-tooltip="Innovation Engineering">AccionLabs</a>
+                        <a href="https://www.appliedis.com" target="_blank" class="client-logo" data-tooltip="Cloud Adoption Services">AIS</a>
+                        <a href="https://www.knoah.com" target="_blank" class="client-logo" data-tooltip="Customer Experience BPO">Knoah Solutions</a>
+                        <a href="#" target="_blank" class="client-logo" data-tooltip="IT Services & Consulting">Bregrade</a>
+                        <a href="https://www.infosys.com" target="_blank" class="client-logo" data-tooltip="Digital Services & Consulting">Infosys</a>
+                        <a href="https://www.cognizant.com" target="_blank" class="client-logo" data-tooltip="IT Services & Consulting">Cognizant</a>
+                        <a href="https://www.inrythm.com" target="_blank" class="client-logo" data-tooltip="Digital Product Engineering">Inrythm</a>
+                        <a href="https://www.ispace.com" target="_blank" class="client-logo" data-tooltip="IT Staffing & Solutions">iSpace</a>
+                        <a href="https://www.cigniti.com" target="_blank" class="client-logo" data-tooltip="Quality Engineering & Testing">Cigniti</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES & EXPERTISE -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">My Expertise</h2>
+            <p class="section-subtitle">Delivering enterprise-grade solutions focusing on Cloud, DevOps, and Scalable Architectures.</p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <i class="fas fa-users-cog service-icon"></i>
+                    <h3 class="service-title">Micro Frontends & UI</h3>
+                    <p class="service-desc">Architecting scalable UIs using Module Federation, Angular, React, and Next.js for seamless user experiences.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <i class="fas fa-tachometer-alt service-icon"></i>
+                    <h3 class="service-title">Cloud & DevOps</h3>
+                    <p class="service-desc">Expert in AWS, GCP, Azure, Kubernetes, Docker, and Terraform for robust infrastructure automation.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <i class="fas fa-server service-icon"></i>
+                    <h3 class="service-title">Full Stack Development</h3>
+                    <p class="service-desc">Building end-to-end solutions using MERN (MongoDB, Express, React, Node) and MEAN stacks.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <i class="fas fa-shield-alt service-icon"></i>
+                    <h3 class="service-title">Security & Compliance</h3>
+                    <p class="service-desc">Implementing OAuth2, OIDC, SSO, and OWASP best practices to secure enterprise applications.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <i class="fas fa-chart-line service-icon"></i>
+                    <h3 class="service-title">Solution Architecture</h3>
+                    <p class="service-desc">Defining overall application architecture across frontend, backend, APIs, and cloud infrastructure.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <i class="fas fa-globe service-icon"></i>
+                    <h3 class="service-title">Database & Big Data</h3>
+                    <p class="service-desc">Managing scalable data solutions with MongoDB, DynamoDB, SQL Server, and BigQuery.</p>
+                </div>
+                <!-- Service 7 -->
+                <div class="service-card">
+                    <i class="fas fa-bullhorn service-icon"></i>
+                    <h3 class="service-title">Digital Marketing & SEO</h3>
+                    <p class="service-desc">Enhancing online presence through strategic Digital Marketing and technical SEO optimization.</p>
+                </div>
+                <!-- Service 8 -->
+                <div class="service-card">
+                    <i class="fas fa-user-tag service-icon"></i>
+                    <h3 class="service-title">Personalization & Segmentation</h3>
+                    <p class="service-desc">Driving engagement with targeted Segmentation and dynamic Personalization strategies.</p>
+                </div>
+                <!-- Service 9 -->
+                <div class="service-card">
+                    <i class="fas fa-network-wired service-icon"></i>
+                    <h3 class="service-title">CDN & Regional Caching</h3>
+                    <p class="service-desc">Accelerating content delivery via Regional Caching and Edge Computing using CDNs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Proficiency</h2>
+            <p class="section-subtitle">Comprehensive overview of my technical stack and domain expertise.</p>
+            
+            <div class="skill-category">
+                <h3>Web Technologies (Frontend)</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">HTML5/CSS3</span><span class="skill-pill">SCSS & LESS</span><span class="skill-pill">Tailwind</span>
+                    <span class="skill-pill">JavaScript</span><span class="skill-pill">Alpine.js</span><span class="skill-pill">TypeScript</span>
+                    <span class="skill-pill">AJAX & JSON</span><span class="skill-pill">AngularJS 1.5</span><span class="skill-pill">Angular 2+</span>
+                    <span class="skill-pill">Angular 16/18</span><span class="skill-pill">Angular UI Bootstrap</span><span class="skill-pill">ngxBootstrap</span>
+                    <span class="skill-pill">Angular Material</span><span class="skill-pill">NativeScript</span><span class="skill-pill">React.js</span>
+                    <span class="skill-pill">NextJS</span><span class="skill-pill">JSX</span><span class="skill-pill">Redux</span>
+                    <span class="skill-pill">Axios</span><span class="skill-pill">React Native</span><span class="skill-pill">Ant Design</span>
+                    <span class="skill-pill">Vue.js</span><span class="skill-pill">Vuex.js</span><span class="skill-pill">VueBootstrap</span>
+                    <span class="skill-pill">Ionic Framework</span><span class="skill-pill">D3.js</span><span class="skill-pill">NVD3.js</span>
+                    <span class="skill-pill">Chart.js</span><span class="skill-pill">3d Forced Graphs</span><span class="skill-pill">WebGL</span>
+                    <span class="skill-pill">Webservices</span><span class="skill-pill">Web API</span><span class="skill-pill">Backbone.js</span>
+                    <span class="skill-pill">Knockout.js</span><span class="skill-pill">Ember.js</span><span class="skill-pill">Sencha Ext JS</span>
+                    <span class="skill-pill">JQuery UI/Mobile</span><span class="skill-pill">Kendo UI</span><span class="skill-pill">Breeze.js</span>
+                    <span class="skill-pill">Require.js</span><span class="skill-pill">Underscore.js</span><span class="skill-pill">ES6</span>
+                    <span class="skill-pill">PhoneGap</span><span class="skill-pill">Cordova</span><span class="skill-pill">Nunjucks</span>
+                    <span class="skill-pill">Eleventy (11ty)</span><span class="skill-pill">JAMstack</span><span class="skill-pill">Liquid</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Backend, Languages & API</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">Node.js</span><span class="skill-pill">Express.js</span><span class="skill-pill">Nest.js</span>
+                    <span class="skill-pill">Python</span><span class="skill-pill">Django</span><span class="skill-pill">Golang</span>
+                    <span class="skill-pill">PHP</span><span class="skill-pill">Java</span><span class="skill-pill">C/C++</span>
+                    <span class="skill-pill">.Net</span><span class="skill-pill">Socket.io</span><span class="skill-pill">Lodash.js</span>
+                    <span class="skill-pill">Passport.js</span><span class="skill-pill">SAML</span><span class="skill-pill">OIDC</span>
+                    <span class="skill-pill">OAuth2</span><span class="skill-pill">Auth0</span><span class="skill-pill">KeyCloak</span>
+                    <span class="skill-pill">Swagger</span><span class="skill-pill">Fast APIs</span><span class="skill-pill">Web Sockets</span>
+                    <span class="skill-pill">Microservices</span><span class="skill-pill">RESTful APIs</span><span class="skill-pill">Serverless APIs</span>
+                    <span class="skill-pill">SSO</span><span class="skill-pill">gRPC</span><span class="skill-pill">Express-validator.js</span>
+                    <span class="skill-pill">JWT</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Cloud & DevOps</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">AWS</span><span class="skill-pill">GCP</span><span class="skill-pill">Azure</span>
+                    <span class="skill-pill">Kubernetes (EKS, AKS, GKE)</span><span class="skill-pill">Docker</span><span class="skill-pill">Docker Compose</span>
+                    <span class="skill-pill">Kind</span><span class="skill-pill">Minikube</span><span class="skill-pill">Kubeadm</span>
+                    <span class="skill-pill">APISIX</span><span class="skill-pill">HELM</span><span class="skill-pill">Backstage</span>
+                    <span class="skill-pill">Terraform</span><span class="skill-pill">Ansible</span><span class="skill-pill">Pulumi</span>
+                    <span class="skill-pill">VPC/Subnets</span><span class="skill-pill">ALB/NLB/GLB</span><span class="skill-pill">Github Packages</span>
+                    <span class="skill-pill">ECR</span><span class="skill-pill">IoT</span><span class="skill-pill">IaC</span>
+                    <span class="skill-pill">Nginx</span><span class="skill-pill">HAProxy</span><span class="skill-pill">SSL/TLS</span>
+                    <span class="skill-pill">OWASP ZAP</span><span class="skill-pill">HashiCorp Vault</span><span class="skill-pill">API Gateway</span>
+                    <span class="skill-pill">SQS/SNS</span><span class="skill-pill">Kafka</span><span class="skill-pill">RabbitMQ</span>
+                    <span class="skill-pill">Redis</span><span class="skill-pill">BigQuery</span><span class="skill-pill">Firebase</span>
+                    <span class="skill-pill">Azure Service Bus</span><span class="skill-pill">Azure DevOps</span><span class="skill-pill">Azure Function</span>
+                    <span class="skill-pill">Azure VM</span><span class="skill-pill">Google Pub/Sub</span><span class="skill-pill">AWS Lambda</span>
+                    <span class="skill-pill">S3 Bucket</span><span class="skill-pill">Google Storage</span><span class="skill-pill">Jfrog</span>
+                    <span class="skill-pill">SonarQube</span><span class="skill-pill">Veracode</span><span class="skill-pill">GIT</span>
+                    <span class="skill-pill">GitHub/GitLab</span><span class="skill-pill">GitHub Actions</span><span class="skill-pill">Bitbucket</span>
+                    <span class="skill-pill">TFS</span><span class="skill-pill">CI/CD Pipelines</span><span class="skill-pill">YAML</span>
+                    <span class="skill-pill">Jenkins</span><span class="skill-pill">JIRA</span><span class="skill-pill">CDNs</span>
+                    <span class="skill-pill">Akamai</span><span class="skill-pill">Cloudflare</span><span class="skill-pill">CloudFront</span>
+                    <span class="skill-pill">Edge Computing</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Databases</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">SQL Server</span><span class="skill-pill">Cosmos DB</span><span class="skill-pill">DB2</span>
+                    <span class="skill-pill">MySQL</span><span class="skill-pill">Oracle</span><span class="skill-pill">PostgreSQL</span>
+                    <span class="skill-pill">MS Access</span><span class="skill-pill">MongoDB</span><span class="skill-pill">Mongoose</span>
+                    <span class="skill-pill">Azure SQL</span><span class="skill-pill">AWS DynamoDB</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>CMS & Reporting</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">Joomla</span><span class="skill-pill">Drupal</span><span class="skill-pill">WordPress</span>
+                    <span class="skill-pill">Moodle</span><span class="skill-pill">OSCommerce</span><span class="skill-pill">CodeIgniter</span>
+                    <span class="skill-pill">CakePHP</span><span class="skill-pill">PowerPoint</span>
+                    <span class="skill-pill">Crystal Reports</span><span class="skill-pill">Active Reports</span><span class="skill-pill">SSRS/SSIS</span>
+                    <span class="skill-pill">Tableau</span><span class="skill-pill">Power BI</span>
+                    <span class="skill-pill">Headless CMS</span><span class="skill-pill">Contentful</span><span class="skill-pill">Strapi</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Adobe Experience Cloud</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">Adobe Experience Manager (AEM)</span>
+                    <span class="skill-pill">Magento (Adobe Commerce)</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Marketing & Analytics</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">Google Analytics</span><span class="skill-pill">Adobe Analytics</span>
+                    <span class="skill-pill">Adobe Target</span><span class="skill-pill">Adobe Tag Manager</span>
+                    <span class="skill-pill">Google Tag Manager</span><span class="skill-pill">Segment</span>
+                    <span class="skill-pill">Tealium</span><span class="skill-pill">FullStory</span>
+                    <span class="skill-pill">ActionIQ</span><span class="skill-pill">SEO</span>
+                    <span class="skill-pill">Google Search Console</span><span class="skill-pill">SEMrush</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Design, Testing & Patterns</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">Sketch</span><span class="skill-pill">Figma</span><span class="skill-pill">Adobe XD</span>
+                    <span class="skill-pill">Balsamiq</span><span class="skill-pill">draw.io</span><span class="skill-pill">User Research</span>
+                    <span class="skill-pill">Usability Testing</span><span class="skill-pill">Information Architecture</span><span class="skill-pill">Wireframing</span>
+                    <span class="skill-pill">Prototyping</span><span class="skill-pill">Visual/Interaction Design</span><span class="skill-pill">User Persona</span>
+                    <span class="skill-pill">User Journey</span><span class="skill-pill">Accessibility</span><span class="skill-pill">UCD</span>
+                    <span class="skill-pill">Jasmine</span><span class="skill-pill">Protractor</span><span class="skill-pill">Jest</span>
+                    <span class="skill-pill">Pact.js</span><span class="skill-pill">Karma</span><span class="skill-pill">Cypress</span>
+                    <span class="skill-pill">Design Patterns (SOLID, MVC, MVVM)</span><span class="skill-pill">Singleton</span><span class="skill-pill">Observer</span>
+                    <span class="skill-pill">Factory</span><span class="skill-pill">Facade</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Operating Systems</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">Windows Server</span><span class="skill-pill">MacOS</span><span class="skill-pill">Ubuntu</span>
+                    <span class="skill-pill">Linux</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Domain Knowledge</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-pill">E-commerce</span><span class="skill-pill">Retail</span><span class="skill-pill">Healthcare</span>
+                    <span class="skill-pill">Mobile</span><span class="skill-pill">Logistics</span><span class="skill-pill">Banking</span>
+                    <span class="skill-pill">Insurance</span><span class="skill-pill">PropTech</span><span class="skill-pill">Human Resources</span>
+                    <span class="skill-pill">Cybersecurity</span><span class="skill-pill">IoT</span><span class="skill-pill">Blockchain</span>
+                    <span class="skill-pill">Web3</span><span class="skill-pill">Cloud Computing</span><span class="skill-pill">Big Data & Analytics</span>
+                    <span class="skill-pill">Telecom</span><span class="skill-pill">Oil & Gas</span><span class="skill-pill">Energy</span>
+                    <span class="skill-pill">Manufacturing</span><span class="skill-pill">Public Relations</span><span class="skill-pill">Financial Services</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- EXPERIENCE SECTION -->
-    <section id="experience">
+    <section id="experience" style="display: none;">
         <div class="container">
             <h2 class="section-title">Work Experience</h2>
             <p class="section-subtitle">My professional journey and key achievements.</p>
@@ -1154,414 +1557,27 @@
                         <p class="timeline-desc">Research and content editing.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">A showcase of my latest work and technical contributions.</p>
-            
-            <div class="project-search">
-                <i class="fas fa-search"></i>
-                <input type="text" id="projectSearchInput" placeholder="Search projects...">
-            </div>
-
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="cloud">Cloud & DevOps</button>
-                <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-            </div>
-
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card" data-category="cloud">
-                    <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80" class="project-img" alt="Soulverse Backend">
-                    <div class="project-content">
-                        <h3 class="project-title">Soulverse Backend Services</h3>
-                        <p class="project-desc">Architected scalable Kubernetes clusters and implemented DevOps automation. Leveraged GitHub Packages to manage container images, environments, and internal developer portals.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Kubernetes</span>
-                            <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">Terraform</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                        <button class="view-case-study-btn" data-details="<ul><li>Architected and deployed scalable Kubernetes clusters for backend services.</li><li>Leveraged GitHub Packages to manage container images, environments, and internal developer portals.</li><li>Implemented AWS Load Balancers (ALB/NLB) for traffic management.</li><li>Provisioned infrastructure using Terraform and Ansible (IaC).</li></ul>">
-                            View Case Study
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Project: AWS Elastic Beanstalk -->
-                <div class="project-card" data-category="cloud">
-                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&q=80" class="project-img" alt="AWS Elastic Beanstalk">
-                    <div class="project-content">
-                        <h3 class="project-title">Scalable Infrastructure with AWS Elastic Beanstalk</h3>
-                        <p class="project-desc">Designed and deployed load-balanced architecture using AWS Elastic Beanstalk and Auto Scaling Groups for high availability and cost-efficiency.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">AWS Elastic Beanstalk</span>
-                            <span class="tech-tag">Auto Scaling</span>
-                            <span class="tech-tag">ALB</span>
-                            <span class="tech-tag">CloudWatch</span>
-                        </div>
-                        <button class="view-case-study-btn" data-details="<ul><li>Designed and deployed a load-balanced architecture using AWS Elastic Beanstalk.</li><li>Configured Application Load Balancers (ALB) for high availability.</li><li>Integrated AWS Auto Scaling Groups for dynamic scaling based on metrics.</li><li>Enabled seamless CI/CD pipeline integration and infrastructure monitoring.</li></ul>">
-                            View Case Study
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Project: Soulverse Microservices Security -->
-                <div class="project-card" data-category="cloud">
-                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80" class="project-img" alt="Soulverse Microservices Security">
-                    <div class="project-content">
-                        <h3 class="project-title">Soulverse Microservices Security</h3>
-                        <p class="project-desc">Performed penetration testing and security hardening. Implemented Nginx reverse proxy, SSL, and OWASP mitigation strategies.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Nginx</span>
-                            <span class="tech-tag">SSL/TLS</span>
-                            <span class="tech-tag">OWASP</span>
-                            <span class="tech-tag">DevSecOps</span>
-                        </div>
-                        <button class="view-case-study-btn" data-details="<ul><li>Performed penetration testing and vulnerability mitigation.</li><li>Implemented Nginx reverse proxy for application-layer protection.</li><li>Configured SSL certificates and enforced HTTPS.</li><li>Hardened security with XSS protection, CSP, HSTS, and X-Frame-Options.</li></ul>">
-                            View Case Study
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
+                <!-- Project: SEO & Performance Optimization -->
                 <div class="project-card" data-category="web">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" class="project-img" alt="Enquire.buzz">
+                    <img src="https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?auto=format&fit=crop&q=80" class="project-img" alt="SEO & Performance">
                     <div class="project-content">
-                        <h3 class="project-title">Enquire.buzz & Omnisent.ai</h3>
-                        <p class="project-desc">Architected a Micro Frontend ecosystem using Angular Module Federation. Developed a Composite UI Framework for seamless widget integration.</p>
+                        <h3 class="project-title">SEO & Performance Optimization</h3>
+                        <p class="project-desc">Achieved 90+ Core Web Vitals scores and doubled organic traffic through technical SEO and performance tuning.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Angular</span>
-                            <span class="tech-tag">Micro Frontends</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Module Federation</span>
+                            <span class="tech-tag">Google Search Console</span>
+                            <span class="tech-tag">Lighthouse</span>
+                            <span class="tech-tag">Schema.org</span>
+                            <span class="tech-tag">Core Web Vitals</span>
                         </div>
-                        <button class="view-case-study-btn" data-details="<ul><li>Architected a Micro Frontend ecosystem using Angular Module Federation.</li><li>Developed a Composite UI Framework for seamless widget integration.</li><li>Enabled dynamic loading and reuse of 50+ widgets across applications.</li><li>Reduced development time for new features by 60%.</li></ul>">
+                        <button class="view-case-study-btn" data-details="<ul><li>Optimized critical rendering path to improve LCP and CLS metrics.</li><li>Implemented JSON-LD structured data for rich snippets.</li><li>Conducted technical SEO audits using SEMrush and Ahrefs.</li><li>Reduced bundle sizes by 40% using code splitting and tree shaking.</li></ul>">
                             View Case Study
                         </button>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card" data-category="web">
-                    <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80" class="project-img" alt="Synapse Search">
-                    <div class="project-content">
-                        <h3 class="project-title">Synapse Search Application</h3>
-                        <p class="project-desc">Developed an advanced search application with multi-criteria filtering and faceted search. Integrated AWS Cognito for secure SSO authentication.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">AWS Cognito</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">ElasticSearch</span>
-                        </div>
-                        <button class="view-case-study-btn" data-details="<ul><li>Developed an advanced search application with multi-criteria filtering.</li><li>Implemented faceted search and autosuggestions.</li><li>Integrated AWS Cognito with Active Directory using SAML 2.0/OIDC.</li><li>Ensured secure API authentication using JWT tokens.</li></ul>">
-                            View Case Study
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card" data-category="web">
-                    <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?auto=format&fit=crop&q=80" class="project-img" alt="Sears Parts Direct">
-                    <div class="project-content">
-                        <h3 class="project-title">Sears Parts Direct</h3>
-                        <p class="project-desc">Enhanced e-commerce platform using Next.js for SSR/ISR. Improved SEO and product discovery with faceted search.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                        </div>
-                        <button class="view-case-study-btn" data-details="<ul><li>Enhanced product discovery with a robust parts catalog.</li><li>Implemented intuitive search filters and faceted navigation.</li><li>Leveraged Next.js SSR and ISR for optimal performance and SEO.</li><li>Streamlined the secure online ordering and checkout process.</li></ul>">
-                            View Case Study
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card" data-category="cloud">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80" class="project-img" alt="MDMS & HES">
-                    <div class="project-content">
-                        <h3 class="project-title">MDMS & HES (IoT)</h3>
-                        <p class="project-desc">Developed Smart Meter Management System using AWS IoT, Lambda, and DynamoDB. Handled high-frequency data collection.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">AWS IoT</span>
-                            <span class="tech-tag">Big Data</span>
-                            <span class="tech-tag">Nest.js</span>
-                            <span class="tech-tag">Microservices</span>
-                        </div>
-                        <button class="view-case-study-btn" data-details="<ul><li>Spearheaded development of Head End System (HES) and Meter Dynamics Management System (MDMS).</li><li>Implemented AWS IoT, Lambda, and DynamoDB for scalable data handling.</li><li>Orchestrated high-frequency data collection from millions of smart meters.</li><li>Designed microservices architecture using API Gateway.</li></ul>">
-                            View Case Study
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card" data-category="web">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" class="project-img" alt="Member Discovery">
-                    <div class="project-content">
-                        <h3 class="project-title">Member Discovery Engine</h3>
-                        <p class="project-desc">Customizable search platform for Sales/Marketing to filter registered members. Features faceted search and NLP queries.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Angular</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">ElasticSearch</span>
-                        </div>
-
-    <!-- STATS & TRUSTED BY -->
-    <section id="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div>
-                    <div class="stat-number">18+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div>
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Projects Delivered</div>
-                </div>
-                <div>
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Cloud Certifications</div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 50px;">
-                <p style="text-transform: uppercase; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">Trusted by Industry Leaders</p>
-                <div class="clients-grid">
-                    <span class="client-logo">Soulverse</span>
-                    <span class="client-logo">Sears</span>
-                    <span class="client-logo">Deloitte</span>
-                    <span class="client-logo">UBS</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES & EXPERTISE -->
-    <section id="services">
-        <div class="container">
-            <h2 class="section-title">My Expertise</h2>
-            <p class="section-subtitle">Delivering enterprise-grade solutions focusing on Cloud, DevOps, and Scalable Architectures.</p>
-            
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <i class="fas fa-users-cog service-icon"></i>
-                    <h3 class="service-title">Micro Frontends & UI</h3>
-                    <p class="service-desc">Architecting scalable UIs using Module Federation, Angular, React, and Next.js for seamless user experiences.</p>
-                </div>
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <i class="fas fa-tachometer-alt service-icon"></i>
-                    <h3 class="service-title">Cloud & DevOps</h3>
-                    <p class="service-desc">Expert in AWS, GCP, Azure, Kubernetes, Docker, and Terraform for robust infrastructure automation.</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <i class="fas fa-server service-icon"></i>
-                    <h3 class="service-title">Full Stack Development</h3>
-                    <p class="service-desc">Building end-to-end solutions using MERN (MongoDB, Express, React, Node) and MEAN stacks.</p>
-                </div>
-                <!-- Service 4 -->
-                <div class="service-card">
-                    <i class="fas fa-shield-alt service-icon"></i>
-                    <h3 class="service-title">Security & Compliance</h3>
-                    <p class="service-desc">Implementing OAuth2, OIDC, SSO, and OWASP best practices to secure enterprise applications.</p>
-                </div>
-                <!-- Service 5 -->
-                <div class="service-card">
-                    <i class="fas fa-chart-line service-icon"></i>
-                    <h3 class="service-title">Solution Architecture</h3>
-                    <p class="service-desc">Defining overall application architecture across frontend, backend, APIs, and cloud infrastructure.</p>
-                </div>
-                <!-- Service 6 -->
-                <div class="service-card">
-                    <i class="fas fa-globe service-icon"></i>
-                    <h3 class="service-title">Database & Big Data</h3>
-                    <p class="service-desc">Managing scalable data solutions with MongoDB, DynamoDB, SQL Server, and BigQuery.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY HIRE ME (Business Value) -->
-    <section id="why-hire-me">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div>
-                    <h2 class="section-title" style="text-align: left;">Why Should You Hire Me?</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">
-                        I don't just write code; I implement solutions that directly impact your bottom line. My focus is on business value—improving sales, reducing churn, and ensuring operational efficiency.
-                    </p>
-                    <a href="#contact" class="btn btn-primary">Let's Talk Business</a>
-                </div>
-                <div class="value-list">
-                    <div class="value-item">
-                        <h3><i class="fas fa-check-circle"></i> Business Value</h3>
-                        <p class="service-desc">Focus on ROI and Sales Growth.</p>
-                    </div>
-                    <div class="value-item">
-                        <h3><i class="fas fa-check-circle"></i> Technical Leadership</h3>
-                        <p class="service-desc">Mentoring teams, code reviews, and strategic planning.</p>
-                    </div>
-                    <div class="value-item">
-                        <h3><i class="fas fa-check-circle"></i> Rapid Delivery</h3>
-                        <p class="service-desc">Agile/Scrum methodologies and CI/CD automation.</p>
-                    </div>
-                    <div class="value-item">
-                        <h3><i class="fas fa-check-circle"></i> Future Proofing</h3>
-                        <p class="service-desc">Microservices and Serverless architectures.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- SKILLS SECTION -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Proficiency</h2>
-            <p class="section-subtitle">Comprehensive overview of my technical stack and domain expertise.</p>
-            
-            <div class="skill-category">
-                <h3>Web Technologies (Frontend)</h3>
-                <div class="skill-tags-container">
-                    <span class="skill-pill">HTML5/CSS3</span><span class="skill-pill">SCSS & LESS</span><span class="skill-pill">Tailwind</span>
-                    <span class="skill-pill">JavaScript</span><span class="skill-pill">Alpine.js</span><span class="skill-pill">TypeScript</span>
-                    <span class="skill-pill">AJAX & JSON</span><span class="skill-pill">AngularJS 1.5</span><span class="skill-pill">Angular 2+</span>
-                    <span class="skill-pill">Angular 16/18</span><span class="skill-pill">Angular UI Bootstrap</span><span class="skill-pill">ngxBootstrap</span>
-                    <span class="skill-pill">Angular Material</span><span class="skill-pill">NativeScript</span><span class="skill-pill">React.js</span>
-                    <span class="skill-pill">NextJS</span><span class="skill-pill">JSX</span><span class="skill-pill">Redux</span>
-                    <span class="skill-pill">Axios</span><span class="skill-pill">React Native</span><span class="skill-pill">Ant Design</span>
-                    <span class="skill-pill">Vue.js</span><span class="skill-pill">Vuex.js</span><span class="skill-pill">VueBootstrap</span>
-                    <span class="skill-pill">Ionic Framework</span><span class="skill-pill">D3.js</span><span class="skill-pill">NVD3.js</span>
-                    <span class="skill-pill">Chart.js</span><span class="skill-pill">3d Forced Graphs</span><span class="skill-pill">WebGL</span>
-                    <span class="skill-pill">Webservices</span><span class="skill-pill">Web API</span><span class="skill-pill">Backbone.js</span>
-                    <span class="skill-pill">Knockout.js</span><span class="skill-pill">Ember.js</span><span class="skill-pill">Sencha Ext JS</span>
-                    <span class="skill-pill">JQuery UI/Mobile</span><span class="skill-pill">Kendo UI</span><span class="skill-pill">Breeze.js</span>
-                    <span class="skill-pill">Require.js</span><span class="skill-pill">Underscore.js</span><span class="skill-pill">ES6</span>
-                    <span class="skill-pill">PhoneGap</span><span class="skill-pill">Cordova</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Backend, Languages & API</h3>
-                <div class="skill-tags-container">
-                    <span class="skill-pill">Node.js</span><span class="skill-pill">Express.js</span><span class="skill-pill">Nest.js</span>
-                    <span class="skill-pill">Python</span><span class="skill-pill">Django</span><span class="skill-pill">Golang</span>
-                    <span class="skill-pill">PHP</span><span class="skill-pill">Java</span><span class="skill-pill">C/C++</span>
-                    <span class="skill-pill">.Net</span><span class="skill-pill">Socket.io</span><span class="skill-pill">Lodash.js</span>
-                    <span class="skill-pill">Passport.js</span><span class="skill-pill">SAML</span><span class="skill-pill">OIDC</span>
-                    <span class="skill-pill">OAuth2</span><span class="skill-pill">Auth0</span><span class="skill-pill">KeyCloak</span>
-                    <span class="skill-pill">Swagger</span><span class="skill-pill">Fast APIs</span><span class="skill-pill">Web Sockets</span>
-                    <span class="skill-pill">Microservices</span><span class="skill-pill">RESTful APIs</span><span class="skill-pill">Serverless APIs</span>
-                    <span class="skill-pill">SSO</span><span class="skill-pill">gRPC</span><span class="skill-pill">Express-validator.js</span>
-                    <span class="skill-pill">JWT</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Cloud & DevOps</h3>
-                <div class="skill-tags-container">
-                    <span class="skill-pill">AWS</span><span class="skill-pill">GCP</span><span class="skill-pill">Azure</span>
-                    <span class="skill-pill">Kubernetes (EKS, AKS, GKE)</span><span class="skill-pill">Docker</span><span class="skill-pill">Docker Compose</span>
-                    <span class="skill-pill">Kind</span><span class="skill-pill">Minikube</span><span class="skill-pill">Kubeadm</span>
-                    <span class="skill-pill">APISIX</span><span class="skill-pill">HELM</span><span class="skill-pill">Backstage</span>
-                    <span class="skill-pill">Terraform</span><span class="skill-pill">Ansible</span><span class="skill-pill">Pulumi</span>
-                    <span class="skill-pill">VPC/Subnets</span><span class="skill-pill">ALB/NLB/GLB</span><span class="skill-pill">Github Packages</span>
-                    <span class="skill-pill">ECR</span><span class="skill-pill">IoT</span><span class="skill-pill">IaC</span>
-                    <span class="skill-pill">Nginx</span><span class="skill-pill">HAProxy</span><span class="skill-pill">SSL/TLS</span>
-                    <span class="skill-pill">OWASP ZAP</span><span class="skill-pill">HashiCorp Vault</span><span class="skill-pill">API Gateway</span>
-                    <span class="skill-pill">SQS/SNS</span><span class="skill-pill">Kafka</span><span class="skill-pill">RabbitMQ</span>
-                    <span class="skill-pill">Redis</span><span class="skill-pill">BigQuery</span><span class="skill-pill">Firebase</span>
-                    <span class="skill-pill">Azure Service Bus</span><span class="skill-pill">Azure DevOps</span><span class="skill-pill">Azure Function</span>
-                    <span class="skill-pill">Azure VM</span><span class="skill-pill">Google Pub/Sub</span><span class="skill-pill">AWS Lambda</span>
-                    <span class="skill-pill">S3 Bucket</span><span class="skill-pill">Google Storage</span><span class="skill-pill">Jfrog</span>
-                    <span class="skill-pill">SonarQube</span><span class="skill-pill">Veracode</span><span class="skill-pill">GIT</span>
-                    <span class="skill-pill">GitHub/GitLab</span><span class="skill-pill">GitHub Actions</span><span class="skill-pill">Bitbucket</span>
-                    <span class="skill-pill">TFS</span><span class="skill-pill">CI/CD Pipelines</span><span class="skill-pill">YAML</span>
-                    <span class="skill-pill">Jenkins</span><span class="skill-pill">JIRA</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Databases</h3>
-                <div class="skill-tags-container">
-                    <span class="skill-pill">SQL Server</span><span class="skill-pill">Cosmos DB</span><span class="skill-pill">DB2</span>
-                    <span class="skill-pill">MySQL</span><span class="skill-pill">Oracle</span><span class="skill-pill">PostgreSQL</span>
-                    <span class="skill-pill">MS Access</span><span class="skill-pill">MongoDB</span><span class="skill-pill">Mongoose</span>
-                    <span class="skill-pill">Azure SQL</span><span class="skill-pill">AWS DynamoDB</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>CMS & Reporting</h3>
-                <div class="skill-tags-container">
-                    <span class="skill-pill">Joomla</span><span class="skill-pill">Drupal</span><span class="skill-pill">WordPress</span>
-                    <span class="skill-pill">Moodle</span><span class="skill-pill">OSCommerce</span><span class="skill-pill">CodeIgniter</span>
-                    <span class="skill-pill">CakePHP</span><span class="skill-pill">Magento</span><span class="skill-pill">PowerPoint</span>
-                    <span class="skill-pill">Crystal Reports</span><span class="skill-pill">Active Reports</span><span class="skill-pill">SSRS/SSIS</span>
-                    <span class="skill-pill">Tableau</span><span class="skill-pill">Power BI</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Digital Marketing & SEO</h3>
-                <div class="skill-tags-container">
-                    <span class="skill-pill">Search Engine Optimization (SEO)</span><span class="skill-pill">Google Analytics (GA4)</span>
-                    <span class="skill-pill">Google Search Console</span><span class="skill-pill">Technical SEO</span>
-                    <span class="skill-pill">Conversion Rate Optimization (CRO)</span><span class="skill-pill">A/B Testing</span>
-                    <span class="skill-pill">Content Strategy</span><span class="skill-pill">Email Marketing</span>
-                    <span class="skill-pill">Social Media Integration</span><span class="skill-pill">Marketing Automation</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Design, Testing & Patterns</h3>
-                <div class="skill-tags-container">
-                    <span class="skill-pill">Sketch</span><span class="skill-pill">Figma</span><span class="skill-pill">Adobe XD</span>
-                    <span class="skill-pill">Balsamiq</span><span class="skill-pill">draw.io</span><span class="skill-pill">User Research</span>
-                    <span class="skill-pill">Usability Testing</span><span class="skill-pill">Information Architecture</span><span class="skill-pill">Wireframing</span>
-                    <span class="skill-pill">Prototyping</span><span class="skill-pill">Visual/Interaction Design</span><span class="skill-pill">User Persona</span>
-                    <span class="skill-pill">User Journey</span><span class="skill-pill">Accessibility</span><span class="skill-pill">UCD</span>
-                    <span class="skill-pill">Jasmine</span><span class="skill-pill">Protractor</span><span class="skill-pill">Jest</span>
-                    <span class="skill-pill">Pact.js</span><span class="skill-pill">Karma</span><span class="skill-pill">Cypress</span>
-                    <span class="skill-pill">Design Patterns (SOLID, MVC, MVVM)</span><span class="skill-pill">Singleton</span><span class="skill-pill">Observer</span>
-                    <span class="skill-pill">Factory</span><span class="skill-pill">Facade</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Operating Systems</h3>
-                <div class="skill-tags-container">
-                    <span class="skill-pill">Windows Server</span><span class="skill-pill">MacOS</span><span class="skill-pill">Ubuntu</span>
-                    <span class="skill-pill">Linux</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Domain Knowledge</h3>
-                <div class="skill-tags-container">
-                    <span class="skill-pill">E-commerce</span><span class="skill-pill">Retail</span><span class="skill-pill">Healthcare</span>
-                    <span class="skill-pill">Mobile</span><span class="skill-pill">Logistics</span><span class="skill-pill">Banking</span>
-                    <span class="skill-pill">Insurance</span><span class="skill-pill">PropTech</span><span class="skill-pill">Human Resources</span>
-                    <span class="skill-pill">Cybersecurity</span><span class="skill-pill">IoT</span><span class="skill-pill">Blockchain</span>
-                    <span class="skill-pill">Web3</span><span class="skill-pill">Cloud Computing</span><span class="skill-pill">Big Data & Analytics</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
 
     <!-- ROLES & RESPONSIBILITIES SECTION -->
     <section id="roles">
@@ -1570,15 +1586,15 @@
             <p class="section-subtitle">Key areas of ownership and contribution throughout my career.</p>
             
             <div class="role-search">
-                <i class="fas fa-search"></i>
-                <input type="text" id="roleSearchInput" placeholder="Search roles...">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input type="text" id="roleSearchInput" placeholder="Search roles..." aria-label="Search roles">
             </div>
 
             <div class="roles-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="tech">Tech & Dev</button>
-                <button class="filter-btn" data-filter="management">Management</button>
-                <button class="filter-btn" data-filter="design">Design & UX</button>
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter-btn" data-filter="tech" aria-pressed="false">Tech & Dev</button>
+                <button class="filter-btn" data-filter="management" aria-pressed="false">Management</button>
+                <button class="filter-btn" data-filter="design" aria-pressed="false">Design & UX</button>
             </div>
 
             <div class="roles-grid">
@@ -1596,7 +1612,7 @@
                         <li>Ensure application accessibility for individuals with disabilities.</li>
                         <li>Optimize UI performance for quick loading times and prompt user interaction responses.</li>
                     </ul>
-                    <button class="read-more-toggle">Read More <i class="fas fa-chevron-down"></i></button>
+                    <button class="read-more-toggle" aria-expanded="false">Read More <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                 </div>
 
                 <div class="role-card" data-category="tech">
@@ -1697,24 +1713,60 @@
                     <h3>Education</h3>
                     <div class="edu-cert-grid">
                         <div class="cert-card">
-                            <i class="fas fa-graduation-cap cert-icon"></i>
-                            <h3 class="cert-title">MCA</h3>
-                            <div class="cert-issuer">Osmania University</div>
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fas fa-graduation-cap cert-icon"></i>
+                                    <h3 class="cert-title">MCA</h3>
+                                    <div class="cert-issuer">Osmania University</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">MCA</h3>
+                                    <p>Master of Computer Applications</p>
+                                    <div class="cert-issuer">Osmania University</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="cert-card">
-                            <i class="fas fa-university cert-icon"></i>
-                            <h3 class="cert-title">B.Sc. Computers</h3>
-                            <div class="cert-issuer">Osmania University</div>
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fas fa-university cert-icon"></i>
+                                    <h3 class="cert-title">B.Sc. Computers</h3>
+                                    <div class="cert-issuer">Osmania University</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">B.Sc. Computers</h3>
+                                    <p>Bachelor of Science</p>
+                                    <div class="cert-issuer">Osmania University</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="cert-card">
-                            <i class="fas fa-school cert-icon"></i>
-                            <h3 class="cert-title">Intermediate (M.P.C)</h3>
-                            <div class="cert-issuer">Board of Intermediate Education</div>
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fas fa-school cert-icon"></i>
+                                    <h3 class="cert-title">Intermediate (M.P.C)</h3>
+                                    <div class="cert-issuer">Board of Intermediate Education</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">Intermediate</h3>
+                                    <p>Maths, Physics, Chemistry</p>
+                                    <div class="cert-issuer">Board of Intermediate Education</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="cert-card">
-                            <i class="fas fa-book cert-icon"></i>
-                            <h3 class="cert-title">SSC</h3>
-                            <div class="cert-issuer">Board of Secondary Education</div>
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fas fa-book cert-icon"></i>
+                                    <h3 class="cert-title">SSC</h3>
+                                    <div class="cert-issuer">Board of Secondary Education</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">SSC</h3>
+                                    <p>Secondary School Certificate</p>
+                                    <div class="cert-issuer">Board of Secondary Education</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div style="text-align: center; margin-top: 30px;">
@@ -1727,24 +1779,138 @@
                     <h3>Certifications</h3>
                     <div class="edu-cert-grid">
                         <div class="cert-card">
-                            <i class="fab fa-aws cert-icon"></i>
-                            <h3 class="cert-title">AWS Certified Solutions Architect</h3>
-                            <div class="cert-issuer">Amazon Web Services</div>
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fab fa-aws cert-icon"></i>
+                                    <h3 class="cert-title">AWS Certified Solutions Architect</h3>
+                                    <div class="cert-issuer">Amazon Web Services</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">AWS Certified</h3>
+                                    <p>Solutions Architect - Associate</p>
+                                    <button class="btn btn-outline" style="font-size: 0.8rem; padding: 5px 15px;">Verify</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="cert-card">
-                            <i class="fab fa-microsoft cert-icon"></i>
-                            <h3 class="cert-title">Azure Solutions Architect</h3>
-                            <div class="cert-issuer">Microsoft Azure</div>
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fab fa-microsoft cert-icon"></i>
+                                    <h3 class="cert-title">Azure Solutions Architect</h3>
+                                    <div class="cert-issuer">Microsoft Azure</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">Azure Certified</h3>
+                                    <p>Solutions Architect Expert</p>
+                                    <button class="btn btn-outline" style="font-size: 0.8rem; padding: 5px 15px;">Verify</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="cert-card">
-                            <i class="fab fa-google cert-icon"></i>
-                            <h3 class="cert-title">Google Cloud Professional</h3>
-                            <div class="cert-issuer">Google Cloud Platform</div>
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fab fa-google cert-icon"></i>
+                                    <h3 class="cert-title">Google Cloud Professional</h3>
+                                    <div class="cert-issuer">Google Cloud Platform</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">GCP Certified</h3>
+                                    <p>Professional Cloud Architect</p>
+                                    <button class="btn btn-outline" style="font-size: 0.8rem; padding: 5px 15px;">Verify</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="cert-card">
-                            <i class="fas fa-code cert-icon"></i>
-                            <h3 class="cert-title">HTML5 & JavaScript</h3>
-                            <div class="cert-issuer">Certified Professional</div>
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fas fa-code cert-icon"></i>
+                                    <h3 class="cert-title">HTML5 & JavaScript</h3>
+                                    <div class="cert-issuer">Certified Professional</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">Web Development</h3>
+                                    <p>Advanced Certification</p>
+                                    <button class="btn btn-outline" style="font-size: 0.8rem; padding: 5px 15px;">Verify</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">Adobe Certifications</h3>
+                    <div class="edu-cert-grid">
+                        <div class="cert-card">
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fab fa-adobe cert-icon"></i>
+                                    <h3 class="cert-title">Adobe Experience Manager Architect</h3>
+                                    <div class="cert-issuer">Adobe Certified Expert</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">AEM Architect</h3>
+                                    <p>Adobe Certified Expert</p>
+                                    <button class="btn btn-outline" style="font-size: 0.8rem; padding: 5px 15px;">Verify</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-card">
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fab fa-adobe cert-icon"></i>
+                                    <h3 class="cert-title">Adobe Target Architect</h3>
+                                    <div class="cert-issuer">Adobe Certified Master</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">Target Architect</h3>
+                                    <p>Adobe Certified Master</p>
+                                    <button class="btn btn-outline" style="font-size: 0.8rem; padding: 5px 15px;">Verify</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-card">
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fab fa-adobe cert-icon"></i>
+                                    <h3 class="cert-title">Adobe Analytics Architect</h3>
+                                    <div class="cert-issuer">Adobe Certified Expert</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">Analytics Architect</h3>
+                                    <p>Adobe Certified Expert</p>
+                                    <button class="btn btn-outline" style="font-size: 0.8rem; padding: 5px 15px;">Verify</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">Marketing & Analytics Certifications</h3>
+                    <div class="edu-cert-grid">
+                        <div class="cert-card">
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fab fa-google cert-icon"></i>
+                                    <h3 class="cert-title">Google Analytics Individual Qualification</h3>
+                                    <div class="cert-issuer">Google</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">GAIQ</h3>
+                                    <p>Google Analytics Certified</p>
+                                    <button class="btn btn-outline" style="font-size: 0.8rem; padding: 5px 15px;">Verify</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-card">
+                            <div class="cert-card-inner">
+                                <div class="cert-card-front">
+                                    <i class="fas fa-search cert-icon"></i>
+                                    <h3 class="cert-title">Advanced Technical SEO</h3>
+                                    <div class="cert-issuer">SEMrush Academy</div>
+                                </div>
+                                <div class="cert-card-back">
+                                    <h3 class="cert-title">Technical SEO</h3>
+                                    <p>SEMrush Certified</p>
+                                    <button class="btn btn-outline" style="font-size: 0.8rem; padding: 5px 15px;">Verify</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1796,12 +1962,372 @@
         </div>
     </section>
 
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A showcase of my latest work and technical contributions.</p>
+            
+            <div class="project-search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input type="text" id="projectSearchInput" placeholder="Search projects..." aria-label="Search projects">
+            </div>
 
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter-btn" data-filter="cloud" aria-pressed="false">Cloud & DevOps</button>
+                <button class="filter-btn" data-filter="web" aria-pressed="false">Web Development</button>
+                <button class="filter-btn" data-filter="mobile" aria-pressed="false">Mobile</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="cloud">
+                    <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80" class="project-img" alt="Soulverse Backend">
+                    <div class="project-content">
+                        <h3 class="project-title">Soulverse Backend Services</h3>
+                        <p class="project-desc">Architected scalable Kubernetes clusters and implemented DevOps automation. Leveraged GitHub Packages to manage container images and environments.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Terraform</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Architected and deployed scalable Kubernetes clusters for backend services.</li><li>Leveraged GitHub Packages to manage container images and environments.</li><li>Implemented AWS Load Balancers (ALB/NLB) for traffic management.</li><li>Provisioned infrastructure using Terraform and Ansible (IaC).</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project: AWS Elastic Beanstalk -->
+                <div class="project-card" data-category="cloud">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&q=80" class="project-img" alt="AWS Elastic Beanstalk">
+                    <div class="project-content">
+                        <h3 class="project-title">Scalable Infrastructure with AWS Elastic Beanstalk</h3>
+                        <p class="project-desc">Designed and deployed load-balanced architecture using AWS Elastic Beanstalk and Auto Scaling Groups for high availability and cost-efficiency.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS Elastic Beanstalk</span>
+                            <span class="tech-tag">Auto Scaling</span>
+                            <span class="tech-tag">ALB</span>
+                            <span class="tech-tag">CloudWatch</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Designed and deployed a load-balanced architecture using AWS Elastic Beanstalk.</li><li>Configured Application Load Balancers (ALB) for high availability.</li><li>Integrated AWS Auto Scaling Groups for dynamic scaling based on metrics.</li><li>Enabled seamless CI/CD pipeline integration and infrastructure monitoring.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project: Soulverse Microservices Security -->
+                <div class="project-card" data-category="cloud">
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80" class="project-img" alt="Soulverse Microservices Security">
+                    <div class="project-content">
+                        <h3 class="project-title">Soulverse Microservices Security</h3>
+                        <p class="project-desc">Performed penetration testing and security hardening. Implemented Nginx reverse proxy, SSL, and OWASP mitigation strategies.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Nginx</span>
+                            <span class="tech-tag">SSL/TLS</span>
+                            <span class="tech-tag">OWASP</span>
+                            <span class="tech-tag">DevSecOps</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Performed penetration testing and vulnerability mitigation.</li><li>Implemented Nginx reverse proxy for application-layer protection.</li><li>Configured SSL certificates and enforced HTTPS.</li><li>Hardened security with XSS protection, CSP, HSTS, and X-Frame-Options.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project: Adobe Experience Cloud -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80" class="project-img" alt="Adobe Experience Cloud">
+                    <div class="project-content">
+                        <h3 class="project-title">Adobe Experience Cloud Implementation</h3>
+                        <p class="project-desc">Implemented end-to-end digital experience solutions using Adobe Experience Manager (AEM), Adobe Target, and Analytics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AEM</span>
+                            <span class="tech-tag">Adobe Target</span>
+                            <span class="tech-tag">Adobe Analytics</span>
+                            <span class="tech-tag">Java</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Led the migration of legacy CMS to Adobe Experience Manager (AEM) as a Cloud Service.</li><li>Implemented personalization strategies using Adobe Target.</li><li>Integrated Adobe Analytics for real-time user behavior tracking.</li><li>Developed custom AEM components and templates using HTL and Java.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" class="project-img" alt="Enquire.buzz">
+                    <div class="project-content">
+                        <h3 class="project-title">Enquire.buzz & Omnisent.ai</h3>
+                        <p class="project-desc">Architected a Micro Frontend ecosystem using Angular Module Federation. Developed a Composite UI Framework for seamless widget integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Micro Frontends</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Module Federation</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Architected a Micro Frontend ecosystem using Angular Module Federation.</li><li>Developed a Composite UI Framework for seamless widget integration.</li><li>Enabled dynamic loading and reuse of 50+ widgets across applications.</li><li>Reduced development time for new features by 60%.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80" class="project-img" alt="Synapse Search">
+                    <div class="project-content">
+                        <h3 class="project-title">Synapse Search Application</h3>
+                        <p class="project-desc">Developed an advanced search application with multi-criteria filtering and faceted search. Integrated AWS Cognito for secure SSO authentication.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">AWS Cognito</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">ElasticSearch</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Developed an advanced search application with multi-criteria filtering.</li><li>Implemented faceted search and autosuggestions.</li><li>Integrated AWS Cognito with Active Directory using SAML 2.0/OIDC.</li><li>Ensured secure API authentication using JWT tokens.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project: SSO Implementation -->
+                <div class="project-card" data-category="cloud">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80" class="project-img" alt="SSO Implementation">
+                    <div class="project-content">
+                        <h3 class="project-title">Single Sign-On (SSO) Implementation</h3>
+                        <p class="project-desc">Led the design of a secure SSO solution across enterprise apps using AWS Cognito and OIDC, improving user experience and security.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS Cognito</span>
+                            <span class="tech-tag">SAML 2.0</span>
+                            <span class="tech-tag">OIDC</span>
+                            <span class="tech-tag">Passport.js</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Integrated AWS Cognito with Active Directory using SAML 2.0 and OIDC.</li><li>Configured API Gateway to validate tokens and enforce scopes.</li><li>Implemented Passport.js strategies for Node.js authentication.</li><li>Reduced login complexity and centralized access control.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?auto=format&fit=crop&q=80" class="project-img" alt="Sears Parts Direct">
+                    <div class="project-content">
+                        <h3 class="project-title">Sears Parts Direct</h3>
+                        <p class="project-desc">Enhanced e-commerce platform using Next.js for SSR/ISR. Improved SEO and product discovery with faceted search.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Enhanced product discovery with a robust parts catalog.</li><li>Implemented intuitive search filters and faceted navigation.</li><li>Leveraged Next.js SSR and ISR for optimal performance and SEO.</li><li>Streamlined the secure online ordering and checkout process.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="cloud">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80" class="project-img" alt="MDMS & HES">
+                    <div class="project-content">
+                        <h3 class="project-title">MDMS & HES (IoT)</h3>
+                        <p class="project-desc">Developed Smart Meter Management System using AWS IoT, Lambda, and DynamoDB. Handled high-frequency data collection.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS IoT</span>
+                            <span class="tech-tag">Big Data</span>
+                            <span class="tech-tag">Nest.js</span>
+                            <span class="tech-tag">Microservices</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Spearheaded development of Head End System (HES) and Meter Dynamics Management System (MDMS).</li><li>Implemented AWS IoT, Lambda, and DynamoDB for scalable data handling.</li><li>Orchestrated high-frequency data collection from millions of smart meters.</li><li>Designed microservices architecture using API Gateway.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" class="project-img" alt="Member Discovery">
+                    <div class="project-content">
+                        <h3 class="project-title">Member Discovery Engine</h3>
+                        <p class="project-desc">Customizable search platform for Sales/Marketing to filter registered members. Features faceted search and NLP queries.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">ElasticSearch</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Built a customizable search platform for Sales and Marketing teams.</li><li>Enabled dynamic filtering through faceted search.</li><li>Integrated NLP capabilities to process natural language queries.</li><li>Provided mobile accessibility for on-the-go usage.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" class="project-img" alt="Employee QuickView">
+                    <div class="project-content">
+                        <h3 class="project-title">Employee QuickView</h3>
+                        <p class="project-desc">Integrated analytics platform for workforce management. Built with Angular 2.0 and Node.js for real-time insights.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular 2.0</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Architected an integrated analytics platform with 20+ modules.</li><li>Built customizable dashboards for real-time workforce insights.</li><li>Developed modular and reusable UI components using Angular.</li><li>Integrated Node.js APIs with MySQL for high-performance data access.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80" class="project-img" alt="Lucas Systems">
+                    <div class="project-content">
+                        <h3 class="project-title">Lucas Systems (AMD)</h3>
+                        <p class="project-desc">Web-based dashboard for logistics operations visibility. Configurable views for managing mobile work execution.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AngularJS</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Developed a web-based dashboard for logistics operations visibility.</li><li>Enabled real-time tracking of productivity and workflow.</li><li>Implemented configurable views for managing mobile work execution.</li><li>Optimized UI for mobile devices used in distribution centers.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80" class="project-img" alt="Gieco Insurance">
+                    <div class="project-content">
+                        <h3 class="project-title">Gieco Insurance Portal</h3>
+                        <p class="project-desc">Developed UI components for insurance products (Vehicle, Property). Integrated REST APIs for policy management.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AngularJS</span>
+                            <span class="tech-tag">HTML5/CSS3</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">SQL Server</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: VetChef -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80" class="project-img" alt="VetChef">
+                    <div class="project-content">
+                        <h3 class="project-title">VetChef</h3>
+                        <p class="project-desc">User-friendly digital platform for pet health and nutrition, leveraging Next.js for dynamic content delivery.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Developed comprehensive search filters (categories, keywords, dates).</li><li>Implemented sorting functionality for search results.</li><li>Created faceted search with dynamic filtering options.</li><li>Implemented autosuggestions for search queries.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project: Sears.com -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80" class="project-img" alt="Sears.com Personalization">
+                    <div class="project-content">
+                        <h3 class="project-title">Sears.com Personalization</h3>
+                        <p class="project-desc">Led front-end personalization for product pages using Adobe Target, increasing conversion rates by 25%.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Adobe Target</span>
+                            <span class="tech-tag">Optimizely</span>
+                            <span class="tech-tag">JAMStack</span>
+                            <span class="tech-tag">Azure</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Integrated user data APIs and designed responsive components.</li><li>Implemented dynamic content delivery using Adobe Target.</li><li>Set up feature flags and A/B tests using Optimizely.</li><li>Ensured WCAG compliance and accessibility (ARIA, semantic HTML).</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project: Individual Member View (IMV) -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" class="project-img" alt="Individual Member View">
+                    <div class="project-content">
+                        <h3 class="project-title">Individual Member View (IMV)</h3>
+                        <p class="project-desc">Dynamic search and exploration tool for billions of member data points with quick response times.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular 9</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express.js</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Enables dynamic search of billions of data points.</li><li>Offers customizable logic and ranking of individual member sales.</li><li>Built with MEAN Stack (MongoDB, Express, Angular, Node).</li><li>Includes export and saving options for data analysis.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project: Individual Store View (ISV) -->
+                <div class="project-card" data-category="mobile">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80" class="project-img" alt="Individual Store View">
+                    <div class="project-content">
+                        <h3 class="project-title">Individual Store View (ISV)</h3>
+                        <p class="project-desc">Web and mobile app providing personalized, location-specific experiences for retail store users.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Angular 9</span>
+                            <span class="tech-tag">PhoneGap</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Implemented store locator using GPS and maps.</li><li>Enabled in-store navigation with interactive maps.</li><li>Displayed exclusive in-store promotions and discounts.</li><li>Facilitated mobile shopping and 'click and collect' options.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project: Member Application Platform (MAP) -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80" class="project-img" alt="Member Application Platform">
+                    <div class="project-content">
+                        <h3 class="project-title">Member Application Platform (MAP)</h3>
+                        <p class="project-desc">Performance Measurement Tool providing flexible data views and insights on Format/SHC results.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular 9</span>
+                            <span class="tech-tag">Bootstrap 4+</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Designed front-end architecture using Angular 9 and Bootstrap 4+.</li><li>Integrated MEAN stack for real-time data access.</li><li>Implemented drill-down dashboards and data visualization.</li><li>Optimized performance with lazy loading and change detection.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project: MPS – Database Fetch -->
+                <div class="project-card" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80" class="project-img" alt="MPS Database Fetch">
+                    <div class="project-content">
+                        <h3 class="project-title">MPS – Database Fetch</h3>
+                        <p class="project-desc">Quick method to retrieve current and historical data from the Member Performance Scorecard.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AngularJS</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express.js</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Built data retrieval modules for current and historical data.</li><li>Created reusable UI components and services.</li><li>Implemented RESTful API integration for large datasets.</li><li>Ensured data security and access control.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- BLOG / LATEST LEARNINGS -->
     <section id="blog">
         <div class="container">
-            <h2 class="section-title">Latest Learnings</h2>
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <p class="section-subtitle">Insights on Cloud, DevOps, and Architecture. <a href="newsletter.html" style="color: var(--primary-color); font-weight: 600;">View Archive &rarr;</a></p>
             <div class="blog-grid">
                 <div class="blog-card">
                     <div class="blog-content">
@@ -1845,16 +2371,16 @@
         <div class="container" style="max-width: 800px;">
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq-item">
-                <div class="faq-question">Do you work with agencies or direct clients? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">I work with both. I have extensive experience integrating into existing agency teams as well as leading projects for direct clients.</div>
+                <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-1">Do you work with agencies or direct clients? <i class="fas fa-chevron-down" aria-hidden="true"></i></div>
+                <div class="faq-answer" id="faq-ans-1" role="region">I work with both. I have extensive experience integrating into existing agency teams as well as leading projects for direct clients.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">How do you handle SEO? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">I build with a 'Performance First' mindset. Using semantic HTML, fast load times (Core Web Vitals), and proper metadata management ensures high rankings.</div>
+                <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-2">How do you handle SEO? <i class="fas fa-chevron-down" aria-hidden="true"></i></div>
+                <div class="faq-answer" id="faq-ans-2" role="region">I build with a 'Performance First' mindset. Using semantic HTML, fast load times (Core Web Vitals), and proper metadata management ensures high rankings.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">What industries have you served? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">I have served FinTech, E-commerce, Healthcare, and SaaS sectors, helping them scale their digital presence.</div>
+                <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-3">What industries have you served? <i class="fas fa-chevron-down" aria-hidden="true"></i></div>
+                <div class="faq-answer" id="faq-ans-3" role="region">I have served FinTech, E-commerce, Healthcare, and SaaS sectors, helping them scale their digital presence.</div>
             </div>
         </div>
     </section>
@@ -1868,15 +2394,15 @@
                     <h3 style="margin-bottom: 20px;">Contact Me</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label>Name</label>
+                            <label for="contactName">Name</label>
                             <input type="text" id="contactName" placeholder="Your Name">
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
+                            <label for="contactEmail">Email</label>
                             <input type="email" id="contactEmail" placeholder="Your Email">
                         </div>
                         <div class="form-group">
-                            <label>Message</label>
+                            <label for="contactMessage">Message</label>
                             <textarea id="contactMessage" rows="5" placeholder="How can I help you?"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
@@ -1963,28 +2489,28 @@
     </div>
 
     <!-- SCROLL TO TOP BUTTON -->
-    <button id="scroll-top-btn" title="Go to top">
+    <button id="scroll-top-btn" title="Go to top" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <!-- HIRE ME FAB (Mobile Only) -->
-    <a href="#contact" id="hire-me-fab">
+    <a href="#contact" id="hire-me-fab" aria-label="Hire Me">
         <i class="fas fa-paper-plane"></i> Hire Me
     </a>
 
     <!-- BLOG MODAL -->
-    <div class="modal-overlay" id="blog-modal">
+    <div class="modal-overlay" id="blog-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal" role="button" tabindex="0" aria-label="Close Modal">&times;</span>
             <h2 id="modal-title" style="margin-bottom: 20px;"></h2>
             <div id="modal-body" style="color: var(--text-muted); line-height: 1.8;"></div>
         </div>
     </div>
 
     <!-- PROJECT MODAL -->
-    <div class="modal-overlay" id="project-modal">
+    <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
         <div class="modal-content">
-            <span class="close-modal" id="close-project-modal">&times;</span>
+            <span class="close-modal" id="close-project-modal" role="button" tabindex="0" aria-label="Close Modal">&times;</span>
             <img id="modal-project-img" src="" alt="" style="width:100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 20px;">
             <h2 id="modal-project-title" style="margin-bottom: 15px;"></h2>
             <div id="modal-project-tech" style="margin-bottom: 20px; display: flex; gap: 8px; flex-wrap: wrap;"></div>
@@ -1997,6 +2523,9 @@
         <span class="close-lightbox">&times;</span>
         <img id="lightbox-img" src="" alt="Full Screen Image">
     </div>
+
+    <!-- CUSTOM TOOLTIP ELEMENT -->
+    <div id="custom-tooltip"></div>
 
     <!-- JAVASCRIPT -->
     <script>
@@ -2041,14 +2570,31 @@
         const navLinks = document.getElementById('nav-links');
 
         hamburger.addEventListener('click', () => {
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+            hamburger.setAttribute('aria-expanded', !expanded);
             navLinks.classList.toggle('active');
         });
 
         // --- FAQ Accordion ---
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
-            item.querySelector('.faq-question').addEventListener('click', () => {
+            const question = item.querySelector('.faq-question');
+            
+            // Click event
+            question.addEventListener('click', () => {
                 item.classList.toggle('active');
+                const expanded = question.getAttribute('aria-expanded') === 'true' || false;
+                question.setAttribute('aria-expanded', !expanded);
+            });
+            
+            // Keyboard event (Enter/Space)
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    item.classList.toggle('active');
+                    const expanded = question.getAttribute('aria-expanded') === 'true' || false;
+                    question.setAttribute('aria-expanded', !expanded);
+                }
             });
         });
 
@@ -2206,7 +2752,7 @@
         const typingText = document.getElementById('typing-text');
         
         if (typingText) {
-            const words = ["Solutions Architect", "Engineering Manager", "Cloud & DevOps Expert", "Full Stack Developer"];
+            const words = ["Solutions Architect", "Engineering Manager", "Technical Architect", "UI Architect", "Full Stack Developer", "Frontend Developer", "JavaScript/TypeScript Developer", "Angular / React Developer", "MEAN / MERN Stack Developer", "DevOps Engineer"];
             let wordIndex = 0;
             let charIndex = 0;
             let isDeleting = false;
@@ -2441,6 +2987,8 @@ END:VCARD`;
             button.addEventListener('click', () => {
                 const list = button.previousElementSibling;
                 list.classList.toggle('collapsed');
+                const expanded = button.getAttribute('aria-expanded') === 'true' || false;
+                button.setAttribute('aria-expanded', !expanded);
                 
                 if (list.classList.contains('collapsed')) {
                     button.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
@@ -2458,8 +3006,9 @@ END:VCARD`;
         roleFilterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 // Remove active class from all buttons
-                roleFilterBtns.forEach(b => b.classList.remove('active'));
+                roleFilterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
                 btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
 
                 const filterValue = btn.getAttribute('data-filter');
                 const searchTerm = roleSearchInput.value.toLowerCase();
@@ -2517,8 +3066,9 @@ END:VCARD`;
 
         projectFilterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                projectFilterBtns.forEach(b => b.classList.remove('active'));
+                projectFilterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
                 btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
                 
                 const filterValue = btn.getAttribute('data-filter');
                 const searchTerm = projectSearchInput ? projectSearchInput.value.toLowerCase() : '';
@@ -2565,6 +3115,131 @@ END:VCARD`;
 
         if (closeProjectModal) closeProjectModal.addEventListener('click', () => { projectModal.classList.remove('active'); document.body.style.overflow = ''; });
         if (projectModal) projectModal.addEventListener('click', (e) => { if (e.target === projectModal) { projectModal.classList.remove('active'); document.body.style.overflow = ''; } });
+
+        // --- Stats Counter Animation ---
+        const statsSection = document.getElementById('stats');
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let statsAnimated = false;
+
+        if (statsSection && statNumbers.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !statsAnimated) {
+                        statNumbers.forEach(stat => {
+                            const target = parseInt(stat.getAttribute('data-target'));
+                            const duration = 2000; // 2s
+                            const startTime = performance.now();
+
+                            function update(currentTime) {
+                                const elapsed = currentTime - startTime;
+                                const progress = Math.min(elapsed / duration, 1);
+                                
+                                // Ease out quart
+                                const ease = 1 - Math.pow(1 - progress, 4);
+                                
+                                const current = Math.floor(ease * target);
+                                stat.textContent = current + "+";
+
+                                if (progress < 1) {
+                                    requestAnimationFrame(update);
+                                } else {
+                                    stat.textContent = target + "+";
+                                }
+                            }
+                            requestAnimationFrame(update);
+                        });
+                        statsAnimated = true;
+                        observer.unobserve(statsSection);
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            observer.observe(statsSection);
+        }
+
+        // --- Stats Particle Effect ---
+        const statsCanvas = document.getElementById('stats-particles');
+        if (statsCanvas) {
+            const ctx = statsCanvas.getContext('2d');
+            let particlesArray;
+
+            function initParticles() {
+                statsCanvas.width = statsCanvas.offsetWidth;
+                statsCanvas.height = statsCanvas.offsetHeight;
+                particlesArray = [];
+                const numberOfParticles = (statsCanvas.height * statsCanvas.width) / 9000;
+                
+                for (let i = 0; i < numberOfParticles; i++) {
+                    const size = Math.random() * 2 + 1;
+                    const x = Math.random() * (statsCanvas.width - size * 2) + size * 2;
+                    const y = Math.random() * (statsCanvas.height - size * 2) + size * 2;
+                    const directionX = (Math.random() * 0.4) - 0.2;
+                    const directionY = (Math.random() * 0.4) - 0.2;
+                    const color = '#7c3aed';
+                    
+                    particlesArray.push({ x, y, directionX, directionY, size, color });
+                }
+            }
+
+            function animateParticles() {
+                requestAnimationFrame(animateParticles);
+                ctx.clearRect(0, 0, statsCanvas.width, statsCanvas.height);
+                
+                for (let i = 0; i < particlesArray.length; i++) {
+                    let p = particlesArray[i];
+                    p.x += p.directionX;
+                    p.y += p.directionY;
+
+                    if (p.x + p.size > statsCanvas.width || p.x - p.size < 0) p.directionX = -p.directionX;
+                    if (p.y + p.size > statsCanvas.height || p.y - p.size < 0) p.directionY = -p.directionY;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.globalAlpha = 0.5;
+                    ctx.fill();
+
+                    // Connect particles
+                    for (let j = i; j < particlesArray.length; j++) {
+                        let p2 = particlesArray[j];
+                        let distance = ((p.x - p2.x) * (p.x - p2.x)) + ((p.y - p2.y) * (p.y - p2.y));
+                        if (distance < 9000) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(124, 58, 237, ${1 - (distance / 9000)})`;
+                            ctx.lineWidth = 1;
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            window.addEventListener('resize', initParticles);
+            initParticles();
+            animateParticles();
+        }
+
+        // --- Custom Tooltip Logic ---
+        const customTooltip = document.getElementById('custom-tooltip');
+        const tooltipTargets = document.querySelectorAll('[data-tooltip]');
+
+        tooltipTargets.forEach(target => {
+            target.addEventListener('mouseenter', (e) => {
+                const text = target.getAttribute('data-tooltip');
+                if (text) {
+                    customTooltip.textContent = text;
+                    customTooltip.style.display = 'block';
+                }
+            });
+            target.addEventListener('mousemove', (e) => {
+                customTooltip.style.left = (e.clientX + 15) + 'px';
+                customTooltip.style.top = (e.clientY + 15) + 'px';
+            });
+            target.addEventListener('mouseleave', () => {
+                customTooltip.style.display = 'none';
+            });
+        });
     </script>
 </body>
 </html>

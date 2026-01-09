@@ -10,6 +10,7 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#7c3aed">
     <link rel="apple-touch-icon" href="icon-192x192.png">
+    <link rel="icon" type="image/png" href="icon-192x192.png">
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -99,6 +100,21 @@
             .newsletter-box form { flex-direction: column; gap: 10px; }
             .newsletter-box input { width: 100%; margin-right: 0; }
             .newsletter-box button { width: 100%; }
+        }
+
+        /* Scroll to Top */
+        #scroll-top-btn {
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+            background: var(--primary-gradient); color: white; border: none; border-radius: 50%;
+            cursor: pointer; display: none; align-items: center; justify-content: center;
+            font-size: 1.2rem; box-shadow: var(--shadow); z-index: 1500;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        #scroll-top-btn:hover { opacity: 0.9; transform: translateY(-3px); }
+        #scroll-top-btn.show { display: flex; animation: popIn 0.3s ease-out; }
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.8) translateY(10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         /* Footer */
@@ -205,6 +221,11 @@
         </div>
     </section>
 
+    <!-- SCROLL TO TOP BUTTON -->
+    <button id="scroll-top-btn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- FOOTER -->
     <footer>
         <div class="container">
@@ -254,6 +275,21 @@
                 icon.classList.add('fa-sun');
             }
         });
+
+        // Scroll to Top Logic
+        const scrollTopBtn = document.getElementById('scroll-top-btn');
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
     </script>
 </body>
 </html>
