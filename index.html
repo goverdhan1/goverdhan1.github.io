@@ -1981,6 +1981,24 @@
             </div>
 
             <div class="projects-grid">
+                <!-- Project: MyDoorView -->
+                <div class="project-card" data-category="web mobile">
+                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" class="project-img" alt="MyDoorView video intercom and access control">
+                    <div class="project-content">
+                        <h3 class="project-title">MyDoorView — Video Intercom &amp; Access Control</h3>
+                        <p class="project-desc">Full Stack Architect for a multi-tenant platform where door panels call residents and staff, and the door unlocks from the app, phone, PIN, QR, RFID, or Brivo, PDK, and Kantech.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">NestJS</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <button class="view-case-study-btn" data-details="<ul><li>Architected a five-level tenant hierarchy (Super Admin, Distributor, Dealer, Account Admin, Resident) with JWT sessions, MFA, and a per-tenant permission model.</li><li>Built the NestJS API on PostgreSQL, Redis, and BullMQ for sites, devices, credentials, schedules, subscriptions, tickets, and audit events.</li><li>Implemented real-time door calling with Socket.IO, WebRTC, and Twilio, including group ringing and unlock during a live call on web and mobile.</li><li>Shipped the partner portal, property-admin portal, and React Native app (CallKit on iOS, ConnectionService on Android) for remote lock, guest passes, live video, and billing.</li></ul>">
+                            View Case Study
+                        </button>
+                    </div>
+                </div>
+
                 <!-- Project 1 -->
                 <div class="project-card" data-category="cloud">
                     <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80" class="project-img" alt="Soulverse Backend">
@@ -3052,8 +3070,9 @@ END:VCARD`;
             projectCards.forEach(card => {
                 const cardCategory = card.getAttribute('data-category');
                 const cardText = card.textContent.toLowerCase();
-                
-                const matchesCategory = category === 'all' || cardCategory === category;
+                const cardCategories = (cardCategory || '').split(/\s+/);
+
+                const matchesCategory = category === 'all' || cardCategories.includes(category);
                 const matchesSearch = cardText.includes(term);
 
                 if (matchesCategory && matchesSearch) {
